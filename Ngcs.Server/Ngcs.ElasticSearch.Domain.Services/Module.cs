@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.Composition;
-using System.Diagnostics;
+using Ngcs.ElasticSearch.Domain.Contracts;
 using Ngcs.Practices.Composition;
 using Ngcs.Practices.IoC;
 
@@ -10,7 +10,7 @@ namespace Ngcs.ElasticSearch.Domain.Services
     {
         public void RegisterModule(IIocContainer container)
         {
-            Debug.WriteLine(("Module!!"));
+            container.RegisterSingleton<IValueService, ValueService>();
         }
     }
 }

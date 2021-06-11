@@ -118,6 +118,10 @@
       <Project>{33bf59dc-d43b-42b3-ad67-eef477f76bb5}</Project>
       <Name>LogoFX.Web.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Ngcs.ElasticSearch.Domain.Contracts\Ngcs.ElasticSearch.Domain.Contracts.csproj">
+      <Project>{5512C587-6E38-44BB-8078-5D4D5C7341B5}</Project>
+      <Name>Ngcs.ElasticSearch.Domain.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Ngcs.Practices.Composition\Ngcs.Practices.Composition.csproj">
       <Project>{284cbdd1-aadb-4ca2-b6f3-88548e9f0764}</Project>
       <Name>Ngcs.Practices.Composition</Name>
