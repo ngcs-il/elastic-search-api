@@ -13,15 +13,7 @@ namespace Ngcs.Server.Facade
             // Web API configuration and services
             var iocContainer = new SimpleIocContainer();
             ServiceLocator.Current = iocContainer;
-
-            // Web API routes
-            config.MapHttpAttributeRoutes();
-
-            config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
+            IHttpConfigurationProvider bootstrapper = new AppBootstrapper(iocContainer);
         }
     }
 }
