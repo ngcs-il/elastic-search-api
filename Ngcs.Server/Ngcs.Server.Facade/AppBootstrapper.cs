@@ -11,6 +11,14 @@ namespace Ngcs.Server.Facade
         {
         }
 
+        public override string ModulesPath
+        {
+            get
+            {
+                return Properties.Resources.ModulesPath;
+            }
+        }
+
         protected override void Configure()
         {
             base.Configure();

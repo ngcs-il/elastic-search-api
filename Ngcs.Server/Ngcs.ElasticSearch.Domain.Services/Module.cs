@@ -10,7 +10,7 @@ namespace Ngcs.ElasticSearch.Domain.Services
     {
         public void RegisterModule(IIocContainer container)
         {
-            Debug.WriteLine(("Module!"));
+            Debug.WriteLine(("Module!!"));
         }
     }
 }

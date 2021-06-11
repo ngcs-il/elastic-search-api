@@ -1,6 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Web.Http;
+﻿using System.Web.Http;
 using LogoFX.Practices.IoC.SimpleContainer;
 using Ngcs.Practices.IoC;
 
