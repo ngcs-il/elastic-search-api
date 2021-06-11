@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogoFX.Practices.IoC.Simple
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.Server.Iis", "Ngcs.Server.Iis\Ngcs.Server.Iis.csproj", "{DA885403-7485-4347-A6F2-0CF2F88B0EAA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NGCS.Practices.Composition.Web", "NGCS.Practices.Composition.Web\NGCS.Practices.Composition.Web.csproj", "{8A2B19F7-5903-450D-B2BB-D9359F0DBF05}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,14 @@ Global
 		{DA885403-7485-4347-A6F2-0CF2F88B0EAA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DA885403-7485-4347-A6F2-0CF2F88B0EAA}.Release|x64.ActiveCfg = Release|Any CPU
 		{DA885403-7485-4347-A6F2-0CF2F88B0EAA}.Release|x64.Build.0 = Release|Any CPU
+		{8A2B19F7-5903-450D-B2BB-D9359F0DBF05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A2B19F7-5903-450D-B2BB-D9359F0DBF05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A2B19F7-5903-450D-B2BB-D9359F0DBF05}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8A2B19F7-5903-450D-B2BB-D9359F0DBF05}.Debug|x64.Build.0 = Debug|Any CPU
+		{8A2B19F7-5903-450D-B2BB-D9359F0DBF05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A2B19F7-5903-450D-B2BB-D9359F0DBF05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A2B19F7-5903-450D-B2BB-D9359F0DBF05}.Release|x64.ActiveCfg = Release|Any CPU
+		{8A2B19F7-5903-450D-B2BB-D9359F0DBF05}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
