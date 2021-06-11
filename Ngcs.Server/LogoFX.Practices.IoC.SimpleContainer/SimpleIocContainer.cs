@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Solid.Practices.IoC;
+using Ngcs.Practices.IoC;
 
 namespace LogoFX.Practices.IoC.SimpleContainer
 {

@@ -1,4 +1,7 @@
-﻿namespace NGCS.Practices.Composition.Web
+﻿using Ngcs.Practices.Composition;
+using Ngcs.Practices.IoC;
+
+namespace NGCS.Practices.Composition.Web
 {
 	public class BootstrapperInitializationFacade : BootstrapperInitializationFacadeBase
 	{

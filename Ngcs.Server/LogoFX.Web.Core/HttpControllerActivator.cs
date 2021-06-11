@@ -2,7 +2,7 @@
 using System.Net.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Dispatcher;
-using Solid.Practices.IoC;
+using Ngcs.Practices.IoC;
 
 namespace LogoFX.Web.Core
 {

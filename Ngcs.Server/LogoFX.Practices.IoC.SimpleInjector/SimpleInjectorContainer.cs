@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using Ngcs.Practices.IoC;
 using SimpleInjector;
-using Solid.Practices.IoC;
 
 namespace LogoFX.Practices.IoC.SimpleInjector
 {
