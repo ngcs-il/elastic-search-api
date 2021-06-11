@@ -6,16 +6,16 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{DA885403-7485-4347-A6F2-0CF2F88B0EAA}</ProjectGuid>
+    <ProjectGuid>{DE170738-2426-4146-A0D2-45D659E15390}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Ngcs.Server.Iis</RootNamespace>
-    <AssemblyName>Ngcs.Server.Iis</AssemblyName>
+    <RootNamespace>Ngcs.Server.Facade</RootNamespace>
+    <AssemblyName>Ngcs.Server.Facade</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44348</IISExpressSSLPort>
+    <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -27,7 +27,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\Bin\Debug\</OutputPath>
+    <OutputPath>bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -49,9 +49,17 @@
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Solid.Practices.IoC, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Solid.Practices.Composition, Version=2.3.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Lib\Solid\Solid.Practices.IoC.dll</HintPath>
+      <HintPath>..\..\..\Ngcs.Server\Lib\Solid\Solid.Practices.Composition.dll</HintPath>
+    </Reference>
+    <Reference Include="Solid.Practices.Composition.Web, Version=2.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Ngcs.Server\Lib\Solid\Solid.Practices.Composition.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Solid.Practices.IoC, Version=2.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Ngcs.Server\Lib\Solid\Solid.Practices.IoC.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Web.DynamicData" />
@@ -87,8 +95,8 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppBootstrapper.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -105,16 +113,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LogoFX.Practices.IoC.SimpleContainer\LogoFX.Practices.IoC.SimpleContainer.csproj">
-      <Project>{50CB854F-8AE9-4A2D-A45B-8A4E0D14B91B}</Project>
+      <Project>{50cb854f-8ae9-4a2d-a45b-8a4e0d14b91b}</Project>
       <Name>LogoFX.Practices.IoC.SimpleContainer</Name>
     </ProjectReference>
     <ProjectReference Include="..\LogoFX.Web.Core\LogoFX.Web.Core.csproj">
-      <Project>{33BF59DC-D43B-42B3-AD67-EEF477F76BB5}</Project>
+      <Project>{33bf59dc-d43b-42b3-ad67-eef477f76bb5}</Project>
       <Name>LogoFX.Web.Core</Name>
     </ProjectReference>
   </ItemGroup>
@@ -131,9 +138,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>63460</DevelopmentServerPort>
+          <DevelopmentServerPort>65347</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44348/</IISUrl>
+          <IISUrl>http://localhost:65347/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

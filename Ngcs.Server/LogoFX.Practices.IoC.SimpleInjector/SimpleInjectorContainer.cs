@@ -26,12 +26,12 @@ namespace LogoFX.Practices.IoC.SimpleInjector
 
         public void RegisterSingleton<TService, TImplementation>() where TImplementation : class, TService
         {
-            _container.RegisterSingle(typeof(TService), typeof(TImplementation));
+            _container.RegisterSingleton(typeof(TService), typeof(TImplementation));
         }
 
         public void RegisterInstance<TService>(TService instance) where TService : class
         {
-            _container.RegisterSingle(instance);
+            _container.RegisterInstance(instance);
         }
 
         public TService GetInstance<TService>(Type serviceType) where TService : class
