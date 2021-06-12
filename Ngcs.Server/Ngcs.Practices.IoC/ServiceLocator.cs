@@ -8,8 +8,8 @@ namespace Ngcs.Practices.IoC
 
         public static IServiceLocator Current
         {
-            get => ServiceLocator._current != null ? ServiceLocator._current : throw new NullReferenceException("Service Locator must be set");
-            set => ServiceLocator._current = value;
+            get => _current ?? throw new NullReferenceException("Service Locator must be set");
+            set => _current = value;
         }
     }
 }

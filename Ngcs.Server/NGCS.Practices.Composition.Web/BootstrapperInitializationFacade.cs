@@ -10,6 +10,7 @@ namespace NGCS.Practices.Composition.Web
 		{
 		}
 
-		protected override IAssembliesReadOnlyResolver CreateAssembliesResolver() => (IAssembliesReadOnlyResolver)new AssembliesResolver((ICompositionModulesProvider)this.CompositionContainer);
+		protected override IAssembliesReadOnlyResolver CreateAssembliesResolver() 
+			=> new AssembliesResolver(CompositionContainer);
 	}
 }

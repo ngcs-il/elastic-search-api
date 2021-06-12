@@ -56,8 +56,10 @@ namespace LogoFX.Practices.IoC.SimpleInjector
 
         public void BuildUp(object instance)
         {
-            var producer = _container.GetRegistration(instance.GetType().BaseType, true);
-            producer.Registration.InitializeInstance(instance);
+	        var producer = _container.GetRegistration(
+		        instance?.GetType().BaseType ?? throw new ArgumentNullException(nameof(instance)),
+		        true);
+	        producer?.Registration.InitializeInstance(instance);
         }
     }
 }

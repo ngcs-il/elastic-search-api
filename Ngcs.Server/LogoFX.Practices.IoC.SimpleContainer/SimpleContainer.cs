@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection;
 
@@ -21,7 +22,8 @@ namespace LogoFX.Practices.IoC.SimpleContainer
 
         private class FactoryFactory<T>
         {
-            public Func<T> Create(SimpleContainer container)
+	        [SuppressMessage("ReSharper", "UnusedMember.Local")]
+	        public Func<T> Create(SimpleContainer container)
             {
                 return () => (T)container.GetInstance(typeof(T), null);
             }
@@ -59,6 +61,7 @@ namespace LogoFX.Practices.IoC.SimpleContainer
 
         #region Public Methods
 
+        [SuppressMessage("ReSharper", "UnusedMember.Global")]
         public void RegisterPerLifetime(Func<object> lifeTime, Type service, string key, Type implementation)
         {
             WeakReference wr = null;
@@ -99,7 +102,7 @@ namespace LogoFX.Practices.IoC.SimpleContainer
         }
 
         /// <summary>
-        ///   Registers the class so that it is created once, on first request, and the same instance is returned to all requestors thereafter.
+        ///   Registers the class so that it is created once, on first request, and the same instance is returned to all callers thereafter.
         /// </summary>
         /// <param name = "service">The service.</param>
         /// <param name = "key">The key.</param>
@@ -170,7 +173,8 @@ namespace LogoFX.Practices.IoC.SimpleContainer
         /// </summary>
         /// <param name="service">The service.</param>
         /// <param name="key">The key.</param>
-        /// <returns>True if a handler is registere; false otherwise.</returns>
+        /// <returns>True if a handler is registered; false otherwise.</returns>
+        [SuppressMessage("ReSharper", "UnusedMember.Global")]
         public bool HasHandler(Type service, string key)
         {
             return GetEntry(service, key) != null;
@@ -196,7 +200,8 @@ namespace LogoFX.Practices.IoC.SimpleContainer
                 var factoryFactoryType = typeof(FactoryFactory<>).MakeGenericType(typeToCreate);
                 var factoryFactoryHost = Activator.CreateInstance(factoryFactoryType);
                 var factoryFactoryMethod = factoryFactoryType.GetMethod("Create");
-                return factoryFactoryMethod.Invoke(factoryFactoryHost, new object[] { this });
+                if (!(factoryFactoryMethod is null))
+	                return factoryFactoryMethod.Invoke(factoryFactoryHost, new object[] {this});
             }
 
             if (s_enumerableType.IsAssignableFrom(service))
@@ -257,6 +262,7 @@ namespace LogoFX.Practices.IoC.SimpleContainer
         /// Creates a child container.
         /// </summary>
         /// <returns>A new container.</returns>
+        [SuppressMessage("ReSharper", "UnusedMember.Global")]
         public SimpleContainer CreateChildContainer()
         {
             return new SimpleContainer(_entries);

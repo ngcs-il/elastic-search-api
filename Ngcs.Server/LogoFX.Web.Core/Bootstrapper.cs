@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Web.Http.Dispatcher;
 using NGCS.Practices.Composition.Web;
@@ -23,11 +24,12 @@ namespace LogoFX.Web.Core
             Start();
         }
 
+        [SuppressMessage("ReSharper", "ParameterOnlyUsedForPreconditionCheck.Local")]
         private BootstrapperBase(Predicate<Type> predicate)
         {
             if (predicate == null)
             {
-                throw new ArgumentNullException("predicate");
+                throw new ArgumentNullException(nameof(predicate));
             }            
         }
 
@@ -41,10 +43,7 @@ namespace LogoFX.Web.Core
             StartRuntime();
         }        
         
-        public virtual string ModulesPath
-        {
-            get { return string.Empty; }
-        }
+        public virtual string ModulesPath => string.Empty;
 
         protected void SetupHttpConfiguration(IHttpConfigurationProxy config)
         {            
@@ -58,15 +57,13 @@ namespace LogoFX.Web.Core
         /// Gets the current lifetime scope.
         /// </summary>
         /// <value>The current lifetime scope.</value>
-        protected virtual object CurrentLifetimeScope
-        {
-            get { return _defaultLifetimeScope ?? (_defaultLifetimeScope = new Object()); }
-        }
+        [SuppressMessage("ReSharper", "UnusedMember.Global")]
+        protected virtual object CurrentLifetimeScope => _defaultLifetimeScope ?? (_defaultLifetimeScope = new Object());
 
         private void StartRuntime()
         {            
-            DirectoryInfo directoryInfo = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory);
-            string path = Path.Combine(directoryInfo.FullName, ModulesPath);
+            var directoryInfo = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory);
+            var path = Path.Combine(directoryInfo.FullName, ModulesPath);
             var initializationFacade = new BootstrapperInitializationFacade(_iocContainer);  
             initializationFacade.Initialize(path);
             //code smell
