@@ -38,6 +38,7 @@
   <ItemGroup>
     <Compile Include="ApiControllerBase.cs" />
     <Compile Include="ApiControllerExtensions.cs" />
+    <Compile Include="ExceptionFilterAttribute.cs" />
     <Compile Include="IHttpConfigurationProvider.cs" />
     <Compile Include="IisBootstrapper.cs" />
     <Compile Include="ImpersonateAttribute.cs" />
