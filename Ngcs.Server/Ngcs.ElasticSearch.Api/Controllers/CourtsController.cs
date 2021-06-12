@@ -9,6 +9,7 @@ using Ngcs.ElasticSearch.Domain.Contracts;
 
 namespace Ngcs.ElasticSearch.Api.Controllers
 {
+    //[Impersonate]
     public partial class CourtsController
     {
         private readonly ICourtsService _courtsService;
@@ -20,6 +21,7 @@ namespace Ngcs.ElasticSearch.Api.Controllers
 
         /// <summary>Listing Courts</summary>
         /// <returns>OK</returns>
+        
         private async partial Task<IHttpActionResult> GetCourtsImplementationAsync(CancellationToken cancellationToken)
         {
             return Ok(_courtsService.GetCourts().Select(CourtMapper.ToDto));

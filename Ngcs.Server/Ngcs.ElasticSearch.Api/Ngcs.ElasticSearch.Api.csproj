@@ -60,8 +60,10 @@
   <ItemGroup>
     <Compile Include="Controllers\api.cs" />
     <Compile Include="Controllers\ApiControllerBase.cs" />
+    <Compile Include="Controllers\ApiControllerExtensions.cs" />
     <Compile Include="Controllers\CourtsController.cs" />
     <Compile Include="Controllers\EntitiesController.cs" />
+    <Compile Include="Controllers\ImpersonateAttribute.cs" />
     <Compile Include="Controllers\InterestsController.cs" />
     <Compile Include="Controllers\PrivilegesController.cs" />
     <Compile Include="Controllers\ProceduresController.cs" />
