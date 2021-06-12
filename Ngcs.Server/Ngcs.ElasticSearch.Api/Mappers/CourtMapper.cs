@@ -1,18 +1,23 @@
-﻿using Ngcs.ElasticSearch.Api.Controllers;
+﻿using AutoMapper;
+using JetBrains.Annotations;
+using Ngcs.ElasticSearch.Api.Controllers;
 using Ngcs.ElasticSearch.Domain.Contracts;
+using Ngcs.ElasticSearch.Domain.Implementation.Models;
 
 namespace Ngcs.ElasticSearch.Api.Mappers
 {
-    public static class CourtMapper
+    [UsedImplicitly]
+    public class CourtMapper
     {
-        public static CourtDto ToDto(ICourt model)
+        private readonly IMapper _mapper;
+
+        public CourtMapper(IMapper mapper)
         {
-            return new CourtDto
-            {
-                Id = model.Id,
-                Name = model.Name,
-                Level = model.Level
-            };
+            _mapper = mapper;
         }
+
+        internal CourtDto MapToCourtDto(ICourt court) => _mapper.Map<CourtDto>(court);
+
+        internal Court MapToCourt(CourtDto courtDto) => _mapper.Map<Court>(courtDto);
     }
 }

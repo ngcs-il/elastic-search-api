@@ -13,10 +13,12 @@ namespace Ngcs.ElasticSearch.Api.Controllers
     public partial class CourtsController
     {
         private readonly ICourtsService _courtsService;
+        private readonly CourtMapper _courtMapper;
 
-        public CourtsController(ICourtsService courtsService)
+        public CourtsController(ICourtsService courtsService, CourtMapper courtMapper)
         {
             _courtsService = courtsService;
+            _courtMapper = courtMapper;
         }
 
         /// <summary>Listing Courts</summary>
@@ -24,7 +26,7 @@ namespace Ngcs.ElasticSearch.Api.Controllers
         
         private async partial Task<IHttpActionResult> GetCourtsImplementationAsync(CancellationToken cancellationToken)
         {
-            return Ok(_courtsService.GetCourts().Select(CourtMapper.ToDto));
+            return Ok(_courtsService.GetCourts().Select(x => _courtMapper.MapToCourtDto(x)));
         }
 
         /// <summary>Listing Court Level types</summary>
