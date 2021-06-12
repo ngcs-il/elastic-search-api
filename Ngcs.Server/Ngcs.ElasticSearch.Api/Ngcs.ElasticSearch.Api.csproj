@@ -64,7 +64,7 @@
     <Compile Include="Controllers\ProceduresController.cs" />
     <Compile Include="Controllers\ProceedingsController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
-    <Compile Include="Controllers\Values2Controller.cs" />
+    <Compile Include="Mappers\CourtMapper.cs" />
     <Compile Include="Module.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

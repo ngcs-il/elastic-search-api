@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Web.Http;
+
 // ReSharper disable UnusedParameterInPartialMethod
 
 namespace Ngcs.ElasticSearch.Api.Controllers
 {
     public partial class SearchController
     {
-        private partial Task<ApiResponse<SearchResultDto>> GetSearchResultsImplementationAsync(string q,
+        private partial Task<IHttpActionResult> GetSearchResultsImplementationAsync(string q,
             int num, int start, Source? source, bool? searchInTitles, bool? searchInContent, bool? searchInMemoTitles,
             bool? searchInMemoContent, DateRangeType? dateRangeType, DateTimeOffset? startDate,
             DateTimeOffset? endDate, bool hasAppeal, bool legalCase, string court, string courtLevel,
@@ -17,7 +19,7 @@ namespace Ngcs.ElasticSearch.Api.Controllers
             throw new NotImplementedException();
         }
 
-        private partial Task<ApiResponse> PostSearchQueryImplementationAsync(QueryDto body, CancellationToken cancellationToken)
+        private partial Task<IHttpActionResult> PostSearchQueryImplementationAsync(QueryDto body, CancellationToken cancellationToken)
         {
             throw new NotImplementedException();
         }

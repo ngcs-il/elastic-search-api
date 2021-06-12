@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Web.Http;
 
 namespace Ngcs.ElasticSearch.Api.Controllers
 {
@@ -9,7 +9,7 @@ namespace Ngcs.ElasticSearch.Api.Controllers
     {
         /// <summary>Listing Procedure types</summary>
         /// <returns>OK</returns>
-        private partial Task<ApiResponse<ICollection<ProcedureDto>>> GetProceduresImplementationAsync(CancellationToken cancellationToken)
+        private partial Task<IHttpActionResult> GetProceduresImplementationAsync(CancellationToken cancellationToken)
         {
             throw new NotImplementedException();
         }

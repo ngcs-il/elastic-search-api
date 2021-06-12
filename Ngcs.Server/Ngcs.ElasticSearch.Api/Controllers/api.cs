@@ -14,7 +14,6 @@
 namespace Ngcs.ElasticSearch.Api.Controllers
 {
     using System = global::System;
-    using System.Net.Http;
 
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.11.3.0 (NJsonSchema v10.4.4.0 (Newtonsoft.Json v11.0.0.0))")]
     public partial class SearchController : ApiControllerBase
@@ -29,11 +28,11 @@ namespace Ngcs.ElasticSearch.Api.Controllers
         /// <param name="searchInMemoTitles">Is search in memo title.</param>
         /// <param name="searchInMemoContent">Is search in memo content.</param>
         /// <returns>OK</returns>
-        private partial System.Threading.Tasks.Task<ApiResponse<SearchResultDto>> GetSearchResultsImplementationAsync(string q, int num, int start, Source? source, bool? searchInTitles, bool? searchInContent, bool? searchInMemoTitles, bool? searchInMemoContent, DateRangeType? dateRangeType, System.DateTimeOffset? startDate, System.DateTimeOffset? endDate, bool hasAppeal, bool legalCase, string court, string courtLevel, string interest, string procedure, string proceeding, string entities, System.Threading.CancellationToken cancellationToken);
+        private partial System.Threading.Tasks.Task<System.Web.Http.IHttpActionResult> GetSearchResultsImplementationAsync(string q, int num, int start, Source? source, bool? searchInTitles, bool? searchInContent, bool? searchInMemoTitles, bool? searchInMemoContent, DateRangeType? dateRangeType, System.DateTimeOffset? startDate, System.DateTimeOffset? endDate, bool hasAppeal, bool legalCase, string court, string courtLevel, string interest, string procedure, string proceeding, string entities, System.Threading.CancellationToken cancellationToken);
 
         /// <summary>Finds Documents</summary>
         /// <returns>OK</returns>
-        private partial System.Threading.Tasks.Task<ApiResponse> PostSearchQueryImplementationAsync(QueryDto body, System.Threading.CancellationToken cancellationToken);
+        private partial System.Threading.Tasks.Task<System.Web.Http.IHttpActionResult> PostSearchQueryImplementationAsync(QueryDto body, System.Threading.CancellationToken cancellationToken);
 
 
         /// <summary>Finds Documents</summary>
@@ -46,36 +45,18 @@ namespace Ngcs.ElasticSearch.Api.Controllers
         /// <param name="searchInMemoContent">Is search in memo content.</param>
         /// <returns>OK</returns>
         [System.Web.Http.HttpGet, System.Web.Http.Route("search")]
-        public async System.Threading.Tasks.Task<HttpResponseMessage> GetSearchResults([System.Web.Http.FromUri][System.ComponentModel.DataAnnotations.Required] string q, [System.Web.Http.FromUri][System.ComponentModel.DataAnnotations.Required] int num, [System.Web.Http.FromUri][System.ComponentModel.DataAnnotations.Required] int start, [System.Web.Http.FromUri] Source? source = null, [System.Web.Http.FromUri] bool? searchInTitles = null, [System.Web.Http.FromUri] bool? searchInContent = null, [System.Web.Http.FromUri] bool? searchInMemoTitles = null, [System.Web.Http.FromUri] bool? searchInMemoContent = null, [System.Web.Http.FromUri] DateRangeType? dateRangeType = null, [System.Web.Http.FromUri] System.DateTimeOffset? startDate = null, [System.Web.Http.FromUri] System.DateTimeOffset? endDate = null, [System.Web.Http.FromUri] bool? hasAppeal = null, [System.Web.Http.FromUri] bool? legalCase = null, [System.Web.Http.FromUri] string court = null, [System.Web.Http.FromUri] string courtLevel = null, [System.Web.Http.FromUri] string interest = null, [System.Web.Http.FromUri] string procedure = null, [System.Web.Http.FromUri] string proceeding = null, [System.Web.Http.FromUri] string entities = null, System.Threading.CancellationToken cancellationToken = default)
+        public System.Threading.Tasks.Task<System.Web.Http.IHttpActionResult> GetSearchResults([System.Web.Http.FromUri][System.ComponentModel.DataAnnotations.Required] string q, [System.Web.Http.FromUri][System.ComponentModel.DataAnnotations.Required] int num, [System.Web.Http.FromUri][System.ComponentModel.DataAnnotations.Required] int start, [System.Web.Http.FromUri] Source? source = null, [System.Web.Http.FromUri] bool? searchInTitles = null, [System.Web.Http.FromUri] bool? searchInContent = null, [System.Web.Http.FromUri] bool? searchInMemoTitles = null, [System.Web.Http.FromUri] bool? searchInMemoContent = null, [System.Web.Http.FromUri] DateRangeType? dateRangeType = null, [System.Web.Http.FromUri] System.DateTimeOffset? startDate = null, [System.Web.Http.FromUri] System.DateTimeOffset? endDate = null, [System.Web.Http.FromUri] bool? hasAppeal = null, [System.Web.Http.FromUri] bool? legalCase = null, [System.Web.Http.FromUri] string court = null, [System.Web.Http.FromUri] string courtLevel = null, [System.Web.Http.FromUri] string interest = null, [System.Web.Http.FromUri] string procedure = null, [System.Web.Http.FromUri] string proceeding = null, [System.Web.Http.FromUri] string entities = null, System.Threading.CancellationToken cancellationToken = default)
         {
-            var result = await GetSearchResultsImplementationAsync(q, num, start, source, searchInTitles, searchInContent, searchInMemoTitles, searchInMemoContent, dateRangeType, startDate, endDate, hasAppeal ?? false, legalCase ?? false, court, courtLevel, interest, procedure, proceeding, entities, cancellationToken).ConfigureAwait(false);
-
-            var status = (System.Net.HttpStatusCode)result.StatusCode;
-            HttpResponseMessage response = Request.CreateResponse(status, result);
-
-            foreach (var header in result.Headers)
-                response.Headers.Add(header.Key, header.Value);
-
-            return response;
+            return GetSearchResultsImplementationAsync(q, num, start, source, searchInTitles, searchInContent, searchInMemoTitles, searchInMemoContent, dateRangeType, startDate, endDate, hasAppeal ?? false, legalCase ?? false, court, courtLevel, interest, procedure, proceeding, entities, cancellationToken);
         }
-
 
         /// <summary>Finds Documents</summary>
         /// <returns>OK</returns>
         [System.Web.Http.HttpPost, System.Web.Http.Route("search")]
-        public async System.Threading.Tasks.Task<HttpResponseMessage> PostSearchQuery([System.Web.Http.FromBody][System.ComponentModel.DataAnnotations.Required] QueryDto body, System.Threading.CancellationToken cancellationToken = default)
+        public System.Threading.Tasks.Task<System.Web.Http.IHttpActionResult> PostSearchQuery([System.Web.Http.FromBody][System.ComponentModel.DataAnnotations.Required] QueryDto body, System.Threading.CancellationToken cancellationToken = default)
         {
-            var result = await PostSearchQueryImplementationAsync(body, cancellationToken).ConfigureAwait(false);
-
-            var status = (System.Net.HttpStatusCode)result.StatusCode;
-            HttpResponseMessage response = Request.CreateResponse(status);
-
-            foreach (var header in result.Headers)
-                response.Headers.Add(header.Key, header.Value);
-
-            return response;
+            return PostSearchQueryImplementationAsync(body, cancellationToken);
         }
-
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.11.3.0 (NJsonSchema v10.4.4.0 (Newtonsoft.Json v11.0.0.0))")]
@@ -84,46 +65,28 @@ namespace Ngcs.ElasticSearch.Api.Controllers
 
         /// <summary>Listing Courts</summary>
         /// <returns>OK</returns>
-        private partial System.Threading.Tasks.Task<ApiResponse<System.Collections.Generic.ICollection<CourtDto>>> GetCourtsImplementationAsync(System.Threading.CancellationToken cancellationToken);
+        private partial System.Threading.Tasks.Task<System.Web.Http.IHttpActionResult> GetCourtsImplementationAsync(System.Threading.CancellationToken cancellationToken);
 
         /// <summary>Listing Court Level types</summary>
         /// <returns>OK</returns>
-        private partial System.Threading.Tasks.Task<ApiResponse<System.Collections.Generic.ICollection<CourtLevelDto>>> GetCourtLevelsImplementationAsync(System.Threading.CancellationToken cancellationToken);
+        private partial System.Threading.Tasks.Task<System.Web.Http.IHttpActionResult> GetCourtLevelsImplementationAsync(System.Threading.CancellationToken cancellationToken);
 
 
         /// <summary>Listing Courts</summary>
         /// <returns>OK</returns>
         [System.Web.Http.HttpGet, System.Web.Http.Route("courts")]
-        public async System.Threading.Tasks.Task<HttpResponseMessage> GetCourts(System.Threading.CancellationToken cancellationToken = default)
+        public System.Threading.Tasks.Task<System.Web.Http.IHttpActionResult> GetCourts(System.Threading.CancellationToken cancellationToken = default)
         {
-            var result = await GetCourtsImplementationAsync(cancellationToken).ConfigureAwait(false);
-
-            var status = (System.Net.HttpStatusCode)result.StatusCode;
-            HttpResponseMessage response = Request.CreateResponse(status, result);
-
-            foreach (var header in result.Headers)
-                response.Headers.Add(header.Key, header.Value);
-
-            return response;
+            return GetCourtsImplementationAsync(cancellationToken);
         }
-
 
         /// <summary>Listing Court Level types</summary>
         /// <returns>OK</returns>
         [System.Web.Http.HttpGet, System.Web.Http.Route("courts/levels")]
-        public async System.Threading.Tasks.Task<HttpResponseMessage> GetCourtLevels(System.Threading.CancellationToken cancellationToken = default)
+        public System.Threading.Tasks.Task<System.Web.Http.IHttpActionResult> GetCourtLevels(System.Threading.CancellationToken cancellationToken = default)
         {
-            var result = await GetCourtLevelsImplementationAsync(cancellationToken).ConfigureAwait(false);
-
-            var status = (System.Net.HttpStatusCode)result.StatusCode;
-            HttpResponseMessage response = Request.CreateResponse(status, result);
-
-            foreach (var header in result.Headers)
-                response.Headers.Add(header.Key, header.Value);
-
-            return response;
+            return GetCourtLevelsImplementationAsync(cancellationToken);
         }
-
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.11.3.0 (NJsonSchema v10.4.4.0 (Newtonsoft.Json v11.0.0.0))")]
@@ -132,25 +95,16 @@ namespace Ngcs.ElasticSearch.Api.Controllers
 
         /// <summary>Listing Procedure types</summary>
         /// <returns>OK</returns>
-        private partial System.Threading.Tasks.Task<ApiResponse<System.Collections.Generic.ICollection<ProcedureDto>>> GetProceduresImplementationAsync(System.Threading.CancellationToken cancellationToken);
+        private partial System.Threading.Tasks.Task<System.Web.Http.IHttpActionResult> GetProceduresImplementationAsync(System.Threading.CancellationToken cancellationToken);
 
 
         /// <summary>Listing Procedure types</summary>
         /// <returns>OK</returns>
         [System.Web.Http.HttpGet, System.Web.Http.Route("procedures")]
-        public async System.Threading.Tasks.Task<HttpResponseMessage> GetProcedures(System.Threading.CancellationToken cancellationToken = default)
+        public System.Threading.Tasks.Task<System.Web.Http.IHttpActionResult> GetProcedures(System.Threading.CancellationToken cancellationToken = default)
         {
-            var result = await GetProceduresImplementationAsync(cancellationToken).ConfigureAwait(false);
-
-            var status = (System.Net.HttpStatusCode)result.StatusCode;
-            HttpResponseMessage response = Request.CreateResponse(status, result);
-
-            foreach (var header in result.Headers)
-                response.Headers.Add(header.Key, header.Value);
-
-            return response;
+            return GetProceduresImplementationAsync(cancellationToken);
         }
-
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.11.3.0 (NJsonSchema v10.4.4.0 (Newtonsoft.Json v11.0.0.0))")]
@@ -159,25 +113,16 @@ namespace Ngcs.ElasticSearch.Api.Controllers
 
         /// <summary>Listing Proceeding types</summary>
         /// <returns>OK</returns>
-        private partial System.Threading.Tasks.Task<ApiResponse<System.Collections.Generic.ICollection<ProceedingDto>>> GetProceedingsImplementationAsync(System.Threading.CancellationToken cancellationToken);
+        private partial System.Threading.Tasks.Task<System.Web.Http.IHttpActionResult> GetProceedingsImplementationAsync(System.Threading.CancellationToken cancellationToken);
 
 
         /// <summary>Listing Proceeding types</summary>
         /// <returns>OK</returns>
         [System.Web.Http.HttpGet, System.Web.Http.Route("proceedings")]
-        public async System.Threading.Tasks.Task<HttpResponseMessage> GetProceedings(System.Threading.CancellationToken cancellationToken = default)
+        public System.Threading.Tasks.Task<System.Web.Http.IHttpActionResult> GetProceedings(System.Threading.CancellationToken cancellationToken = default)
         {
-            var result = await GetProceedingsImplementationAsync(cancellationToken).ConfigureAwait(false);
-
-            var status = (System.Net.HttpStatusCode)result.StatusCode;
-            HttpResponseMessage response = Request.CreateResponse(status, result);
-
-            foreach (var header in result.Headers)
-                response.Headers.Add(header.Key, header.Value);
-
-            return response;
+            return GetProceedingsImplementationAsync(cancellationToken);
         }
-
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.11.3.0 (NJsonSchema v10.4.4.0 (Newtonsoft.Json v11.0.0.0))")]
@@ -186,25 +131,16 @@ namespace Ngcs.ElasticSearch.Api.Controllers
 
         /// <summary>Listiting Interest types</summary>
         /// <returns>OK</returns>
-        private partial System.Threading.Tasks.Task<ApiResponse<System.Collections.Generic.ICollection<InterestDto>>> GetInterestsImplementationAsync(System.Threading.CancellationToken cancellationToken);
+        private partial System.Threading.Tasks.Task<System.Web.Http.IHttpActionResult> GetInterestsImplementationAsync(System.Threading.CancellationToken cancellationToken);
 
 
         /// <summary>Listiting Interest types</summary>
         /// <returns>OK</returns>
         [System.Web.Http.HttpGet, System.Web.Http.Route("interests")]
-        public async System.Threading.Tasks.Task<HttpResponseMessage> GetInterests(System.Threading.CancellationToken cancellationToken = default)
+        public System.Threading.Tasks.Task<System.Web.Http.IHttpActionResult> GetInterests(System.Threading.CancellationToken cancellationToken = default)
         {
-            var result = await GetInterestsImplementationAsync(cancellationToken).ConfigureAwait(false);
-
-            var status = (System.Net.HttpStatusCode)result.StatusCode;
-            HttpResponseMessage response = Request.CreateResponse(status, result);
-
-            foreach (var header in result.Headers)
-                response.Headers.Add(header.Key, header.Value);
-
-            return response;
+            return GetInterestsImplementationAsync(cancellationToken);
         }
-
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.11.3.0 (NJsonSchema v10.4.4.0 (Newtonsoft.Json v11.0.0.0))")]
@@ -213,25 +149,16 @@ namespace Ngcs.ElasticSearch.Api.Controllers
 
         /// <summary>Listing Entity types</summary>
         /// <returns>OK</returns>
-        private partial System.Threading.Tasks.Task<ApiResponse<System.Collections.Generic.ICollection<EntityTypeDto>>> GetEntitiesImplementationAsync(System.Threading.CancellationToken cancellationToken);
+        private partial System.Threading.Tasks.Task<System.Web.Http.IHttpActionResult> GetEntitiesImplementationAsync(System.Threading.CancellationToken cancellationToken);
 
 
         /// <summary>Listing Entity types</summary>
         /// <returns>OK</returns>
         [System.Web.Http.HttpGet, System.Web.Http.Route("entities")]
-        public async System.Threading.Tasks.Task<HttpResponseMessage> GetEntities(System.Threading.CancellationToken cancellationToken = default)
+        public System.Threading.Tasks.Task<System.Web.Http.IHttpActionResult> GetEntities(System.Threading.CancellationToken cancellationToken = default)
         {
-            var result = await GetEntitiesImplementationAsync(cancellationToken).ConfigureAwait(false);
-
-            var status = (System.Net.HttpStatusCode)result.StatusCode;
-            HttpResponseMessage response = Request.CreateResponse(status, result);
-
-            foreach (var header in result.Headers)
-                response.Headers.Add(header.Key, header.Value);
-
-            return response;
+            return GetEntitiesImplementationAsync(cancellationToken);
         }
-
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.11.3.0 (NJsonSchema v10.4.4.0 (Newtonsoft.Json v11.0.0.0))")]
@@ -240,25 +167,16 @@ namespace Ngcs.ElasticSearch.Api.Controllers
 
         /// <summary>Listing Privileges types</summary>
         /// <returns>OK</returns>
-        private partial System.Threading.Tasks.Task<ApiResponse<System.Collections.Generic.ICollection<PrivilegeDto>>> GetPrivilegesImplementationAsync(System.Threading.CancellationToken cancellationToken);
+        private partial System.Threading.Tasks.Task<System.Web.Http.IHttpActionResult> GetPrivilegesImplementationAsync(System.Threading.CancellationToken cancellationToken);
 
 
         /// <summary>Listing Privileges types</summary>
         /// <returns>OK</returns>
         [System.Web.Http.HttpGet, System.Web.Http.Route("privileges")]
-        public async System.Threading.Tasks.Task<HttpResponseMessage> GetPrivileges(System.Threading.CancellationToken cancellationToken = default)
+        public System.Threading.Tasks.Task<System.Web.Http.IHttpActionResult> GetPrivileges(System.Threading.CancellationToken cancellationToken = default)
         {
-            var result = await GetPrivilegesImplementationAsync(cancellationToken).ConfigureAwait(false);
-
-            var status = (System.Net.HttpStatusCode)result.StatusCode;
-            HttpResponseMessage response = Request.CreateResponse(status, result);
-
-            foreach (var header in result.Headers)
-                response.Headers.Add(header.Key, header.Value);
-
-            return response;
+            return GetPrivilegesImplementationAsync(cancellationToken);
         }
-
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.4.4.0 (Newtonsoft.Json v11.0.0.0)")]
@@ -898,32 +816,6 @@ namespace Ngcs.ElasticSearch.Api.Controllers
         public DateFormatConverter()
         {
             DateTimeFormat = "yyyy-MM-dd";
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.11.3.0 (NJsonSchema v10.4.4.0 (Newtonsoft.Json v11.0.0.0))")]
-    public partial class ApiResponse
-    {
-        public int StatusCode { get; private set; }
-
-        public System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> Headers { get; private set; }
-
-        public ApiResponse(int statusCode, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers)
-        {
-            StatusCode = statusCode;
-            Headers = headers;
-        }
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.11.3.0 (NJsonSchema v10.4.4.0 (Newtonsoft.Json v11.0.0.0))")]
-    public partial class ApiResponse<TResult> : ApiResponse
-    {
-        public TResult Result { get; private set; }
-
-        public ApiResponse(int statusCode, System.Collections.Generic.IReadOnlyDictionary<string, System.Collections.Generic.IEnumerable<string>> headers, TResult result)
-            : base(statusCode, headers)
-        {
-            Result = result;
         }
     }
 
