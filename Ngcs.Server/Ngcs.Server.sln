@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.ElasticSearch.Api", "N
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.ElasticSearch.Domain.Implementation", "Ngcs.ElasticSearch.Domain.Implementation\Ngcs.ElasticSearch.Domain.Implementation.csproj", "{9732B4F0-6309-4E50-BCE3-3AFAFAF58A7D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.WebApi2.Core", "Ngcs.WebApi2.Core\Ngcs.WebApi2.Core.csproj", "{2DF223E2-2DD9-41B9-9609-92676F0D6D59}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -115,6 +117,14 @@ Global
 		{9732B4F0-6309-4E50-BCE3-3AFAFAF58A7D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9732B4F0-6309-4E50-BCE3-3AFAFAF58A7D}.Release|x64.ActiveCfg = Release|Any CPU
 		{9732B4F0-6309-4E50-BCE3-3AFAFAF58A7D}.Release|x64.Build.0 = Release|Any CPU
+		{2DF223E2-2DD9-41B9-9609-92676F0D6D59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DF223E2-2DD9-41B9-9609-92676F0D6D59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DF223E2-2DD9-41B9-9609-92676F0D6D59}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2DF223E2-2DD9-41B9-9609-92676F0D6D59}.Debug|x64.Build.0 = Debug|Any CPU
+		{2DF223E2-2DD9-41B9-9609-92676F0D6D59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DF223E2-2DD9-41B9-9609-92676F0D6D59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DF223E2-2DD9-41B9-9609-92676F0D6D59}.Release|x64.ActiveCfg = Release|Any CPU
+		{2DF223E2-2DD9-41B9-9609-92676F0D6D59}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

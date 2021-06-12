@@ -1,9 +1,12 @@
 using System.Web;
 using System.Web.Http;
 
+#pragma warning disable 1591
+
 namespace Ngcs.Server.Facade
 {
-    public class WebApiApplication : HttpApplication
+	/// <inheritdoc />
+	public class WebApiApplication : HttpApplication
     {
         protected void Application_Start()
         {

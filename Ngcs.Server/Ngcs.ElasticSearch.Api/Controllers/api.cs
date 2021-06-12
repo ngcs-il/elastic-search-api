@@ -4,6 +4,8 @@
 // </auto-generated>
 //----------------------
 
+using Ngcs.WebApi2.Core;
+
 #pragma warning disable 108 // Disable "CS0108 '{derivedDto}.ToJson()' hides inherited member '{dtoBase}.ToJson()'. Use the new keyword if hiding was intended."
 #pragma warning disable 114 // Disable "CS0114 '{derivedDto}.RaisePropertyChanged(String)' hides inherited member 'dtoBase.RaisePropertyChanged(String)'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword."
 #pragma warning disable 472 // Disable "CS0472 The result of the expression is always 'false' since a value of type 'Int32' is never equal to 'null' of type 'Int32?'
@@ -18,7 +20,7 @@ namespace Ngcs.ElasticSearch.Api.Controllers
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.11.3.0 (NJsonSchema v10.4.4.0 (Newtonsoft.Json v11.0.0.0))")]
     public partial class SearchController : ApiControllerBase
     {
-
+    
         /// <summary>Finds Documents</summary>
         /// <param name="q">The search phrase.</param>
         /// <param name="num">The number of results per page.</param>
@@ -29,12 +31,12 @@ namespace Ngcs.ElasticSearch.Api.Controllers
         /// <param name="searchInMemoContent">Is search in memo content.</param>
         /// <returns>OK</returns>
         private partial System.Threading.Tasks.Task<System.Web.Http.IHttpActionResult> GetSearchResultsImplementationAsync(string q, int num, int start, Source? source, bool? searchInTitles, bool? searchInContent, bool? searchInMemoTitles, bool? searchInMemoContent, DateRangeType? dateRangeType, System.DateTimeOffset? startDate, System.DateTimeOffset? endDate, bool hasAppeal, bool legalCase, string court, string courtLevel, string interest, string procedure, string proceeding, string entities, System.Threading.CancellationToken cancellationToken);
-
+    	
         /// <summary>Finds Documents</summary>
         /// <returns>OK</returns>
         private partial System.Threading.Tasks.Task<System.Web.Http.IHttpActionResult> PostSearchQueryImplementationAsync(QueryDto body, System.Threading.CancellationToken cancellationToken);
-
-
+    	
+    
         /// <summary>Finds Documents</summary>
         /// <param name="q">The search phrase.</param>
         /// <param name="num">The number of results per page.</param>
@@ -45,33 +47,33 @@ namespace Ngcs.ElasticSearch.Api.Controllers
         /// <param name="searchInMemoContent">Is search in memo content.</param>
         /// <returns>OK</returns>
         [System.Web.Http.HttpGet, System.Web.Http.Route("search")]
-        public System.Threading.Tasks.Task<System.Web.Http.IHttpActionResult> GetSearchResults([System.Web.Http.FromUri][System.ComponentModel.DataAnnotations.Required] string q, [System.Web.Http.FromUri][System.ComponentModel.DataAnnotations.Required] int num, [System.Web.Http.FromUri][System.ComponentModel.DataAnnotations.Required] int start, [System.Web.Http.FromUri] Source? source = null, [System.Web.Http.FromUri] bool? searchInTitles = null, [System.Web.Http.FromUri] bool? searchInContent = null, [System.Web.Http.FromUri] bool? searchInMemoTitles = null, [System.Web.Http.FromUri] bool? searchInMemoContent = null, [System.Web.Http.FromUri] DateRangeType? dateRangeType = null, [System.Web.Http.FromUri] System.DateTimeOffset? startDate = null, [System.Web.Http.FromUri] System.DateTimeOffset? endDate = null, [System.Web.Http.FromUri] bool? hasAppeal = null, [System.Web.Http.FromUri] bool? legalCase = null, [System.Web.Http.FromUri] string court = null, [System.Web.Http.FromUri] string courtLevel = null, [System.Web.Http.FromUri] string interest = null, [System.Web.Http.FromUri] string procedure = null, [System.Web.Http.FromUri] string proceeding = null, [System.Web.Http.FromUri] string entities = null, System.Threading.CancellationToken cancellationToken = default)
+        public System.Threading.Tasks.Task<System.Web.Http.IHttpActionResult> GetSearchResults([System.Web.Http.FromUri] [System.ComponentModel.DataAnnotations.Required] string q, [System.Web.Http.FromUri] [System.ComponentModel.DataAnnotations.Required] int num, [System.Web.Http.FromUri] [System.ComponentModel.DataAnnotations.Required] int start, [System.Web.Http.FromUri] Source? source = null, [System.Web.Http.FromUri] bool? searchInTitles = null, [System.Web.Http.FromUri] bool? searchInContent = null, [System.Web.Http.FromUri] bool? searchInMemoTitles = null, [System.Web.Http.FromUri] bool? searchInMemoContent = null, [System.Web.Http.FromUri] DateRangeType? dateRangeType = null, [System.Web.Http.FromUri] System.DateTimeOffset? startDate = null, [System.Web.Http.FromUri] System.DateTimeOffset? endDate = null, [System.Web.Http.FromUri] bool? hasAppeal = null, [System.Web.Http.FromUri] bool? legalCase = null, [System.Web.Http.FromUri] string court = null, [System.Web.Http.FromUri] string courtLevel = null, [System.Web.Http.FromUri] string interest = null, [System.Web.Http.FromUri] string procedure = null, [System.Web.Http.FromUri] string proceeding = null, [System.Web.Http.FromUri] string entities = null, System.Threading.CancellationToken cancellationToken = default)
         {
             return GetSearchResultsImplementationAsync(q, num, start, source, searchInTitles, searchInContent, searchInMemoTitles, searchInMemoContent, dateRangeType, startDate, endDate, hasAppeal ?? false, legalCase ?? false, court, courtLevel, interest, procedure, proceeding, entities, cancellationToken);
         }
-
+    
         /// <summary>Finds Documents</summary>
         /// <returns>OK</returns>
         [System.Web.Http.HttpPost, System.Web.Http.Route("search")]
-        public System.Threading.Tasks.Task<System.Web.Http.IHttpActionResult> PostSearchQuery([System.Web.Http.FromBody][System.ComponentModel.DataAnnotations.Required] QueryDto body, System.Threading.CancellationToken cancellationToken = default)
+        public System.Threading.Tasks.Task<System.Web.Http.IHttpActionResult> PostSearchQuery([System.Web.Http.FromBody] [System.ComponentModel.DataAnnotations.Required] QueryDto body, System.Threading.CancellationToken cancellationToken = default)
         {
             return PostSearchQueryImplementationAsync(body, cancellationToken);
         }
     }
-
+    
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.11.3.0 (NJsonSchema v10.4.4.0 (Newtonsoft.Json v11.0.0.0))")]
     public partial class CourtsController : ApiControllerBase
     {
-
+    
         /// <summary>Listing Courts</summary>
         /// <returns>OK</returns>
         private partial System.Threading.Tasks.Task<System.Web.Http.IHttpActionResult> GetCourtsImplementationAsync(System.Threading.CancellationToken cancellationToken);
-
+    	
         /// <summary>Listing Court Level types</summary>
         /// <returns>OK</returns>
         private partial System.Threading.Tasks.Task<System.Web.Http.IHttpActionResult> GetCourtLevelsImplementationAsync(System.Threading.CancellationToken cancellationToken);
-
-
+    	
+    
         /// <summary>Listing Courts</summary>
         /// <returns>OK</returns>
         [System.Web.Http.HttpGet, System.Web.Http.Route("courts")]
@@ -79,7 +81,7 @@ namespace Ngcs.ElasticSearch.Api.Controllers
         {
             return GetCourtsImplementationAsync(cancellationToken);
         }
-
+    
         /// <summary>Listing Court Level types</summary>
         /// <returns>OK</returns>
         [System.Web.Http.HttpGet, System.Web.Http.Route("courts/levels")]
@@ -88,16 +90,16 @@ namespace Ngcs.ElasticSearch.Api.Controllers
             return GetCourtLevelsImplementationAsync(cancellationToken);
         }
     }
-
+    
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.11.3.0 (NJsonSchema v10.4.4.0 (Newtonsoft.Json v11.0.0.0))")]
     public partial class ProceduresController : ApiControllerBase
     {
-
+    
         /// <summary>Listing Procedure types</summary>
         /// <returns>OK</returns>
         private partial System.Threading.Tasks.Task<System.Web.Http.IHttpActionResult> GetProceduresImplementationAsync(System.Threading.CancellationToken cancellationToken);
-
-
+    	
+    
         /// <summary>Listing Procedure types</summary>
         /// <returns>OK</returns>
         [System.Web.Http.HttpGet, System.Web.Http.Route("procedures")]
@@ -106,16 +108,16 @@ namespace Ngcs.ElasticSearch.Api.Controllers
             return GetProceduresImplementationAsync(cancellationToken);
         }
     }
-
+    
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.11.3.0 (NJsonSchema v10.4.4.0 (Newtonsoft.Json v11.0.0.0))")]
     public partial class ProceedingsController : ApiControllerBase
     {
-
+    
         /// <summary>Listing Proceeding types</summary>
         /// <returns>OK</returns>
         private partial System.Threading.Tasks.Task<System.Web.Http.IHttpActionResult> GetProceedingsImplementationAsync(System.Threading.CancellationToken cancellationToken);
-
-
+    	
+    
         /// <summary>Listing Proceeding types</summary>
         /// <returns>OK</returns>
         [System.Web.Http.HttpGet, System.Web.Http.Route("proceedings")]
@@ -124,16 +126,16 @@ namespace Ngcs.ElasticSearch.Api.Controllers
             return GetProceedingsImplementationAsync(cancellationToken);
         }
     }
-
+    
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.11.3.0 (NJsonSchema v10.4.4.0 (Newtonsoft.Json v11.0.0.0))")]
     public partial class InterestsController : ApiControllerBase
     {
-
+    
         /// <summary>Listiting Interest types</summary>
         /// <returns>OK</returns>
         private partial System.Threading.Tasks.Task<System.Web.Http.IHttpActionResult> GetInterestsImplementationAsync(System.Threading.CancellationToken cancellationToken);
-
-
+    	
+    
         /// <summary>Listiting Interest types</summary>
         /// <returns>OK</returns>
         [System.Web.Http.HttpGet, System.Web.Http.Route("interests")]
@@ -142,16 +144,16 @@ namespace Ngcs.ElasticSearch.Api.Controllers
             return GetInterestsImplementationAsync(cancellationToken);
         }
     }
-
+    
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.11.3.0 (NJsonSchema v10.4.4.0 (Newtonsoft.Json v11.0.0.0))")]
     public partial class EntitiesController : ApiControllerBase
     {
-
+    
         /// <summary>Listing Entity types</summary>
         /// <returns>OK</returns>
         private partial System.Threading.Tasks.Task<System.Web.Http.IHttpActionResult> GetEntitiesImplementationAsync(System.Threading.CancellationToken cancellationToken);
-
-
+    	
+    
         /// <summary>Listing Entity types</summary>
         /// <returns>OK</returns>
         [System.Web.Http.HttpGet, System.Web.Http.Route("entities")]
@@ -160,16 +162,16 @@ namespace Ngcs.ElasticSearch.Api.Controllers
             return GetEntitiesImplementationAsync(cancellationToken);
         }
     }
-
+    
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.11.3.0 (NJsonSchema v10.4.4.0 (Newtonsoft.Json v11.0.0.0))")]
     public partial class PrivilegesController : ApiControllerBase
     {
-
+    
         /// <summary>Listing Privileges types</summary>
         /// <returns>OK</returns>
         private partial System.Threading.Tasks.Task<System.Web.Http.IHttpActionResult> GetPrivilegesImplementationAsync(System.Threading.CancellationToken cancellationToken);
-
-
+    	
+    
         /// <summary>Listing Privileges types</summary>
         /// <returns>OK</returns>
         [System.Web.Http.HttpGet, System.Web.Http.Route("privileges")]
@@ -180,636 +182,636 @@ namespace Ngcs.ElasticSearch.Api.Controllers
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.4.4.0 (Newtonsoft.Json v11.0.0.0)")]
-    public partial class SearchResultItemDto
+    public partial class SearchResultItemDto 
     {
         [Newtonsoft.Json.JsonProperty("fragments", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required]
         public System.Collections.Generic.List<SearchResultItemFragmentDto> Fragments { get; set; } = new System.Collections.Generic.List<SearchResultItemFragmentDto>();
-
+    
         [Newtonsoft.Json.JsonProperty("ranks", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required]
         public System.Collections.Generic.List<RankDto> Ranks { get; set; } = new System.Collections.Generic.List<RankDto>();
-
+    
         [Newtonsoft.Json.JsonProperty("entities", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required]
         public System.Collections.Generic.List<EntityDto> Entities { get; set; } = new System.Collections.Generic.List<EntityDto>();
-
+    
         [Newtonsoft.Json.JsonProperty("relatedCases", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required]
         public System.Collections.Generic.List<CaseReferenceDto> RelatedCases { get; set; } = new System.Collections.Generic.List<CaseReferenceDto>();
-
+    
         [Newtonsoft.Json.JsonProperty("privilege", Required = Newtonsoft.Json.Required.Always)]
         public int Privilege { get; set; }
-
+    
         [Newtonsoft.Json.JsonProperty("document", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required]
         public DocumentReferenceDto Document { get; set; } = new DocumentReferenceDto();
-
+    
         [Newtonsoft.Json.JsonProperty("mainCase", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required]
         public CaseReferenceDto MainCase { get; set; } = new CaseReferenceDto();
-
+    
         [Newtonsoft.Json.JsonProperty("applicableFilters", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required]
         public System.Collections.Generic.List<FilterReferenceDto> ApplicableFilters { get; set; } = new System.Collections.Generic.List<FilterReferenceDto>();
-
+    
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
-
+    
         [Newtonsoft.Json.JsonExtensionData]
         public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
         {
             get { return _additionalProperties; }
             set { _additionalProperties = value; }
         }
-
-
+    
+    
     }
-
+    
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.4.4.0 (Newtonsoft.Json v11.0.0.0)")]
-    public partial class SearchResultDto
+    public partial class SearchResultDto 
     {
         [Newtonsoft.Json.JsonProperty("items", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required]
         public System.Collections.Generic.List<SearchResultItemDto> Items { get; set; } = new System.Collections.Generic.List<SearchResultItemDto>();
-
+    
         /// <summary>The position of the first item returned in whole results array.</summary>
         [Newtonsoft.Json.JsonProperty("start", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Range(0D, double.MaxValue)]
         public double Start { get; set; }
-
+    
         /// <summary>The position of the last item returned in whole results array.</summary>
         [Newtonsoft.Json.JsonProperty("end", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Range(0D, double.MaxValue)]
         public double End { get; set; }
-
+    
         /// <summary>The number of the search result items found.</summary>
         [Newtonsoft.Json.JsonProperty("total", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Range(0D, double.MaxValue)]
         public double Total { get; set; }
-
+    
         /// <summary>The query execution time.</summary>
         [Newtonsoft.Json.JsonProperty("executionTime", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Range(0D, double.MaxValue)]
         public float ExecutionTime { get; set; }
-
+    
         [Newtonsoft.Json.JsonProperty("distributionByFilters", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required]
         public System.Collections.Generic.List<FilterStatsDto> DistributionByFilters { get; set; } = new System.Collections.Generic.List<FilterStatsDto>();
-
+    
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
-
+    
         [Newtonsoft.Json.JsonExtensionData]
         public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
         {
             get { return _additionalProperties; }
             set { _additionalProperties = value; }
         }
-
-
+    
+    
     }
-
+    
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.4.4.0 (Newtonsoft.Json v11.0.0.0)")]
-    public partial class SearchResultItemFragmentDto
+    public partial class SearchResultItemFragmentDto 
     {
         /// <summary>Represents a text of the fragment.</summary>
         [Newtonsoft.Json.JsonProperty("text", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         public string Text { get; set; }
-
+    
         [Newtonsoft.Json.JsonProperty("highlights", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required]
         public System.Collections.Generic.List<HighlightedPhraseDto> Highlights { get; set; } = new System.Collections.Generic.List<HighlightedPhraseDto>();
-
+    
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
-
+    
         [Newtonsoft.Json.JsonExtensionData]
         public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
         {
             get { return _additionalProperties; }
             set { _additionalProperties = value; }
         }
-
-
+    
+    
     }
-
+    
     /// <summary>Represents a highlighted part of the related text.</summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.4.4.0 (Newtonsoft.Json v11.0.0.0)")]
-    public partial class HighlightedPhraseDto
+    public partial class HighlightedPhraseDto 
     {
         /// <summary>The starting position</summary>
         [Newtonsoft.Json.JsonProperty("start", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Range(0D, double.MaxValue)]
         public double Start { get; set; }
-
+    
         /// <summary>Indicates how many words (tokens) need to highlight</summary>
         [Newtonsoft.Json.JsonProperty("count", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Range(1D, double.MaxValue)]
         public double Count { get; set; } = 1D;
-
+    
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
-
+    
         [Newtonsoft.Json.JsonExtensionData]
         public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
         {
             get { return _additionalProperties; }
             set { _additionalProperties = value; }
         }
-
-
+    
+    
     }
-
+    
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.4.4.0 (Newtonsoft.Json v11.0.0.0)")]
-    public partial class RankDto
+    public partial class RankDto 
     {
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         public string Name { get; set; }
-
+    
         [Newtonsoft.Json.JsonProperty("value", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Range(0D, 10D)]
         public float Value { get; set; }
-
+    
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
-
+    
         [Newtonsoft.Json.JsonExtensionData]
         public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
         {
             get { return _additionalProperties; }
             set { _additionalProperties = value; }
         }
-
-
+    
+    
     }
-
+    
     /// <summary>Represents the Court DTO.</summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.4.4.0 (Newtonsoft.Json v11.0.0.0)")]
-    public partial class CourtDto
+    public partial class CourtDto 
     {
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Always)]
         public int Id { get; set; }
-
+    
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required]
         [System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength = 2)]
         public string Name { get; set; }
-
+    
         [Newtonsoft.Json.JsonProperty("level", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required]
         [System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength = 2)]
         public string Level { get; set; }
-
+    
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
-
+    
         [Newtonsoft.Json.JsonExtensionData]
         public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
         {
             get { return _additionalProperties; }
             set { _additionalProperties = value; }
         }
-
-
+    
+    
     }
-
+    
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.4.4.0 (Newtonsoft.Json v11.0.0.0)")]
-    public partial class EntityDto
+    public partial class EntityDto 
     {
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Always)]
         public int Id { get; set; }
-
+    
         [Newtonsoft.Json.JsonProperty("value", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         [System.ComponentModel.DataAnnotations.StringLength(int.MaxValue)]
         public string Value { get; set; }
-
+    
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
-
+    
         [Newtonsoft.Json.JsonExtensionData]
         public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
         {
             get { return _additionalProperties; }
             set { _additionalProperties = value; }
         }
-
-
+    
+    
     }
-
+    
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.4.4.0 (Newtonsoft.Json v11.0.0.0)")]
-    public partial class CaseReferenceDto
+    public partial class CaseReferenceDto 
     {
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Range(1, 10000)]
         public int Id { get; set; }
-
+    
         [Newtonsoft.Json.JsonProperty("privilege", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         public string Privilege { get; set; }
-
+    
         [Newtonsoft.Json.JsonProperty("court", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         public string Court { get; set; }
-
+    
         [Newtonsoft.Json.JsonProperty("courtLevel", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         public string CourtLevel { get; set; }
-
+    
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         public string Name { get; set; }
-
+    
         [Newtonsoft.Json.JsonProperty("number", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         public string Number { get; set; }
-
+    
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
-
+    
         [Newtonsoft.Json.JsonExtensionData]
         public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
         {
             get { return _additionalProperties; }
             set { _additionalProperties = value; }
         }
-
-
+    
+    
     }
-
+    
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.4.4.0 (Newtonsoft.Json v11.0.0.0)")]
-    public partial class CourtLevelDto
+    public partial class CourtLevelDto 
     {
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Always)]
         public int Id { get; set; }
-
+    
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         public string Name { get; set; }
-
+    
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
-
+    
         [Newtonsoft.Json.JsonExtensionData]
         public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
         {
             get { return _additionalProperties; }
             set { _additionalProperties = value; }
         }
-
-
+    
+    
     }
-
+    
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.4.4.0 (Newtonsoft.Json v11.0.0.0)")]
-    public partial class DocumentReferenceDto
+    public partial class DocumentReferenceDto 
     {
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Range(0, 10000)]
         public int Id { get; set; }
-
+    
         [Newtonsoft.Json.JsonProperty("title", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         public string Title { get; set; }
-
+    
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
-
+    
         [Newtonsoft.Json.JsonExtensionData]
         public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
         {
             get { return _additionalProperties; }
             set { _additionalProperties = value; }
         }
-
-
+    
+    
     }
-
+    
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.4.4.0 (Newtonsoft.Json v11.0.0.0)")]
-    public partial class FilterReferenceDto
+    public partial class FilterReferenceDto 
     {
         [Newtonsoft.Json.JsonProperty("key", Required = Newtonsoft.Json.Required.Always)]
         public double Key { get; set; }
-
+    
         [Newtonsoft.Json.JsonProperty("value", Required = Newtonsoft.Json.Required.Always)]
         public int Value { get; set; }
-
+    
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
-
+    
         [Newtonsoft.Json.JsonExtensionData]
         public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
         {
             get { return _additionalProperties; }
             set { _additionalProperties = value; }
         }
-
-
+    
+    
     }
-
+    
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.4.4.0 (Newtonsoft.Json v11.0.0.0)")]
-    public partial class FilterStatsDto
+    public partial class FilterStatsDto 
     {
         [Newtonsoft.Json.JsonProperty("key", Required = Newtonsoft.Json.Required.Always)]
         public int Key { get; set; }
-
+    
         [Newtonsoft.Json.JsonProperty("values", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required]
         public System.Collections.Generic.List<Values> Values { get; set; } = new System.Collections.Generic.List<Values>();
-
+    
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
-
+    
         [Newtonsoft.Json.JsonExtensionData]
         public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
         {
             get { return _additionalProperties; }
             set { _additionalProperties = value; }
         }
-
-
+    
+    
     }
-
+    
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.4.4.0 (Newtonsoft.Json v11.0.0.0)")]
-    public partial class QueryDto
+    public partial class QueryDto 
     {
         [Newtonsoft.Json.JsonProperty("q", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required]
         [System.ComponentModel.DataAnnotations.StringLength(256, MinimumLength = 1)]
         public string Q { get; set; }
-
+    
         /// <summary>The number of results per page.</summary>
         [Newtonsoft.Json.JsonProperty("num", Required = Newtonsoft.Json.Required.Always)]
         public int Num { get; set; } = 10;
-
+    
         /// <summary>The number indicating a start index of the result.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("start", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Range(0, int.MaxValue)]
         public int Start { get; set; } = 0;
-
+    
         [Newtonsoft.Json.JsonProperty("source", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
         public QueryDtoSource Source { get; set; }
-
+    
         [Newtonsoft.Json.JsonProperty("searchInTitles", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool SearchInTitles { get; set; }
-
+    
         [Newtonsoft.Json.JsonProperty("searchInContent", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool SearchInContent { get; set; }
-
+    
         [Newtonsoft.Json.JsonProperty("searchInMemoTitles", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool SearchInMemoTitles { get; set; }
-
+    
         [Newtonsoft.Json.JsonProperty("searchInMemoContent", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool SearchInMemoContent { get; set; }
-
+    
         [Newtonsoft.Json.JsonProperty("dateRangeType", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringEnumConverter))]
         public QueryDtoDateRangeType DateRangeType { get; set; }
-
+    
         [Newtonsoft.Json.JsonProperty("startDate", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         [Newtonsoft.Json.JsonConverter(typeof(DateFormatConverter))]
         public System.DateTimeOffset StartDate { get; set; }
-
+    
         [Newtonsoft.Json.JsonProperty("endDate", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         [Newtonsoft.Json.JsonConverter(typeof(DateFormatConverter))]
         public System.DateTimeOffset EndDate { get; set; }
-
+    
         [Newtonsoft.Json.JsonProperty("hasAppeal", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool HasAppeal { get; set; } = false;
-
+    
         [Newtonsoft.Json.JsonProperty("legalCase", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public bool LegalCase { get; set; } = false;
-
+    
         [Newtonsoft.Json.JsonProperty("courtId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int CourtId { get; set; }
-
+    
         [Newtonsoft.Json.JsonProperty("courtLevel", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int CourtLevel { get; set; }
-
+    
         [Newtonsoft.Json.JsonProperty("interest", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int Interest { get; set; }
-
+    
         [Newtonsoft.Json.JsonProperty("procedure", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int Procedure { get; set; }
-
+    
         [Newtonsoft.Json.JsonProperty("proceeding", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int Proceeding { get; set; }
-
+    
         [Newtonsoft.Json.JsonProperty("privilege", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int Privilege { get; set; }
-
+    
         [Newtonsoft.Json.JsonProperty("entity", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
         public int Entity { get; set; }
-
+    
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
-
+    
         [Newtonsoft.Json.JsonExtensionData]
         public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
         {
             get { return _additionalProperties; }
             set { _additionalProperties = value; }
         }
-
-
+    
+    
     }
-
+    
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.4.4.0 (Newtonsoft.Json v11.0.0.0)")]
-    public partial class ProcedureDto
+    public partial class ProcedureDto 
     {
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Range(1D, double.MaxValue)]
         public long Id { get; set; }
-
+    
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
-
+    
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
-
+    
         [Newtonsoft.Json.JsonExtensionData]
         public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
         {
             get { return _additionalProperties; }
             set { _additionalProperties = value; }
         }
-
-
+    
+    
     }
-
+    
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.4.4.0 (Newtonsoft.Json v11.0.0.0)")]
-    public partial class ProceedingDto
+    public partial class ProceedingDto 
     {
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Range(1D, double.MaxValue)]
         public long Id { get; set; }
-
+    
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
-
+    
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
-
+    
         [Newtonsoft.Json.JsonExtensionData]
         public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
         {
             get { return _additionalProperties; }
             set { _additionalProperties = value; }
         }
-
-
+    
+    
     }
-
+    
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.4.4.0 (Newtonsoft.Json v11.0.0.0)")]
-    public partial class EntityTypeDto
+    public partial class EntityTypeDto 
     {
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Range(1D, double.MaxValue)]
         public long Id { get; set; }
-
+    
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         public string Name { get; set; }
-
+    
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
-
+    
         [Newtonsoft.Json.JsonExtensionData]
         public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
         {
             get { return _additionalProperties; }
             set { _additionalProperties = value; }
         }
-
-
+    
+    
     }
-
+    
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.4.4.0 (Newtonsoft.Json v11.0.0.0)")]
-    public partial class InterestDto
+    public partial class InterestDto 
     {
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Always)]
         public int Id { get; set; }
-
+    
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         public string Name { get; set; }
-
+    
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
-
+    
         [Newtonsoft.Json.JsonExtensionData]
         public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
         {
             get { return _additionalProperties; }
             set { _additionalProperties = value; }
         }
-
-
+    
+    
     }
-
+    
     /// <summary>Represents the Privilege definition.</summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.4.4.0 (Newtonsoft.Json v11.0.0.0)")]
-    public partial class PrivilegeDto
+    public partial class PrivilegeDto 
     {
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Range(1D, double.MaxValue)]
         public long Id { get; set; }
-
+    
         [Newtonsoft.Json.JsonProperty("name", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Required]
         public string Name { get; set; }
-
+    
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
-
+    
         [Newtonsoft.Json.JsonExtensionData]
         public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
         {
             get { return _additionalProperties; }
             set { _additionalProperties = value; }
         }
-
-
+    
+    
     }
-
+    
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.4.4.0 (Newtonsoft.Json v11.0.0.0)")]
     public enum Source
     {
         [System.Runtime.Serialization.EnumMember(Value = @"decisions")]
         Decisions = 0,
-
+    
         [System.Runtime.Serialization.EnumMember(Value = @"protocols")]
         Protocols = 1,
-
+    
     }
-
+    
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.4.4.0 (Newtonsoft.Json v11.0.0.0)")]
     public enum DateRangeType
     {
         [System.Runtime.Serialization.EnumMember(Value = @"1h")]
         _1h = 0,
-
+    
         [System.Runtime.Serialization.EnumMember(Value = @"24h")]
         _24h = 1,
-
+    
         [System.Runtime.Serialization.EnumMember(Value = @"1w")]
         _1w = 2,
-
+    
         [System.Runtime.Serialization.EnumMember(Value = @"1m")]
         _1m = 3,
-
+    
         [System.Runtime.Serialization.EnumMember(Value = @"1y")]
         _1y = 4,
-
+    
         [System.Runtime.Serialization.EnumMember(Value = @"custom")]
         Custom = 5,
-
+    
     }
-
+    
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.4.4.0 (Newtonsoft.Json v11.0.0.0)")]
-    public partial class Values
+    public partial class Values 
     {
         [Newtonsoft.Json.JsonProperty("id", Required = Newtonsoft.Json.Required.Always)]
         public int Id { get; set; }
-
+    
         [Newtonsoft.Json.JsonProperty("frequency", Required = Newtonsoft.Json.Required.Always)]
         [System.ComponentModel.DataAnnotations.Range(0D, 10D)]
         public double Frequency { get; set; }
-
+    
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
-
+    
         [Newtonsoft.Json.JsonExtensionData]
         public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
         {
             get { return _additionalProperties; }
             set { _additionalProperties = value; }
         }
-
-
+    
+    
     }
-
+    
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.4.4.0 (Newtonsoft.Json v11.0.0.0)")]
     public enum QueryDtoSource
     {
         [System.Runtime.Serialization.EnumMember(Value = @"decisions")]
         Decisions = 0,
-
+    
         [System.Runtime.Serialization.EnumMember(Value = @"protocols")]
         Protocols = 1,
-
+    
     }
-
+    
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.4.4.0 (Newtonsoft.Json v11.0.0.0)")]
     public enum QueryDtoDateRangeType
     {
         [System.Runtime.Serialization.EnumMember(Value = @"1h")]
         _1h = 0,
-
+    
         [System.Runtime.Serialization.EnumMember(Value = @"24h")]
         _24h = 1,
-
+    
         [System.Runtime.Serialization.EnumMember(Value = @"1w")]
         _1w = 2,
-
+    
         [System.Runtime.Serialization.EnumMember(Value = @"1m")]
         _1m = 3,
-
+    
         [System.Runtime.Serialization.EnumMember(Value = @"1y")]
         _1y = 4,
-
+    
         [System.Runtime.Serialization.EnumMember(Value = @"custom")]
         Custom = 5,
-
+    
     }
-
+    
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "13.11.3.0 (NJsonSchema v10.4.4.0 (Newtonsoft.Json v11.0.0.0))")]
     internal class DateFormatConverter : Newtonsoft.Json.Converters.IsoDateTimeConverter
     {
@@ -823,6 +825,6 @@ namespace Ngcs.ElasticSearch.Api.Controllers
 
 #pragma warning restore 1591
 #pragma warning restore 1573
-#pragma warning restore 472
-#pragma warning restore 114
-#pragma warning restore 108
+#pragma warning restore  472
+#pragma warning restore  114
+#pragma warning restore  108

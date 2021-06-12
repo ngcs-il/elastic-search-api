@@ -3,7 +3,7 @@ using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
 
-namespace Ngcs.ElasticSearch.Api.Controllers
+namespace Ngcs.WebApi2.Core
 {
 	[SuppressMessage("ReSharper", "UnusedMember.Global")]
 	public class ImpersonateAttribute : ActionFilterAttribute

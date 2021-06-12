@@ -2,6 +2,8 @@
 using LogoFX.Practices.IoC.SimpleContainer;
 using Ngcs.Practices.IoC;
 
+#pragma warning disable 1591
+
 namespace Ngcs.Server.Facade
 {
     public static class WebApiConfig
@@ -11,7 +13,9 @@ namespace Ngcs.Server.Facade
             // Web API configuration and services
             var iocContainer = new SimpleIocContainer();
             ServiceLocator.Current = iocContainer;
-            IHttpConfigurationProvider bootstrapper = new AppBootstrapper(iocContainer);
+
+            // ReSharper disable once ObjectCreationAsStatement
+            new AppBootstrapper(iocContainer);
         }
     }
 }

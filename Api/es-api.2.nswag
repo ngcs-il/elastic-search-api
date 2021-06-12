@@ -21,7 +21,9 @@
       "basePath": null,
       "className": "{controller}",
       "operationGenerationMode": "MultipleClientsFromFirstTagAndOperationId",
-      "additionalNamespaceUsages": [],
+      "additionalNamespaceUsages": [
+        "Ngcs.WebApi2.Core"
+      ],
       "additionalContractNamespaceUsages": [],
       "generateOptionalParameters": true,
       "generateJsonMethods": false,
@@ -72,7 +74,7 @@
       "checksumCacheEnabled": false,
       "serviceHost": null,
       "serviceSchemes": null,
-      "output": null,
+      "output": "../Ngcs.Server/Ngcs.ElasticSearch.Api/Controllers/api.cs",
       "newLineBehavior": "Auto"
     }
   }

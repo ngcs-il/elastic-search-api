@@ -1,54 +1,19 @@
-﻿using System.Web.Http;
-using LogoFX.Web.Core;
-using Ngcs.Practices.IoC;
+﻿using Ngcs.Practices.IoC;
+using Ngcs.WebApi2.Core;
 
 namespace Ngcs.Server.Facade
 {
-    public class AppBootstrapper : IisBootstrapper
+	/// <inheritdoc />
+	public class AppBootstrapper : IisBootstrapper
     {
-        public AppBootstrapper(IIocContainer iocContainer)
+	    /// <inheritdoc />
+	    public AppBootstrapper(IIocContainer iocContainer)
             : base(iocContainer)
         {
         }
 
-        public override string ModulesPath
-        {
-            get
-            {
-                return Properties.Resources.ModulesPath;
-            }
-        }
-
-        protected override void Configure()
-        {
-            base.Configure();
-        }
-    }
-
-    public interface IHttpConfigurationProvider
-    {
-        IHttpConfigurationProxy GetConfiguration();
-    }
-
-    public class IisBootstrapper : BootstrapperBase, IHttpConfigurationProvider
-    {
-        private IHttpConfigurationProxy _httpConfigurationProxy;
-
-        public IisBootstrapper(IIocContainer iocContainer)
-            : base(iocContainer)
-        {
-        }
-
-        public IHttpConfigurationProxy GetConfiguration()
-        {
-            return _httpConfigurationProxy;
-        }
-
-        protected override void Configure()
-        {
-            var config = GlobalConfiguration.Configuration;
-            _httpConfigurationProxy = new HttpConfigurationProxy(config);
-            SetupHttpConfiguration(_httpConfigurationProxy);
-        }
+	    /// <inheritdoc />
+        public override string ModulesPath => Properties.Resources.ModulesPath;
+        
     }
 }

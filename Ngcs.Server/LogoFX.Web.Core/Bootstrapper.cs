@@ -58,7 +58,7 @@ namespace LogoFX.Web.Core
         /// </summary>
         /// <value>The current lifetime scope.</value>
         [SuppressMessage("ReSharper", "UnusedMember.Global")]
-        protected virtual object CurrentLifetimeScope => _defaultLifetimeScope ?? (_defaultLifetimeScope = new Object());
+        protected virtual object CurrentLifetimeScope => _defaultLifetimeScope ?? (_defaultLifetimeScope = new object());
 
         private void StartRuntime()
         {            

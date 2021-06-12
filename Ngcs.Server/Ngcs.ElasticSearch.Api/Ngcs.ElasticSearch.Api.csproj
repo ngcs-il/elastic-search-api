@@ -22,6 +22,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <LangVersion>latest</LangVersion>
+    <DocumentationFile>..\bin\Ngcs.ElasticSearch.Api.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -38,20 +39,11 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\api.cs" />
-    <Compile Include="Controllers\ApiControllerBase.cs" />
-    <Compile Include="Controllers\ApiControllerExtensions.cs" />
     <Compile Include="Controllers\CourtsController.cs" />
     <Compile Include="Controllers\EntitiesController.cs" />
-    <Compile Include="Controllers\ImpersonateAttribute.cs" />
     <Compile Include="Controllers\InterestsController.cs" />
     <Compile Include="Controllers\PrivilegesController.cs" />
     <Compile Include="Controllers\ProceduresController.cs" />
@@ -81,6 +73,10 @@
     <ProjectReference Include="..\Ngcs.Practices.IoC\Ngcs.Practices.IoC.csproj">
       <Project>{CB390942-3103-4C81-9B6A-F948B402A181}</Project>
       <Name>Ngcs.Practices.IoC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ngcs.WebApi2.Core\Ngcs.WebApi2.Core.csproj">
+      <Project>{2DF223E2-2DD9-41B9-9609-92676F0D6D59}</Project>
+      <Name>Ngcs.WebApi2.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

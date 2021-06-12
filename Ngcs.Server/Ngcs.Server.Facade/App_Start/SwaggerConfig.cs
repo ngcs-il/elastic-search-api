@@ -1,7 +1,11 @@
+using System;
+using System.IO;
 using System.Web.Http;
 using WebActivatorEx;
 using Ngcs.Server.Facade;
 using Swashbuckle.Application;
+
+#pragma warning disable 1591
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
@@ -11,7 +15,7 @@ namespace Ngcs.Server.Facade
     {
         public static void Register()
         {
-            var thisAssembly = typeof(SwaggerConfig).Assembly;
+            // var thisAssembly = typeof(SwaggerConfig).Assembly;
 
             GlobalConfiguration.Configuration
                 .EnableSwagger(c =>
@@ -250,6 +254,14 @@ namespace Ngcs.Server.Facade
                         //
                         //c.EnableApiKeySupport("apiKey", "header");
                     });
+        }
+
+        private static string GetXmlCommentsPath()
+        {
+	        var directoryInfo = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory);
+	        var path = Path.Combine(directoryInfo.FullName, Properties.Resources.ModulesPath);
+
+	        return path;
         }
     }
 }
