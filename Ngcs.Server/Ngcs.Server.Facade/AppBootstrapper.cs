@@ -16,6 +16,7 @@ namespace Ngcs.Server.Facade
 	    /// <inheritdoc />
         public override string ModulesPath => Properties.Resources.ModulesPath;
 
+		/// <inheritdoc />
 	    protected override void Configure()
 	    {
 		    base.Configure();
