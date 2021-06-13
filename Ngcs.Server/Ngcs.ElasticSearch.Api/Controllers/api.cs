@@ -18,6 +18,7 @@ namespace Ngcs.ElasticSearch.Api.Controllers
     using System = global::System;
 
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.11.3.0 (NJsonSchema v10.4.4.0 (Newtonsoft.Json v11.0.0.0))")]
+    [System.Web.Http.RoutePrefix("api/v1")]
     public partial class SearchController : ApiControllerBase
     {
     
@@ -62,6 +63,7 @@ namespace Ngcs.ElasticSearch.Api.Controllers
     }
     
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.11.3.0 (NJsonSchema v10.4.4.0 (Newtonsoft.Json v11.0.0.0))")]
+    [System.Web.Http.RoutePrefix("api/v1")]
     public partial class CourtsController : ApiControllerBase
     {
     
@@ -92,6 +94,7 @@ namespace Ngcs.ElasticSearch.Api.Controllers
     }
     
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.11.3.0 (NJsonSchema v10.4.4.0 (Newtonsoft.Json v11.0.0.0))")]
+    [System.Web.Http.RoutePrefix("api/v1")]
     public partial class ProceduresController : ApiControllerBase
     {
     
@@ -110,6 +113,7 @@ namespace Ngcs.ElasticSearch.Api.Controllers
     }
     
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.11.3.0 (NJsonSchema v10.4.4.0 (Newtonsoft.Json v11.0.0.0))")]
+    [System.Web.Http.RoutePrefix("api/v1")]
     public partial class ProceedingsController : ApiControllerBase
     {
     
@@ -128,6 +132,7 @@ namespace Ngcs.ElasticSearch.Api.Controllers
     }
     
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.11.3.0 (NJsonSchema v10.4.4.0 (Newtonsoft.Json v11.0.0.0))")]
+    [System.Web.Http.RoutePrefix("api/v1")]
     public partial class InterestsController : ApiControllerBase
     {
     
@@ -146,6 +151,7 @@ namespace Ngcs.ElasticSearch.Api.Controllers
     }
     
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.11.3.0 (NJsonSchema v10.4.4.0 (Newtonsoft.Json v11.0.0.0))")]
+    [System.Web.Http.RoutePrefix("api/v1")]
     public partial class EntitiesController : ApiControllerBase
     {
     
@@ -164,6 +170,7 @@ namespace Ngcs.ElasticSearch.Api.Controllers
     }
     
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.11.3.0 (NJsonSchema v10.4.4.0 (Newtonsoft.Json v11.0.0.0))")]
+    [System.Web.Http.RoutePrefix("api/v1")]
     public partial class PrivilegesController : ApiControllerBase
     {
     

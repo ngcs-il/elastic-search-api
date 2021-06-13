@@ -18,7 +18,7 @@
       "useActionResultType": false,
       "generateModelValidationAttributes": true,
       "routeNamingStrategy": "None",
-      "basePath": null,
+      "basePath": "api/v1",
       "className": "{controller}",
       "operationGenerationMode": "MultipleClientsFromFirstTagAndOperationId",
       "additionalNamespaceUsages": [
