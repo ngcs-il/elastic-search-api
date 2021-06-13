@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http.Filters;
@@ -10,25 +11,40 @@ namespace Ngcs.WebApi2.Core
 	{
 		public override void OnException(HttpActionExecutedContext actionExecutedContext)
 		{
-			if (actionExecutedContext.Exception is NotImplementedException)
+			
+			actionExecutedContext.Response = CreateHttpResponseMessage(actionExecutedContext.Exception);
+			
+		}
+
+		private static HttpResponseMessage CreateHttpResponseMessage(Exception exception)
+		{
+			return new HttpResponseMessage
 			{
-				actionExecutedContext.Response = new HttpResponseMessage
-				{
-					StatusCode = HttpStatusCode.NotImplemented,
-					Content = new StringContent(actionExecutedContext.Exception.ToString()),
-					ReasonPhrase = actionExecutedContext.Exception.Message
-				};
+				StatusCode = TranslateExceptionToStatusCode(exception),
+				Content = new StringContent(exception.ToString()),
+				ReasonPhrase = exception.Message
+			};
+		}
+
+		private static HttpStatusCode TranslateExceptionToStatusCode(Exception exception)
+		{
+			if (exception is NotImplementedException)
+			{
+				return HttpStatusCode.NotImplemented;
 			}
 
-			if (actionExecutedContext.Exception is UnauthorizedAccessException)
+			if (exception is UnauthorizedAccessException)
 			{
-				actionExecutedContext.Response = new HttpResponseMessage
-				{
-					StatusCode = HttpStatusCode.Unauthorized,
-					Content = new StringContent(actionExecutedContext.Exception.ToString()),
-					ReasonPhrase = actionExecutedContext.Exception.Message
-				};
+				return HttpStatusCode.Unauthorized;
 			}
+
+			if (exception is FileNotFoundException)
+			{
+				return HttpStatusCode.NotFound;
+			}
+
+			
+			return HttpStatusCode.InternalServerError;
 		}
 	}
 }
