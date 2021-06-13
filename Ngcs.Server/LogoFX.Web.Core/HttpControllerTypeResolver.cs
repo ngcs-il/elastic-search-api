@@ -15,10 +15,7 @@ namespace LogoFX.Web.Core
         private Func<Assembly, Type[]> _getTypesFunc = GetTypes;
         private IEnumerable<Type> _controllerTypes;
 
-        protected virtual Predicate<Type> IsControllerTypePredicate
-        {
-            get { return _isControllerTypePredicate; }
-        }
+        protected virtual Predicate<Type> IsControllerTypePredicate => _isControllerTypePredicate;
 
         /// <summary>
         /// Returns a list of controllers available for the application.
