@@ -1,7 +1,7 @@
 ﻿using Ngcs.Practices.Composition;
 using Ngcs.Practices.IoC;
 
-namespace NGCS.Practices.Composition.Web
+namespace LogoFX.Web.Core
 {
 	public class BootstrapperInitializationFacade : BootstrapperInitializationFacadeBase
 	{

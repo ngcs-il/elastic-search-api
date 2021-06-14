@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Web.Http.Dispatcher;
-using NGCS.Practices.Composition.Web;
 using Ngcs.Practices.IoC;
 
 namespace LogoFX.Web.Core
