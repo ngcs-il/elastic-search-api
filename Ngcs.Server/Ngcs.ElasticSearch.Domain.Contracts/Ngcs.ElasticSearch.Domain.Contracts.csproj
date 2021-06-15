@@ -48,9 +48,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Ngcs.ElasticSerch.Domain.Entities\Ngcs.ElasticSerch.Domain.Entities.csproj">
+    <ProjectReference Include="..\Ngcs.ElasticSearch.Domain.Entities\Ngcs.ElasticSearch.Domain.Entities.csproj">
       <Project>{9F12BECB-8135-4CC3-BA56-BB8F34383A3C}</Project>
-      <Name>Ngcs.ElasticSerch.Domain.Entities</Name>
+      <Name>Ngcs.ElasticSearch.Domain.Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -23,7 +23,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.ElasticSearch.Domain.I
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.WebApi2.Core", "Ngcs.WebApi2.Core\Ngcs.WebApi2.Core.csproj", "{2DF223E2-2DD9-41B9-9609-92676F0D6D59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.ElasticSerch.Domain.Entities", "Ngcs.ElasticSerch.Domain.Entities\Ngcs.ElasticSerch.Domain.Entities.csproj", "{9F12BECB-8135-4CC3-BA56-BB8F34383A3C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.ElasticSearch.Domain.Entities", "Ngcs.ElasticSearch.Domain.Entities\Ngcs.ElasticSearch.Domain.Entities.csproj", "{9F12BECB-8135-4CC3-BA56-BB8F34383A3C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
