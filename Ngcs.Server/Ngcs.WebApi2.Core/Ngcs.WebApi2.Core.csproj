@@ -45,9 +45,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LogoFX.Web.Core\LogoFX.Web.Core.csproj">
+    <ProjectReference Include="..\Ngcs.Web.Core\Ngcs.Web.Core.csproj">
       <Project>{33BF59DC-D43B-42B3-AD67-EEF477F76BB5}</Project>
-      <Name>LogoFX.Web.Core</Name>
+      <Name>Ngcs.Web.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\Ngcs.Practices.IoC\Ngcs.Practices.IoC.csproj">
       <Project>{CB390942-3103-4C81-9B6A-F948B402A181}</Project>

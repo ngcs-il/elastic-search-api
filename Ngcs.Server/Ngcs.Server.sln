@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructures", "Infrastructures", "{4123A0E8-65B5-4C4E-92A2-DF97DC0598FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogoFX.Web.Core", "LogoFX.Web.Core\LogoFX.Web.Core.csproj", "{33BF59DC-D43B-42B3-AD67-EEF477F76BB5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.Web.Core", "Ngcs.Web.Core\Ngcs.Web.Core.csproj", "{33BF59DC-D43B-42B3-AD67-EEF477F76BB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogoFX.Practices.IoC.SimpleContainer", "LogoFX.Practices.IoC.SimpleContainer\LogoFX.Practices.IoC.SimpleContainer.csproj", "{50CB854F-8AE9-4A2D-A45B-8A4E0D14B91B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.Practices.IoC.SimpleContainer", "Ngcs.Practices.IoC.SimpleContainer\Ngcs.Practices.IoC.SimpleContainer.csproj", "{50CB854F-8AE9-4A2D-A45B-8A4E0D14B91B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.Server.Facade", "Ngcs.Server.Facade\Ngcs.Server.Facade.csproj", "{DE170738-2426-4146-A0D2-45D659E15390}"
 EndProject

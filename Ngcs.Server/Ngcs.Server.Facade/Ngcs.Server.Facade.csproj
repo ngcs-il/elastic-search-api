@@ -122,13 +122,13 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LogoFX.Practices.IoC.SimpleContainer\LogoFX.Practices.IoC.SimpleContainer.csproj">
+    <ProjectReference Include="..\Ngcs.Practices.IoC.SimpleContainer\Ngcs.Practices.IoC.SimpleContainer.csproj">
       <Project>{50cb854f-8ae9-4a2d-a45b-8a4e0d14b91b}</Project>
-      <Name>LogoFX.Practices.IoC.SimpleContainer</Name>
+      <Name>Ngcs.Practices.IoC.SimpleContainer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LogoFX.Web.Core\LogoFX.Web.Core.csproj">
+    <ProjectReference Include="..\Ngcs.Web.Core\Ngcs.Web.Core.csproj">
       <Project>{33bf59dc-d43b-42b3-ad67-eef477f76bb5}</Project>
-      <Name>LogoFX.Web.Core</Name>
+      <Name>Ngcs.Web.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\Ngcs.ElasticSearch.Domain.Contracts\Ngcs.ElasticSearch.Domain.Contracts.csproj">
       <Project>{5512C587-6E38-44BB-8078-5D4D5C7341B5}</Project>
