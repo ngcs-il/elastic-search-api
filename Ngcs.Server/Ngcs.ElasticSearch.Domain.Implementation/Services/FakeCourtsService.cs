@@ -1,13 +1,14 @@
 ﻿using Ngcs.ElasticSearch.Domain.Contracts;
-using Ngcs.ElasticSearch.Domain.Implementation.Models;
+using Ngcs.ElasticSerch.Domain.Entities;
+
 
 namespace Ngcs.ElasticSearch.Domain.Implementation.Services
 {
     internal sealed class FakeCourtsService : ICourtsService
     {
-        public ICourt[] GetCourts()
+        public Court[] GetCourts()
         {
-            return new ICourt[]
+            return new Court[]
             {
                 new Court
                 {

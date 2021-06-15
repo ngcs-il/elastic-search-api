@@ -42,7 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Court.cs" />
     <Compile Include="Module.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\FakeCourtsService.cs" />
@@ -52,6 +51,10 @@
     <ProjectReference Include="..\Ngcs.ElasticSearch.Domain.Contracts\Ngcs.ElasticSearch.Domain.Contracts.csproj">
       <Project>{5512C587-6E38-44BB-8078-5D4D5C7341B5}</Project>
       <Name>Ngcs.ElasticSearch.Domain.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ngcs.ElasticSerch.Domain.Entities\Ngcs.ElasticSerch.Domain.Entities.csproj">
+      <Project>{9F12BECB-8135-4CC3-BA56-BB8F34383A3C}</Project>
+      <Name>Ngcs.ElasticSerch.Domain.Entities</Name>
     </ProjectReference>
     <ProjectReference Include="..\Ngcs.Practices.Composition\Ngcs.Practices.Composition.csproj">
       <Project>{284cbdd1-aadb-4ca2-b6f3-88548e9f0764}</Project>

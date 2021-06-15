@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5512C587-6E38-44BB-8078-5D4D5C7341B5}</ProjectGuid>
+    <ProjectGuid>{9F12BECB-8135-4CC3-BA56-BB8F34383A3C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Ngcs.ElasticSearch.Domain.Contracts</RootNamespace>
-    <AssemblyName>Ngcs.ElasticSearch.Domain.Contracts</AssemblyName>
+    <RootNamespace>Ngcs.ElasticSerch.Domain.Entities</RootNamespace>
+    <AssemblyName>Ngcs.ElasticSerch.Domain.Entities</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -21,7 +21,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,7 +29,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -43,15 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ICourtsService.cs" />
-    <Compile Include="IValueService.cs" />
+    <Compile Include="Court.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Ngcs.ElasticSerch.Domain.Entities\Ngcs.ElasticSerch.Domain.Entities.csproj">
-      <Project>{9F12BECB-8135-4CC3-BA56-BB8F34383A3C}</Project>
-      <Name>Ngcs.ElasticSerch.Domain.Entities</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

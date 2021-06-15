@@ -1,7 +1,9 @@
-﻿namespace Ngcs.ElasticSearch.Domain.Contracts
+﻿using Ngcs.ElasticSerch.Domain.Entities;
+
+namespace Ngcs.ElasticSearch.Domain.Contracts
 {
     public interface ICourtsService
     {
-        ICourt[] GetCourts();
+        Court[] GetCourts();
     }
 }

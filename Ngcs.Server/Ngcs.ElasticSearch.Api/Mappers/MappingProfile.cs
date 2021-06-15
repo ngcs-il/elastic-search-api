@@ -1,7 +1,7 @@
 ﻿using System;
 using AutoMapper;
 using Ngcs.ElasticSearch.Api.Controllers;
-using Ngcs.ElasticSearch.Domain.Implementation.Models;
+using Ngcs.ElasticSerch.Domain.Entities;
 
 namespace Ngcs.ElasticSearch.Api.Mappers
 {

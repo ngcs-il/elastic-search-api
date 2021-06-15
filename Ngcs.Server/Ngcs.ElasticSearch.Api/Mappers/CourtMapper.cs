@@ -1,8 +1,7 @@
 ﻿using AutoMapper;
 using JetBrains.Annotations;
 using Ngcs.ElasticSearch.Api.Controllers;
-using Ngcs.ElasticSearch.Domain.Contracts;
-using Ngcs.ElasticSearch.Domain.Implementation.Models;
+using Ngcs.ElasticSerch.Domain.Entities;
 
 namespace Ngcs.ElasticSearch.Api.Mappers
 {
@@ -23,7 +22,7 @@ namespace Ngcs.ElasticSearch.Api.Mappers
             _mapper = mapper;
         }
 
-        internal CourtDto MapToCourtDto(ICourt court) => _mapper.Map<CourtDto>(court);
+        internal CourtDto MapToCourtDto(Court court) => _mapper.Map<CourtDto>(court);
 
         internal Court MapToCourt(CourtDto courtDto) => _mapper.Map<Court>(courtDto);
     }
