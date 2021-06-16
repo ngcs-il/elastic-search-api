@@ -6,26 +6,20 @@ using System.Web.Http.Filters;
 
 namespace Ngcs.WebApi2.Core
 {
+	/// <summary>Represents the attributes for the exception filter.</summary>
 	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
 	public class ExceptionFilterAttribute : System.Web.Http.Filters.ExceptionFilterAttribute
 	{
+		/// <summary>Raises the exception event.</summary>
+		/// <param name="actionExecutedContext">The context for the action.</param>
 		public override void OnException(HttpActionExecutedContext actionExecutedContext)
 		{
-			
-			actionExecutedContext.Response = CreateHttpResponseMessage(actionExecutedContext.Exception);
-			
+			var exception = actionExecutedContext.Exception;
+			var status = TranslateExceptionToStatusCode(exception);
+			var response = actionExecutedContext.Request.CreateErrorResponse(status, exception);
+			actionExecutedContext.Response = response;
 		}
-
-		private static HttpResponseMessage CreateHttpResponseMessage(Exception exception)
-		{
-			return new HttpResponseMessage
-			{
-				StatusCode = TranslateExceptionToStatusCode(exception),
-				Content = new StringContent(exception.ToString()),
-				ReasonPhrase = exception.Message
-			};
-		}
-
+		
 		private static HttpStatusCode TranslateExceptionToStatusCode(Exception exception)
 		{
 			if (exception is NotImplementedException)
