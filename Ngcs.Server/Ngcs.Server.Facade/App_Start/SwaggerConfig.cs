@@ -1,13 +1,16 @@
 using System;
 using System.IO;
+using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Dispatcher;
 using WebActivatorEx;
 using Ngcs.Server.Facade;
 using Swashbuckle.Application;
+using Ngcs.Practices.IoC;
 
 #pragma warning disable 1591
 
-[assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
+[assembly: PostApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
 namespace Ngcs.Server.Facade
 {
@@ -30,17 +33,17 @@ namespace Ngcs.Server.Facade
                         // the docs is taken as the default. If your API supports multiple schemes and you want to be explicit
                         // about them, you can use the "Schemes" option as shown below.
                         //
-                        //c.Schemes(new[] { "http", "https" });
+                        c.Schemes(new[] { "http" });
 
                         // Use "SingleApiVersion" to describe a single version API. Swagger 2.0 includes an "Info" object to
                         // hold additional metadata for an API. Version and title are required but you can also provide
                         // additional fields by chaining methods off SingleApiVersion.
                         //
-                        c.SingleApiVersion("v1", "Ngcs.Server.Facade");
+                        c.SingleApiVersion("v1", "The NGCS Sample API");
 
                         // If you want the output Swagger docs to be indented properly, enable the "PrettyPrint" option.
                         //
-                        //c.PrettyPrint();
+                        c.PrettyPrint();
 
                         // If your API has multiple versions, use "MultipleApiVersions" instead of "SingleApiVersion".
                         // In this case, you must provide a lambda that tells Swashbuckle which actions should be
@@ -65,7 +68,7 @@ namespace Ngcs.Server.Facade
                         //c.BasicAuth("basic")
                         //    .Description("Basic HTTP Authentication");
                         //
-						// NOTE: You must also configure 'EnableApiKeySupport' below in the SwaggerUI section
+                        // NOTE: You must also configure 'EnableApiKeySupport' below in the SwaggerUI section
                         //c.ApiKey("apiKey")
                         //    .Description("API Key Authentication")
                         //    .Name("apiKey")
@@ -105,7 +108,21 @@ namespace Ngcs.Server.Facade
                         // those comments into the generated docs and UI. You can enable this by providing the path to one or
                         // more Xml comment files.
                         //
-                        //c.IncludeXmlComments(GetXmlCommentsPath());
+                        var assemblyResolver = ServiceLocator.Current.GetInstance<IAssembliesResolver>();
+                        var controllerTypesResolver = ServiceLocator.Current.GetInstance<IHttpControllerTypeResolver>();
+
+                        var assemblyPaths = controllerTypesResolver
+	                        .GetControllerTypes(assemblyResolver)
+	                        .Select(ct => ct.Assembly.CodeBase.ToLower().Replace("file:///", ""))
+	                        .Distinct();
+
+                        foreach (var assemblyPath in assemblyPaths)
+                        {
+	                        if (assemblyPath.ToLower().Contains(".dll"))
+	                        { ;
+		                        c.IncludeXmlComments(assemblyPath.Replace(".dll", ".xml"));
+                            }
+                        }
 
                         // Swashbuckle makes a best attempt at generating Swagger compliant JSON schemas for the various types
                         // exposed in your API. However, there may be occasions when more control of the output is needed.
@@ -254,14 +271,6 @@ namespace Ngcs.Server.Facade
                         //
                         //c.EnableApiKeySupport("apiKey", "header");
                     });
-        }
-
-        private static string GetXmlCommentsPath()
-        {
-	        var directoryInfo = new DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory);
-	        var path = Path.Combine(directoryInfo.FullName, Properties.Resources.ModulesPath);
-
-	        return path;
         }
     }
 }
