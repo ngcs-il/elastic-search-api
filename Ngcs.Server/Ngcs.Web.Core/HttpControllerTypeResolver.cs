@@ -9,13 +9,12 @@ using System.Web.Http.Dispatcher;
 
 namespace LogoFX.Web.Core
 {
-    class HttpControllerTypeResolver : IHttpControllerTypeResolver
+	internal class HttpControllerTypeResolver : IHttpControllerTypeResolver
     {
-        private readonly Predicate<Type> _isControllerTypePredicate = IsControllerType;
-        private Func<Assembly, Type[]> _getTypesFunc = GetTypes;
+	    private readonly Func<Assembly, Type[]> _getTypesFunc = GetTypes;
         private IEnumerable<Type> _controllerTypes;
 
-        protected virtual Predicate<Type> IsControllerTypePredicate => _isControllerTypePredicate;
+        protected virtual Predicate<Type> IsControllerTypePredicate { get; } = IsControllerType;
 
         /// <summary>
         /// Returns a list of controllers available for the application.
@@ -26,7 +25,7 @@ namespace LogoFX.Web.Core
         {
             if (assembliesResolver == null)
             {
-                throw new ArgumentNullException("assembliesResolver");
+                throw new ArgumentNullException(nameof(assembliesResolver));
             }
 
             // Go through all assemblies referenced by the application and search for types matching a predicate
@@ -72,7 +71,7 @@ namespace LogoFX.Web.Core
                 }
             }
 
-            result.ForEach(x => Console.WriteLine(string.Format("Loaded controller: {0}", x.FullName)));
+            result.ForEach(x => Console.WriteLine($"Loaded controller: {x.FullName}"));
 
             return result;
         }

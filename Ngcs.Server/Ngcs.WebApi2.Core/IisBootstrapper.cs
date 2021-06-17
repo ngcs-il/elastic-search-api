@@ -4,7 +4,9 @@ using Ngcs.Practices.IoC;
 
 namespace Ngcs.WebApi2.Core
 {
-	/// <inheritdoc />
+	/// <summary>
+	/// The default bootstrapper implementation for IIS hosted Web API Application.
+	/// </summary>
 	public class IisBootstrapper : BootstrapperBase, IHttpConfigurationProvider
 	{
 		private IHttpConfigurationProxy _httpConfigurationProxy;
@@ -13,6 +15,7 @@ namespace Ngcs.WebApi2.Core
 		public IisBootstrapper(IIocContainer iocContainer)
 			: base(iocContainer)
 		{
+			ServiceLocator.Current = (IServiceLocator) iocContainer;
 		}
 
 		/// <inheritdoc />

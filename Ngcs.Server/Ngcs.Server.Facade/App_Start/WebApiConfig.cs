@@ -1,21 +1,20 @@
 ﻿using System.Web.Http;
 using LogoFX.Practices.IoC.SimpleContainer;
-using Ngcs.Practices.IoC;
-
-#pragma warning disable 1591
 
 namespace Ngcs.Server.Facade
 {
+    /// <summary>
+    /// The Web Application starting point.
+    /// </summary>
     public static class WebApiConfig
     {
+        /// <summary>
+        /// The method is called at the Web Application start by the system.
+        /// </summary>
+        /// <param name="config"></param>
         public static void Register(HttpConfiguration config)
         {
-            // Web API configuration and services
-            var iocContainer = new SimpleIocContainer();
-            ServiceLocator.Current = iocContainer;
-
-            // ReSharper disable once ObjectCreationAsStatement
-            new AppBootstrapper(iocContainer);
+           new AppBootstrapper(new SimpleIocContainer()).Start();
         }
     }
 }

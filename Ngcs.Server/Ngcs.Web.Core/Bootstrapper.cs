@@ -20,7 +20,6 @@ namespace LogoFX.Web.Core
             : this(HttpControllerTypeResolver.IsControllerType)
         {            
             _iocContainer = iocContainer;
-            Start();
         }
 
         [SuppressMessage("ReSharper", "ParameterOnlyUsedForPreconditionCheck.Local")]
@@ -32,7 +31,10 @@ namespace LogoFX.Web.Core
             }            
         }
 
-        private void Start()
+        /// <summary>
+        /// Starts the runtime.
+        /// </summary>
+        public void Start()
         {
             if (_isInitialized)
             {
@@ -42,6 +44,9 @@ namespace LogoFX.Web.Core
             StartRuntime();
         }        
         
+        /// <summary>
+        /// Gets the location of executable modules.
+        /// </summary>
         public virtual string ModulesPath => string.Empty;
 
         protected void SetupHttpConfiguration(IHttpConfigurationProxy config)
