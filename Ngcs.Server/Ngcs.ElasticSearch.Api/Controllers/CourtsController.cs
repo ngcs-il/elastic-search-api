@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using Ngcs.ElasticSearch.Api.Mappers;
 using Ngcs.ElasticSearch.Domain.Contracts;
-using Ngcs.WebApi2.Core;
 
 #pragma warning disable 1998
 
@@ -41,7 +40,8 @@ namespace Ngcs.ElasticSearch.Api.Controllers
         /// <returns>OK</returns>
         private async partial Task<IHttpActionResult> GetCourtsImplementationAsync(CancellationToken cancellationToken)
         {
-            return Ok(_courtsService.GetCourts().Select(x => _courtMapper.MapToCourtDto(x)));
+            return Ok((await _courtsService.GetCourtsAsync(cancellationToken).ConfigureAwait(false))
+								.Select(x => _courtMapper.MapToCourtDto(x)));
         }
 
         /// <summary>Listing Court Level types</summary>
