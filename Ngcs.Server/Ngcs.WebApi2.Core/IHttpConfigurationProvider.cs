@@ -1,4 +1,4 @@
-﻿using LogoFX.Web.Core;
+﻿using Ngcs.Web.Core;
 
 namespace Ngcs.WebApi2.Core
 {

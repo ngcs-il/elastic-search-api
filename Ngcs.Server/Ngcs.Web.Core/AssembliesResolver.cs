@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Http.Dispatcher;
 using Ngcs.Practices.Composition;
 
-namespace LogoFX.Web.Core
+namespace Ngcs.Web.Core
 {
     public class AssembliesResolver : AssembliesResolverBase, IAssembliesResolver
     {

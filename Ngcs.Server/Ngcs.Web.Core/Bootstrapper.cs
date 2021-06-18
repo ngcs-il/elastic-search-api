@@ -5,7 +5,7 @@ using System.IO;
 using System.Web.Http.Dispatcher;
 using Ngcs.Practices.IoC;
 
-namespace LogoFX.Web.Core
+namespace Ngcs.Web.Core
 {
     public abstract class BootstrapperBase
     {

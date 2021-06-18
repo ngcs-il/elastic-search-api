@@ -1,6 +1,6 @@
 ﻿using System.Web.Http;
 
-namespace LogoFX.Web.Core
+namespace Ngcs.Web.Core
 {
     public interface IHttpConfigurationProxy
     {        

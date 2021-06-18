@@ -4,7 +4,7 @@ using System.Web.Http.Controllers;
 using System.Web.Http.Dispatcher;
 using Ngcs.Practices.IoC;
 
-namespace LogoFX.Web.Core
+namespace Ngcs.Web.Core
 {
     class HttpControllerActivator : IHttpControllerActivator
     {

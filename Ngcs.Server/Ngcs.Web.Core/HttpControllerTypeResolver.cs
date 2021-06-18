@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Web.Http.Controllers;
 using System.Web.Http.Dispatcher;
 
-namespace LogoFX.Web.Core
+namespace Ngcs.Web.Core
 {
 	internal class HttpControllerTypeResolver : IHttpControllerTypeResolver
     {

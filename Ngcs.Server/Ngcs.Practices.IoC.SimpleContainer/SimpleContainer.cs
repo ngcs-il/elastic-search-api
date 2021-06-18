@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection;
 
-namespace LogoFX.Practices.IoC.SimpleContainer
+namespace Ngcs.Practices.IoC.SimpleContainer
 {
     /// <summary>
     ///   A simple IoC container.

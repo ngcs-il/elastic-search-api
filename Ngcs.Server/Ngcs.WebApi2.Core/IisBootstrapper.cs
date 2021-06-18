@@ -1,6 +1,6 @@
 ﻿using System.Web.Http;
-using LogoFX.Web.Core;
 using Ngcs.Practices.IoC;
+using Ngcs.Web.Core;
 
 namespace Ngcs.WebApi2.Core
 {

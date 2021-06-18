@@ -1,8 +1,7 @@
 using System;
 using System.Collections.Generic;
-using Ngcs.Practices.IoC;
 
-namespace LogoFX.Practices.IoC.SimpleContainer
+namespace Ngcs.Practices.IoC.SimpleContainer
 {
     public class SimpleIocContainer : IIocContainer, IServiceLocator
     {

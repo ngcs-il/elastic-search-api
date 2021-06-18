@@ -7,8 +7,8 @@
     <ProjectGuid>{33BF59DC-D43B-42B3-AD67-EEF477F76BB5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LogoFX.Web.Core</RootNamespace>
-    <AssemblyName>LogoFX.Web.Core</AssemblyName>
+    <RootNamespace>Ngcs.Web.Core</RootNamespace>
+    <AssemblyName>Ngcs.Web.Core</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
