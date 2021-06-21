@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Linq.Expressions;
 
@@ -13,7 +14,7 @@ namespace Ngcs.Data.EntityFramework.Repository
         private readonly IRepositoryQueryProvider<TEntity> _repository;
         private Expression<Func<TEntity, bool>> _filter;
         private Func<IQueryable<TEntity>, 
-            IOrderedQueryable<TEntity>> _orderByQuerable;
+            IOrderedQueryable<TEntity>> _orderByQueryable;
         private int? _page;
         private int? _pageSize;
 
@@ -34,10 +35,11 @@ namespace Ngcs.Data.EntityFramework.Repository
         public RepositoryQuery<TEntity> OrderBy(
             Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy)
         {
-            _orderByQuerable = orderBy;
+            _orderByQueryable = orderBy;
             return this;
         }
 
+        [SuppressMessage("ReSharper", "UnusedMember.Global")]
         public RepositoryQuery<TEntity> Include(
             Expression<Func<TEntity, object>> expression)
         {
@@ -45,6 +47,7 @@ namespace Ngcs.Data.EntityFramework.Repository
             return this;
         }
 
+        [SuppressMessage("ReSharper", "UnusedMember.Global")]
         public IQueryable<TEntity> GetPage(
             int page, int pageSize, out int totalCount)
         {
@@ -54,14 +57,14 @@ namespace Ngcs.Data.EntityFramework.Repository
 
             return _repository.Get(
                 _filter, 
-                _orderByQuerable, _includeProperties, _page, _pageSize);
+                _orderByQueryable, _includeProperties, _page, _pageSize);
         }
 
         public IQueryable<TEntity> Get()
         {
             return _repository.Get(
                 _filter, 
-                _orderByQuerable, _includeProperties, _page, _pageSize);
+                _orderByQueryable, _includeProperties, _page, _pageSize);
         }
     }
 }

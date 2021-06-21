@@ -23,35 +23,9 @@ namespace Ngcs.ElasticSearch.Api.Controllers
     {
     
         /// <summary>Finds Documents</summary>
-        /// <param name="q">The search phrase.</param>
-        /// <param name="num">The number of results per page.</param>
-        /// <param name="start">The number indicating a start index of the result.</param>
-        /// <param name="searchInTitles">Is search in titles.</param>
-        /// <param name="searchInContent">Is search in content.</param>
-        /// <param name="searchInMemoTitles">Is search in memo title.</param>
-        /// <param name="searchInMemoContent">Is search in memo content.</param>
-        /// <returns>OK</returns>
-        private partial System.Threading.Tasks.Task<System.Web.Http.IHttpActionResult> GetSearchResultsImplementationAsync(string q, int num, int start, Source? source, bool? searchInTitles, bool? searchInContent, bool? searchInMemoTitles, bool? searchInMemoContent, DateRangeType? dateRangeType, System.DateTimeOffset? startDate, System.DateTimeOffset? endDate, bool hasAppeal, bool legalCase, string court, string courtLevel, string interest, string procedure, string proceeding, string entities, System.Threading.CancellationToken cancellationToken);
-    	
-        /// <summary>Finds Documents</summary>
         /// <returns>OK</returns>
         private partial System.Threading.Tasks.Task<System.Web.Http.IHttpActionResult> PostSearchQueryImplementationAsync(QueryDto body, System.Threading.CancellationToken cancellationToken);
     	
-    
-        /// <summary>Finds Documents</summary>
-        /// <param name="q">The search phrase.</param>
-        /// <param name="num">The number of results per page.</param>
-        /// <param name="start">The number indicating a start index of the result.</param>
-        /// <param name="searchInTitles">Is search in titles.</param>
-        /// <param name="searchInContent">Is search in content.</param>
-        /// <param name="searchInMemoTitles">Is search in memo title.</param>
-        /// <param name="searchInMemoContent">Is search in memo content.</param>
-        /// <returns>OK</returns>
-        [System.Web.Http.HttpGet, System.Web.Http.Route("search")]
-        public System.Threading.Tasks.Task<System.Web.Http.IHttpActionResult> GetSearchResults([System.Web.Http.FromUri] [System.ComponentModel.DataAnnotations.Required] string q, [System.Web.Http.FromUri] [System.ComponentModel.DataAnnotations.Required] int num, [System.Web.Http.FromUri] [System.ComponentModel.DataAnnotations.Required] int start, [System.Web.Http.FromUri] Source? source = null, [System.Web.Http.FromUri] bool? searchInTitles = null, [System.Web.Http.FromUri] bool? searchInContent = null, [System.Web.Http.FromUri] bool? searchInMemoTitles = null, [System.Web.Http.FromUri] bool? searchInMemoContent = null, [System.Web.Http.FromUri] DateRangeType? dateRangeType = null, [System.Web.Http.FromUri] System.DateTimeOffset? startDate = null, [System.Web.Http.FromUri] System.DateTimeOffset? endDate = null, [System.Web.Http.FromUri] bool? hasAppeal = null, [System.Web.Http.FromUri] bool? legalCase = null, [System.Web.Http.FromUri] string court = null, [System.Web.Http.FromUri] string courtLevel = null, [System.Web.Http.FromUri] string interest = null, [System.Web.Http.FromUri] string procedure = null, [System.Web.Http.FromUri] string proceeding = null, [System.Web.Http.FromUri] string entities = null, System.Threading.CancellationToken cancellationToken = default)
-        {
-            return GetSearchResultsImplementationAsync(q, num, start, source, searchInTitles, searchInContent, searchInMemoTitles, searchInMemoContent, dateRangeType, startDate, endDate, hasAppeal ?? false, legalCase ?? false, court, courtLevel, interest, procedure, proceeding, entities, cancellationToken);
-        }
     
         /// <summary>Finds Documents</summary>
         /// <returns>OK</returns>
@@ -188,6 +162,7 @@ namespace Ngcs.ElasticSearch.Api.Controllers
         }
     }
 
+    /// <summary>Describes the particular searched result item related to found document.</summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.4.4.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class SearchResultItemDto 
     {
@@ -234,6 +209,7 @@ namespace Ngcs.ElasticSearch.Api.Controllers
     
     }
     
+    /// <summary>Contains both the whole search result statistics for the documents search attempt and the list of particular results referencing found documents as well. The list of particular results items is constrained with number of items requested and the number of item to start.</summary>
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.4.4.0 (Newtonsoft.Json v11.0.0.0)")]
     public partial class SearchResultDto 
     {
@@ -726,40 +702,6 @@ namespace Ngcs.ElasticSearch.Api.Controllers
             set { _additionalProperties = value; }
         }
     
-    
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.4.4.0 (Newtonsoft.Json v11.0.0.0)")]
-    public enum Source
-    {
-        [System.Runtime.Serialization.EnumMember(Value = @"decisions")]
-        Decisions = 0,
-    
-        [System.Runtime.Serialization.EnumMember(Value = @"protocols")]
-        Protocols = 1,
-    
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "10.4.4.0 (Newtonsoft.Json v11.0.0.0)")]
-    public enum DateRangeType
-    {
-        [System.Runtime.Serialization.EnumMember(Value = @"1h")]
-        _1h = 0,
-    
-        [System.Runtime.Serialization.EnumMember(Value = @"24h")]
-        _24h = 1,
-    
-        [System.Runtime.Serialization.EnumMember(Value = @"1w")]
-        _1w = 2,
-    
-        [System.Runtime.Serialization.EnumMember(Value = @"1m")]
-        _1m = 3,
-    
-        [System.Runtime.Serialization.EnumMember(Value = @"1y")]
-        _1y = 4,
-    
-        [System.Runtime.Serialization.EnumMember(Value = @"custom")]
-        Custom = 5,
     
     }
     

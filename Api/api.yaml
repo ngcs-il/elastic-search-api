@@ -10,154 +10,23 @@ tags:
   - name: search
     description: TBD
   - name: courts
-    description: TBD
+    description: Listing Courts
   - name: entities
-    description: TBD
+    description: Listing Entity types
   - name: interests
-    description: TBD
+    description: Listiting Interest types
   - name: privileges
-    description: TBD
+    description: Listing Privileges types
   - name: proceedings
-    description: TBD
+    description: Listing Proceeding types
   - name: procedures
-    description: TBD
+    description: Listing Procedure types
 servers:
   - url: 'http://localhost:3000'
 paths:
   /search:
     x-map: search
     x-delay: 300
-    get:
-      summary: Finds Documents
-      description: The only operation to search documents
-      tags:
-        - search
-      operationId: getSearchResults
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/SearchResultDto'
-      parameters:
-        - schema:
-            type: string
-            minLength: 1
-            maxLength: 256
-            example: Some search phrase goes here
-          in: query
-          name: q
-          description: The search phrase.
-          required: true
-          style: form
-          explode: true
-        - schema:
-            type: integer
-            example: 100
-            default: 10
-            minimum: 10
-            maximum: 100
-          in: query
-          name: num
-          description: The number of results per page.
-          required: true
-          style: form
-          explode: true
-        - schema:
-            type: integer
-            minimum: 0
-            example: 50
-          in: query
-          name: start
-          description: The number indicating a start index of the result.
-          style: form
-          explode: true
-          required: true
-        - schema:
-            type: string
-            enum:
-              - decisions
-              - protocols
-          in: query
-          name: source
-        - schema:
-            type: boolean
-          in: query
-          name: searchInTitles
-          description: Is search in titles.
-        - schema:
-            type: boolean
-          in: query
-          name: searchInContent
-          description: Is search in content.
-        - schema:
-            type: boolean
-          in: query
-          name: searchInMemoTitles
-          description: Is search in memo title.
-        - schema:
-            type: boolean
-          in: query
-          name: searchInMemoContent
-          description: Is search in memo content.
-        - schema:
-            type: string
-            enum:
-              - 1h
-              - 24h
-              - 1w
-              - 1m
-              - 1y
-              - custom
-          in: query
-          name: dateRangeType
-        - schema:
-            type: string
-            minLength: 1
-            format: date
-          in: query
-          name: startDate
-        - schema:
-            type: string
-            format: date
-          in: query
-          name: endDate
-        - schema:
-            type: boolean
-            default: false
-          in: query
-          name: hasAppeal
-        - schema:
-            type: boolean
-            default: false
-          in: query
-          name: legalCase
-        - schema:
-            type: string
-          in: query
-          name: court
-        - schema:
-            type: string
-          in: query
-          name: courtLevel
-        - schema:
-            type: string
-          in: query
-          name: interest
-        - schema:
-            type: string
-          in: query
-          name: procedure
-        - schema:
-            type: string
-          in: query
-          name: proceeding
-        - schema:
-            type: string
-          in: query
-          name: entities
-    parameters: []
     post:
       x-use-get: true
       summary: Finds Documents
@@ -167,7 +36,23 @@ paths:
       responses:
         '200':
           description: OK
-      description: Returns the list of documents satisfying the search query.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResultDto'
+              examples: {}
+          headers: {}
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+        '501':
+          description: Not Implemented
+      description: 'Returns the single object containing both, the list of search resuls (each of items references a document with related entities and statistics) and statistics info related to the entire search operation as well satisfying the search query.'
       requestBody:
         required: true
         content:
@@ -1417,7 +1302,7 @@ components:
     SearchResultItemDto:
       title: SearchResultItemDto
       type: object
-      description: ''
+      description: Describes the particular searched result item related to found document.
       properties:
         fragments:
           type: array
@@ -1476,6 +1361,10 @@ components:
         - applicableFilters
     SearchResultDto:
       title: SearchResultDto
+      description: Contains both the whole search result statistics for the documents 
+                   search attempt and the list of particular results referencing found documents as well. 
+                   The list of particular results items is constrained with number of items requested
+                   and the number of item to start.
       type: object
       properties:
         items:
