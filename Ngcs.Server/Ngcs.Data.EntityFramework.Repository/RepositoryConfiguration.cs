@@ -1,4 +1,5 @@
 using System.Data;
+using Ngcs.Data.Repository;
 
 namespace Ngcs.Data.EntityFramework.Repository
 {

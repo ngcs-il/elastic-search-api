@@ -25,8 +25,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.WebApi2.Core", "Ngcs.W
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.ElasticSearch.Domain.Entities", "Ngcs.ElasticSearch.Domain.Entities\Ngcs.ElasticSearch.Domain.Entities.csproj", "{9F12BECB-8135-4CC3-BA56-BB8F34383A3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.Data.EntityFramework.Entities", "Ngcs.Data.EntityFramework.Entities\Ngcs.Data.EntityFramework.Entities.csproj", "{C34CF657-1F27-4CB8-A9B0-90CE0A373568}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.Data.EntityFramework.DbContext", "Ngcs.Data.EntityFramework.DbContext\Ngcs.Data.EntityFramework.DbContext.csproj", "{481EA4B8-825F-4E4A-B657-7D581F33A8C1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.Data.EntityFramework.Repository", "Ngcs.Data.EntityFramework.Repository\Ngcs.Data.EntityFramework.Repository.csproj", "{04E0EB59-6A37-47D9-B3A5-6E5A9CF423CF}"
@@ -34,6 +32,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.Data.Repository", "Ngcs.Data.Repository\Ngcs.Data.Repository.csproj", "{E9369002-B29E-43F3-BE05-44CB874A58A4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.Data.AdoDotNet.Repository", "Ngcs.Data.AdoDotNet.Repository\Ngcs.Data.AdoDotNet.Repository.csproj", "{9F697E06-D181-4ADD-AFFF-21BDD86B38CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.Data.Entities", "Ngcs.Data.Entities\Ngcs.Data.Entities.csproj", "{495E91C5-B078-48FC-9B6C-FEE5CE1A55A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.ElasticSearch.Data.AdoDotNet.Context", "Ngcs.ElasticSearch.Data.AdoDotNet.Context\Ngcs.ElasticSearch.Data.AdoDotNet.Context.csproj", "{D1C8AA50-6AAA-41B7-858D-652CA121C540}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.ElasticSearch.Data.EntityFramework.Context", "Ngcs.ElasticSearch.Data.EntityFramework.Context\Ngcs.ElasticSearch.Data.EntityFramework.Context.csproj", "{3385F33E-EAE6-450A-99CC-24F5D77864B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -291,30 +295,6 @@ Global
 		{9F12BECB-8135-4CC3-BA56-BB8F34383A3C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9F12BECB-8135-4CC3-BA56-BB8F34383A3C}.Release|x64.ActiveCfg = Release|Any CPU
 		{9F12BECB-8135-4CC3-BA56-BB8F34383A3C}.Release|x64.Build.0 = Release|Any CPU
-		{C34CF657-1F27-4CB8-A9B0-90CE0A373568}.Debug With Mock Model and Owin Host|Any CPU.ActiveCfg = Debug|Any CPU
-		{C34CF657-1F27-4CB8-A9B0-90CE0A373568}.Debug With Mock Model and Owin Host|Any CPU.Build.0 = Debug|Any CPU
-		{C34CF657-1F27-4CB8-A9B0-90CE0A373568}.Debug With Mock Model and Owin Host|x64.ActiveCfg = Debug|Any CPU
-		{C34CF657-1F27-4CB8-A9B0-90CE0A373568}.Debug With Mock Model and Owin Host|x64.Build.0 = Debug|Any CPU
-		{C34CF657-1F27-4CB8-A9B0-90CE0A373568}.Debug With Real Model and Owin Host|Any CPU.ActiveCfg = Debug|Any CPU
-		{C34CF657-1F27-4CB8-A9B0-90CE0A373568}.Debug With Real Model and Owin Host|Any CPU.Build.0 = Debug|Any CPU
-		{C34CF657-1F27-4CB8-A9B0-90CE0A373568}.Debug With Real Model and Owin Host|x64.ActiveCfg = Debug|Any CPU
-		{C34CF657-1F27-4CB8-A9B0-90CE0A373568}.Debug With Real Model and Owin Host|x64.Build.0 = Debug|Any CPU
-		{C34CF657-1F27-4CB8-A9B0-90CE0A373568}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C34CF657-1F27-4CB8-A9B0-90CE0A373568}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C34CF657-1F27-4CB8-A9B0-90CE0A373568}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{C34CF657-1F27-4CB8-A9B0-90CE0A373568}.Debug|x64.Build.0 = Debug|Any CPU
-		{C34CF657-1F27-4CB8-A9B0-90CE0A373568}.Real With Real Model and Owin Host|Any CPU.ActiveCfg = Release|Any CPU
-		{C34CF657-1F27-4CB8-A9B0-90CE0A373568}.Real With Real Model and Owin Host|Any CPU.Build.0 = Release|Any CPU
-		{C34CF657-1F27-4CB8-A9B0-90CE0A373568}.Real With Real Model and Owin Host|x64.ActiveCfg = Release|Any CPU
-		{C34CF657-1F27-4CB8-A9B0-90CE0A373568}.Real With Real Model and Owin Host|x64.Build.0 = Release|Any CPU
-		{C34CF657-1F27-4CB8-A9B0-90CE0A373568}.Release with Real Model and IIS Host|Any CPU.ActiveCfg = Release|Any CPU
-		{C34CF657-1F27-4CB8-A9B0-90CE0A373568}.Release with Real Model and IIS Host|Any CPU.Build.0 = Release|Any CPU
-		{C34CF657-1F27-4CB8-A9B0-90CE0A373568}.Release with Real Model and IIS Host|x64.ActiveCfg = Release|Any CPU
-		{C34CF657-1F27-4CB8-A9B0-90CE0A373568}.Release with Real Model and IIS Host|x64.Build.0 = Release|Any CPU
-		{C34CF657-1F27-4CB8-A9B0-90CE0A373568}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C34CF657-1F27-4CB8-A9B0-90CE0A373568}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C34CF657-1F27-4CB8-A9B0-90CE0A373568}.Release|x64.ActiveCfg = Release|Any CPU
-		{C34CF657-1F27-4CB8-A9B0-90CE0A373568}.Release|x64.Build.0 = Release|Any CPU
 		{481EA4B8-825F-4E4A-B657-7D581F33A8C1}.Debug With Mock Model and Owin Host|Any CPU.ActiveCfg = Debug|Any CPU
 		{481EA4B8-825F-4E4A-B657-7D581F33A8C1}.Debug With Mock Model and Owin Host|Any CPU.Build.0 = Debug|Any CPU
 		{481EA4B8-825F-4E4A-B657-7D581F33A8C1}.Debug With Mock Model and Owin Host|x64.ActiveCfg = Debug|Any CPU
@@ -411,6 +391,78 @@ Global
 		{9F697E06-D181-4ADD-AFFF-21BDD86B38CD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9F697E06-D181-4ADD-AFFF-21BDD86B38CD}.Release|x64.ActiveCfg = Release|Any CPU
 		{9F697E06-D181-4ADD-AFFF-21BDD86B38CD}.Release|x64.Build.0 = Release|Any CPU
+		{495E91C5-B078-48FC-9B6C-FEE5CE1A55A2}.Debug With Mock Model and Owin Host|Any CPU.ActiveCfg = Debug|Any CPU
+		{495E91C5-B078-48FC-9B6C-FEE5CE1A55A2}.Debug With Mock Model and Owin Host|Any CPU.Build.0 = Debug|Any CPU
+		{495E91C5-B078-48FC-9B6C-FEE5CE1A55A2}.Debug With Mock Model and Owin Host|x64.ActiveCfg = Debug|Any CPU
+		{495E91C5-B078-48FC-9B6C-FEE5CE1A55A2}.Debug With Mock Model and Owin Host|x64.Build.0 = Debug|Any CPU
+		{495E91C5-B078-48FC-9B6C-FEE5CE1A55A2}.Debug With Real Model and Owin Host|Any CPU.ActiveCfg = Debug|Any CPU
+		{495E91C5-B078-48FC-9B6C-FEE5CE1A55A2}.Debug With Real Model and Owin Host|Any CPU.Build.0 = Debug|Any CPU
+		{495E91C5-B078-48FC-9B6C-FEE5CE1A55A2}.Debug With Real Model and Owin Host|x64.ActiveCfg = Debug|Any CPU
+		{495E91C5-B078-48FC-9B6C-FEE5CE1A55A2}.Debug With Real Model and Owin Host|x64.Build.0 = Debug|Any CPU
+		{495E91C5-B078-48FC-9B6C-FEE5CE1A55A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{495E91C5-B078-48FC-9B6C-FEE5CE1A55A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{495E91C5-B078-48FC-9B6C-FEE5CE1A55A2}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{495E91C5-B078-48FC-9B6C-FEE5CE1A55A2}.Debug|x64.Build.0 = Debug|Any CPU
+		{495E91C5-B078-48FC-9B6C-FEE5CE1A55A2}.Real With Real Model and Owin Host|Any CPU.ActiveCfg = Release|Any CPU
+		{495E91C5-B078-48FC-9B6C-FEE5CE1A55A2}.Real With Real Model and Owin Host|Any CPU.Build.0 = Release|Any CPU
+		{495E91C5-B078-48FC-9B6C-FEE5CE1A55A2}.Real With Real Model and Owin Host|x64.ActiveCfg = Release|Any CPU
+		{495E91C5-B078-48FC-9B6C-FEE5CE1A55A2}.Real With Real Model and Owin Host|x64.Build.0 = Release|Any CPU
+		{495E91C5-B078-48FC-9B6C-FEE5CE1A55A2}.Release with Real Model and IIS Host|Any CPU.ActiveCfg = Release|Any CPU
+		{495E91C5-B078-48FC-9B6C-FEE5CE1A55A2}.Release with Real Model and IIS Host|Any CPU.Build.0 = Release|Any CPU
+		{495E91C5-B078-48FC-9B6C-FEE5CE1A55A2}.Release with Real Model and IIS Host|x64.ActiveCfg = Release|Any CPU
+		{495E91C5-B078-48FC-9B6C-FEE5CE1A55A2}.Release with Real Model and IIS Host|x64.Build.0 = Release|Any CPU
+		{495E91C5-B078-48FC-9B6C-FEE5CE1A55A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{495E91C5-B078-48FC-9B6C-FEE5CE1A55A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{495E91C5-B078-48FC-9B6C-FEE5CE1A55A2}.Release|x64.ActiveCfg = Release|Any CPU
+		{495E91C5-B078-48FC-9B6C-FEE5CE1A55A2}.Release|x64.Build.0 = Release|Any CPU
+		{D1C8AA50-6AAA-41B7-858D-652CA121C540}.Debug With Mock Model and Owin Host|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1C8AA50-6AAA-41B7-858D-652CA121C540}.Debug With Mock Model and Owin Host|Any CPU.Build.0 = Debug|Any CPU
+		{D1C8AA50-6AAA-41B7-858D-652CA121C540}.Debug With Mock Model and Owin Host|x64.ActiveCfg = Debug|Any CPU
+		{D1C8AA50-6AAA-41B7-858D-652CA121C540}.Debug With Mock Model and Owin Host|x64.Build.0 = Debug|Any CPU
+		{D1C8AA50-6AAA-41B7-858D-652CA121C540}.Debug With Real Model and Owin Host|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1C8AA50-6AAA-41B7-858D-652CA121C540}.Debug With Real Model and Owin Host|Any CPU.Build.0 = Debug|Any CPU
+		{D1C8AA50-6AAA-41B7-858D-652CA121C540}.Debug With Real Model and Owin Host|x64.ActiveCfg = Debug|Any CPU
+		{D1C8AA50-6AAA-41B7-858D-652CA121C540}.Debug With Real Model and Owin Host|x64.Build.0 = Debug|Any CPU
+		{D1C8AA50-6AAA-41B7-858D-652CA121C540}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1C8AA50-6AAA-41B7-858D-652CA121C540}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1C8AA50-6AAA-41B7-858D-652CA121C540}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D1C8AA50-6AAA-41B7-858D-652CA121C540}.Debug|x64.Build.0 = Debug|Any CPU
+		{D1C8AA50-6AAA-41B7-858D-652CA121C540}.Real With Real Model and Owin Host|Any CPU.ActiveCfg = Release|Any CPU
+		{D1C8AA50-6AAA-41B7-858D-652CA121C540}.Real With Real Model and Owin Host|Any CPU.Build.0 = Release|Any CPU
+		{D1C8AA50-6AAA-41B7-858D-652CA121C540}.Real With Real Model and Owin Host|x64.ActiveCfg = Release|Any CPU
+		{D1C8AA50-6AAA-41B7-858D-652CA121C540}.Real With Real Model and Owin Host|x64.Build.0 = Release|Any CPU
+		{D1C8AA50-6AAA-41B7-858D-652CA121C540}.Release with Real Model and IIS Host|Any CPU.ActiveCfg = Release|Any CPU
+		{D1C8AA50-6AAA-41B7-858D-652CA121C540}.Release with Real Model and IIS Host|Any CPU.Build.0 = Release|Any CPU
+		{D1C8AA50-6AAA-41B7-858D-652CA121C540}.Release with Real Model and IIS Host|x64.ActiveCfg = Release|Any CPU
+		{D1C8AA50-6AAA-41B7-858D-652CA121C540}.Release with Real Model and IIS Host|x64.Build.0 = Release|Any CPU
+		{D1C8AA50-6AAA-41B7-858D-652CA121C540}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1C8AA50-6AAA-41B7-858D-652CA121C540}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1C8AA50-6AAA-41B7-858D-652CA121C540}.Release|x64.ActiveCfg = Release|Any CPU
+		{D1C8AA50-6AAA-41B7-858D-652CA121C540}.Release|x64.Build.0 = Release|Any CPU
+		{3385F33E-EAE6-450A-99CC-24F5D77864B9}.Debug With Mock Model and Owin Host|Any CPU.ActiveCfg = Debug|Any CPU
+		{3385F33E-EAE6-450A-99CC-24F5D77864B9}.Debug With Mock Model and Owin Host|Any CPU.Build.0 = Debug|Any CPU
+		{3385F33E-EAE6-450A-99CC-24F5D77864B9}.Debug With Mock Model and Owin Host|x64.ActiveCfg = Debug|Any CPU
+		{3385F33E-EAE6-450A-99CC-24F5D77864B9}.Debug With Mock Model and Owin Host|x64.Build.0 = Debug|Any CPU
+		{3385F33E-EAE6-450A-99CC-24F5D77864B9}.Debug With Real Model and Owin Host|Any CPU.ActiveCfg = Debug|Any CPU
+		{3385F33E-EAE6-450A-99CC-24F5D77864B9}.Debug With Real Model and Owin Host|Any CPU.Build.0 = Debug|Any CPU
+		{3385F33E-EAE6-450A-99CC-24F5D77864B9}.Debug With Real Model and Owin Host|x64.ActiveCfg = Debug|Any CPU
+		{3385F33E-EAE6-450A-99CC-24F5D77864B9}.Debug With Real Model and Owin Host|x64.Build.0 = Debug|Any CPU
+		{3385F33E-EAE6-450A-99CC-24F5D77864B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3385F33E-EAE6-450A-99CC-24F5D77864B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3385F33E-EAE6-450A-99CC-24F5D77864B9}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3385F33E-EAE6-450A-99CC-24F5D77864B9}.Debug|x64.Build.0 = Debug|Any CPU
+		{3385F33E-EAE6-450A-99CC-24F5D77864B9}.Real With Real Model and Owin Host|Any CPU.ActiveCfg = Release|Any CPU
+		{3385F33E-EAE6-450A-99CC-24F5D77864B9}.Real With Real Model and Owin Host|Any CPU.Build.0 = Release|Any CPU
+		{3385F33E-EAE6-450A-99CC-24F5D77864B9}.Real With Real Model and Owin Host|x64.ActiveCfg = Release|Any CPU
+		{3385F33E-EAE6-450A-99CC-24F5D77864B9}.Real With Real Model and Owin Host|x64.Build.0 = Release|Any CPU
+		{3385F33E-EAE6-450A-99CC-24F5D77864B9}.Release with Real Model and IIS Host|Any CPU.ActiveCfg = Release|Any CPU
+		{3385F33E-EAE6-450A-99CC-24F5D77864B9}.Release with Real Model and IIS Host|Any CPU.Build.0 = Release|Any CPU
+		{3385F33E-EAE6-450A-99CC-24F5D77864B9}.Release with Real Model and IIS Host|x64.ActiveCfg = Release|Any CPU
+		{3385F33E-EAE6-450A-99CC-24F5D77864B9}.Release with Real Model and IIS Host|x64.Build.0 = Release|Any CPU
+		{3385F33E-EAE6-450A-99CC-24F5D77864B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3385F33E-EAE6-450A-99CC-24F5D77864B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3385F33E-EAE6-450A-99CC-24F5D77864B9}.Release|x64.ActiveCfg = Release|Any CPU
+		{3385F33E-EAE6-450A-99CC-24F5D77864B9}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -421,11 +473,11 @@ Global
 		{284CBDD1-AADB-4CA2-B6F3-88548E9F0764} = {4123A0E8-65B5-4C4E-92A2-DF97DC0598FA}
 		{CB390942-3103-4C81-9B6A-F948B402A181} = {4123A0E8-65B5-4C4E-92A2-DF97DC0598FA}
 		{2DF223E2-2DD9-41B9-9609-92676F0D6D59} = {4123A0E8-65B5-4C4E-92A2-DF97DC0598FA}
-		{C34CF657-1F27-4CB8-A9B0-90CE0A373568} = {4123A0E8-65B5-4C4E-92A2-DF97DC0598FA}
 		{481EA4B8-825F-4E4A-B657-7D581F33A8C1} = {4123A0E8-65B5-4C4E-92A2-DF97DC0598FA}
 		{04E0EB59-6A37-47D9-B3A5-6E5A9CF423CF} = {4123A0E8-65B5-4C4E-92A2-DF97DC0598FA}
 		{E9369002-B29E-43F3-BE05-44CB874A58A4} = {4123A0E8-65B5-4C4E-92A2-DF97DC0598FA}
 		{9F697E06-D181-4ADD-AFFF-21BDD86B38CD} = {4123A0E8-65B5-4C4E-92A2-DF97DC0598FA}
+		{495E91C5-B078-48FC-9B6C-FEE5CE1A55A2} = {4123A0E8-65B5-4C4E-92A2-DF97DC0598FA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F993E494-EB04-4BB6-B99E-0EE747230BEE}

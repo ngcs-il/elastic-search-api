@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace Ngcs.Data.EntityFramework.Repository
+namespace Ngcs.Data.Repository
 {
     public interface IRepositoryQueryProvider<TEntity> where TEntity : class
     {

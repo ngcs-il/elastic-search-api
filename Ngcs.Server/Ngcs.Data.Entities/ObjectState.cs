@@ -1,4 +1,4 @@
-﻿namespace Ngcs.Data.EntityFramework.Entities
+﻿namespace Ngcs.Data.Entities
 {
     public enum ObjectState
     {

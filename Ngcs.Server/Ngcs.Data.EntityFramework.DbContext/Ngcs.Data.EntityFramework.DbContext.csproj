@@ -51,12 +51,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Ngcs.Data.EntityFramework.Entities\Ngcs.Data.EntityFramework.Entities.csproj">
-      <Project>{C34CF657-1F27-4CB8-A9B0-90CE0A373568}</Project>
-      <Name>Ngcs.Data.EntityFramework.Entities</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="EntityFramework">
       <Version>6.4.4</Version>
     </PackageReference>

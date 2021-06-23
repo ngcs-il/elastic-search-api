@@ -4,7 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace Ngcs.Data.EntityFramework.Repository
+namespace Ngcs.Data.Repository
 {
     public sealed class RepositoryQuery<TEntity> where TEntity : class
     {

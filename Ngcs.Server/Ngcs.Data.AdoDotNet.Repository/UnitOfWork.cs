@@ -1,23 +1,15 @@
 ﻿using System;
 using System.Collections;
-using System.Data.Common;
-using System.Data.Entity.Infrastructure;
-using Ngcs.Data.EntityFramework.DbContext;
 using Ngcs.Data.Repository;
 
-namespace Ngcs.Data.EntityFramework.Repository
+namespace Ngcs.Data.AdoDotNet.Repository
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly IDbContext _dbContext;
-       
-        private readonly ITransactionFactory _transactionFactory;
-
         private bool _disposed;
         private Hashtable _repositories;
 
         private const int CommandTimeout = 300;
-
 
         private DbConnection _connection;
 

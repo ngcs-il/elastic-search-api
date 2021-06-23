@@ -1,10 +1,10 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System;
 
 namespace Ngcs.Data.Repository
 {
-	[SuppressMessage("ReSharper", "UnusedMember.Global")]
-	public interface IUnitOfWork
-	{
-		
-	}
+    public interface IUnitOfWork : IDisposable
+    {
+        void Save();
+        IRepository<T> Repository<T>() where T : class;
+    }
 }
