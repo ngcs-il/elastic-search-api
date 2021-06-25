@@ -61,6 +61,10 @@
       <Project>{E9369002-B29E-43F3-BE05-44CB874A58A4}</Project>
       <Name>Ngcs.Data.Repository</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Ngcs.ElasticSearch.Data.AdoDotNet.Context\Ngcs.ElasticSearch.Data.AdoDotNet.Context.csproj">
+      <Project>{D1C8AA50-6AAA-41B7-858D-652CA121C540}</Project>
+      <Name>Ngcs.ElasticSearch.Data.AdoDotNet.Context</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Ngcs.ElasticSearch.Domain.Contracts\Ngcs.ElasticSearch.Domain.Contracts.csproj">
       <Project>{5512C587-6E38-44BB-8078-5D4D5C7341B5}</Project>
       <Name>Ngcs.ElasticSearch.Domain.Contracts</Name>

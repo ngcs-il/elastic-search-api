@@ -6,7 +6,8 @@ namespace Ngcs.Data.AdoDotNet.DbContext
     {
         IDbConnection Connection { get; }
 
-        TypedTableBase<T> Set<T>() where T : DataRow;
+        TypedTableBase<T> Set<T>()
+            where T : DataRow;
 
         int SaveChanges();
     }
