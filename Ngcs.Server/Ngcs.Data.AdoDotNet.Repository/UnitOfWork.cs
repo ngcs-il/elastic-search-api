@@ -1,26 +1,28 @@
 ﻿using System;
 using System.Collections;
+using System.Data;
+using JetBrains.Annotations;
+using Ngcs.Data.AdoDotNet.DbContext;
 using Ngcs.Data.Repository;
 
 namespace Ngcs.Data.AdoDotNet.Repository
 {
+    [UsedImplicitly]
     public class UnitOfWork : IUnitOfWork
     {
+        private readonly IDbContext _dbContext;
+        private readonly ITransactionFactory _transactionFactory;
         private bool _disposed;
         private Hashtable _repositories;
 
-        private const int CommandTimeout = 300;
-
-        private DbConnection _connection;
+        private IDbConnection _connection;
 
         public UnitOfWork(IDbContext dbContext,  ITransactionFactory transactionFactory)
         {
             _dbContext = dbContext;
-  
             _transactionFactory = transactionFactory;
-          
+            
             InitializeUnitOfWork();
-
         }
 
         protected virtual void Dispose(bool disposing)
@@ -31,7 +33,6 @@ namespace Ngcs.Data.AdoDotNet.Repository
                 {
                     _connection.Close();
                     _connection.Dispose();
-                    _dbContext.Dispose();                    
                 }                    
             }
                 
@@ -46,16 +47,16 @@ namespace Ngcs.Data.AdoDotNet.Repository
 
         public void Save()
         {
-            using (var contextTransaction = _transactionFactory.CreateTransaction())
+            using (var transaction = _transactionFactory.CreateTransaction())
             {
                 try
                 {
                     _dbContext.SaveChanges();
-                    contextTransaction.Commit();
+                    transaction.Commit();
                 }
                 catch (Exception)
                 {                    
-                    contextTransaction.Rollback();
+                    transaction.Rollback();
                 }                
             }            
         }
@@ -63,20 +64,22 @@ namespace Ngcs.Data.AdoDotNet.Repository
         public IRepository<T> Repository<T>() where T : class
         {
             if (_repositories == null)
+            {
                 _repositories = new Hashtable();
+            }
 
             var type = typeof(T).Name;
 
-            if (!_repositories.ContainsKey(type))
+            if (_repositories.ContainsKey(type))
             {
-                var repositoryType = typeof(Repository<>);
-
-                var repositoryInstance =
-                    Activator.CreateInstance(repositoryType
-                            .MakeGenericType(typeof(T)), _dbContext);
-
-                _repositories.Add(type, repositoryInstance);
+                return (IRepository<T>) _repositories[type];
             }
+
+            var repositoryType = typeof(Repository<>);
+
+            var repositoryInstance = Activator.CreateInstance(repositoryType.MakeGenericType(typeof(T)), _dbContext);
+
+            _repositories.Add(type, repositoryInstance);
 
             return (IRepository<T>)_repositories[type];
         }
@@ -85,8 +88,7 @@ namespace Ngcs.Data.AdoDotNet.Repository
 
         private void InitializeUnitOfWork()
         {
-            ((IObjectContextAdapter)_dbContext).ObjectContext.CommandTimeout = CommandTimeout;
-            _connection = ((IObjectContextAdapter)_dbContext).ObjectContext.Connection;
+            _connection = _dbContext.Connection;
             _connection.Open();
         }
 

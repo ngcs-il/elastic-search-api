@@ -6,8 +6,6 @@ namespace Ngcs.ElasticSearch.Domain.Contracts
 {
     public interface ICourtsService
     {
-	    Court[] GetCourts();
-
-        Task<Court[]> GetCourtsAsync(CancellationToken cancellationToken);
+        Task<CourtEntity[]> GetCourtsAsync(CancellationToken cancellationToken = default);
     }
 }

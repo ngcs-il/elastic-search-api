@@ -20,5 +20,5 @@ namespace Ngcs.Data.EntityFramework.DbContext
     public interface ITransactionFactory
     {
         DbContextTransaction CreateTransaction();
-    }    
+    }
 }

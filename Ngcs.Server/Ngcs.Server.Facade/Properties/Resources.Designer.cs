@@ -61,7 +61,7 @@ namespace Ngcs.Server.Facade.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ..\bin.
+        ///   Looks up a localized string similar to ..\bin\AdoNet.
         /// </summary>
         internal static string ModulesPath {
             get {

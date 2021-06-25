@@ -1,19 +1,24 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Linq.Expressions;
+using Ngcs.Data.AdoDotNet.DbContext;
 using Ngcs.Data.Repository;
 
 namespace Ngcs.Data.AdoDotNet.Repository
 {
     [SuppressMessage("ReSharper", "SuspiciousTypeConversion.Global")]
-    public class Repository<TEntity> : IRepository<TEntity>, IRepositoryQueryProvider<TEntity> where TEntity : class
+    public class Repository<TEntity> : IRepository<TEntity>, IRepositoryQueryProvider<TEntity>
+        where TEntity : DataRow
     {
-        public Repository()
-        {
-        }
+        private readonly IDbContext _dbContext;
 
+        public Repository(IDbContext dbContext)
+        {
+            _dbContext = dbContext;
+        }
 
         public bool Add(TEntity entity)
         {
@@ -87,7 +92,8 @@ namespace Ngcs.Data.AdoDotNet.Repository
 
         public IQueryable<TEntity> GetAll()
         {
-            throw new NotImplementedException();
+            var entities = SetEntities();
+            return entities;
         }
 
         public IQueryable<TEntity> GetAll(params Expression<Func<TEntity, object>>[] includes)
@@ -144,6 +150,12 @@ namespace Ngcs.Data.AdoDotNet.Repository
             int? pageSize = null)
         {
             throw new NotImplementedException();
+        }
+
+        private IQueryable<TEntity> SetEntities()
+        {
+            var entities = _dbContext.Set<TEntity>();
+            return entities.AsQueryable();
         }
     }
 }

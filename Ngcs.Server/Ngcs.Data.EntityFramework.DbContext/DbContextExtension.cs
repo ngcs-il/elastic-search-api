@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Data.Entity;
-using Ngcs.Data.EntityFramework.Entities;
+using Ngcs.Data.Entities;
 
 namespace Ngcs.Data.EntityFramework.DbContext
 {

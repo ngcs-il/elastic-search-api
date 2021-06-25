@@ -12,7 +12,7 @@ namespace Ngcs.ElasticSearch.Domain.Implementation
         public void RegisterModule(IIocContainer container)
         {
             container.RegisterSingleton<IValueService, ValueService>();
-            container.RegisterSingleton<ICourtsService, FakeCourtsService>();
+            container.RegisterSingleton<ICourtsService, CourtsService>();
         }
     }
 }

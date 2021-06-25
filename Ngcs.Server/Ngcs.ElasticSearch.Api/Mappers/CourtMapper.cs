@@ -6,7 +6,7 @@ using Ngcs.ElasticSerch.Domain.Entities;
 namespace Ngcs.ElasticSearch.Api.Mappers
 {
     /// <summary>
-    /// Maps Court domain entity to CourtDto and versa.
+    /// Maps CourtEntity domain entity to CourtDto and versa.
     /// </summary>
     [UsedImplicitly]
     public class CourtMapper
@@ -22,8 +22,8 @@ namespace Ngcs.ElasticSearch.Api.Mappers
             _mapper = mapper;
         }
 
-        internal CourtDto MapToCourtDto(Court court) => _mapper.Map<CourtDto>(court);
+        internal CourtDto MapToCourtDto(CourtEntity courtEntity) => _mapper.Map<CourtDto>(courtEntity);
 
-        internal Court MapToCourt(CourtDto courtDto) => _mapper.Map<Court>(courtDto);
+        internal CourtEntity MapToCourt(CourtDto courtDto) => _mapper.Map<CourtEntity>(courtDto);
     }
 }

@@ -12,7 +12,7 @@ namespace Ngcs.ElasticSearch.Api.Mappers
             CreateCourtsMaps();
         }
 
-        private void CreateCourtsMaps() => CreateDomainObjectMap<CourtDto, Court>();
+        private void CreateCourtsMaps() => CreateDomainObjectMap<CourtDto, CourtEntity>();
 
         //TODO: put this piece of functionality into 
         //an external package, e.g. Model.Mapping.AutoMapper
