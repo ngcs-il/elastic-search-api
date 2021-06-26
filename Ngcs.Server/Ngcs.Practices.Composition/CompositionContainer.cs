@@ -27,7 +27,7 @@ namespace Ngcs.Practices.Composition
             {
                 container.ComposeParts((object)this);
             }
-            catch (CompositionException ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
                 throw;
