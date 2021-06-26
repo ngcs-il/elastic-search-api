@@ -41,6 +41,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.ElasticSearch.Data.Ent
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.Data.AdoDotNet.DbContext", "Ngcs.Data.AdoDotNet.DbContext\Ngcs.Data.AdoDotNet.DbContext.csproj", "{423164EA-A2E5-4F2A-AFEF-A86416BAB6FB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.Server.GraphQL.Facade", "Ngcs.Server.GraphQL.Facade\Ngcs.Server.GraphQL.Facade.csproj", "{6CCFBB8A-1AE8-4AB5-8AB0-4787539141A7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -264,6 +266,18 @@ Global
 		{423164EA-A2E5-4F2A-AFEF-A86416BAB6FB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{423164EA-A2E5-4F2A-AFEF-A86416BAB6FB}.Release|x64.ActiveCfg = Release|Any CPU
 		{423164EA-A2E5-4F2A-AFEF-A86416BAB6FB}.Release|x64.Build.0 = Release|Any CPU
+		{6CCFBB8A-1AE8-4AB5-8AB0-4787539141A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CCFBB8A-1AE8-4AB5-8AB0-4787539141A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CCFBB8A-1AE8-4AB5-8AB0-4787539141A7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6CCFBB8A-1AE8-4AB5-8AB0-4787539141A7}.Debug|x64.Build.0 = Debug|Any CPU
+		{6CCFBB8A-1AE8-4AB5-8AB0-4787539141A7}.DebugAdoNet|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CCFBB8A-1AE8-4AB5-8AB0-4787539141A7}.DebugAdoNet|Any CPU.Build.0 = Debug|Any CPU
+		{6CCFBB8A-1AE8-4AB5-8AB0-4787539141A7}.DebugAdoNet|x64.ActiveCfg = Debug|Any CPU
+		{6CCFBB8A-1AE8-4AB5-8AB0-4787539141A7}.DebugAdoNet|x64.Build.0 = Debug|Any CPU
+		{6CCFBB8A-1AE8-4AB5-8AB0-4787539141A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CCFBB8A-1AE8-4AB5-8AB0-4787539141A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CCFBB8A-1AE8-4AB5-8AB0-4787539141A7}.Release|x64.ActiveCfg = Release|Any CPU
+		{6CCFBB8A-1AE8-4AB5-8AB0-4787539141A7}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

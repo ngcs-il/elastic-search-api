@@ -13,7 +13,7 @@ namespace Ngcs.ElasticSearch.Data.AdoDotNet.Context
 
         public AppDbContext()
         {
-            Initialize();
+            //Initialize();
         }
 
         private void Initialize()
@@ -29,6 +29,7 @@ namespace Ngcs.ElasticSearch.Data.AdoDotNet.Context
         /// <returns>Null if the name is not found.</returns>
         private static string GetConnectionStringByName(string name)
         {
+	        return string.Empty;
             // Assume failure.
             string returnValue = null;
 

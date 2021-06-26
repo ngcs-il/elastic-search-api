@@ -89,7 +89,7 @@ namespace Ngcs.Data.AdoDotNet.Repository
         private void InitializeUnitOfWork()
         {
             _connection = _dbContext.Connection;
-            _connection.Open();
+            //_connection.Open();
         }
 
     }
