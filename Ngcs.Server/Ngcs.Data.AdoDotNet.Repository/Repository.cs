@@ -155,7 +155,7 @@ namespace Ngcs.Data.AdoDotNet.Repository
         private IQueryable<TEntity> SetEntities()
         {
             var entities = _dbContext.Set<TEntity>();
-            return entities.AsQueryable();
+            return entities;
         }
     }
 }

@@ -61,7 +61,8 @@ namespace Ngcs.Data.AdoDotNet.Repository
             }            
         }
 
-        public IRepository<T> Repository<T>() where T : class
+        public IRepository<T> Repository<T>()
+            where T : class
         {
             if (_repositories == null)
             {
@@ -83,8 +84,6 @@ namespace Ngcs.Data.AdoDotNet.Repository
 
             return (IRepository<T>)_repositories[type];
         }
-
-
 
         private void InitializeUnitOfWork()
         {

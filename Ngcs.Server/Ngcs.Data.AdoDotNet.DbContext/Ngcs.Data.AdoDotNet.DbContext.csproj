@@ -51,7 +51,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DbContextFactory.cs" />
+    <Compile Include="DbMapperBuilder.cs" />
+    <Compile Include="IDataTableAdapter.cs" />
     <Compile Include="IDbContext.cs" />
+    <Compile Include="IMapInfo.cs" />
     <Compile Include="ITransactionFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TransactionAbstractFactory.cs" />

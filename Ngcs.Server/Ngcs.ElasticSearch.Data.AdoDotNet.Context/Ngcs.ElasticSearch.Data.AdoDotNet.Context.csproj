@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -29,6 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugAdoNet|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
@@ -36,7 +38,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
+    <LangVersion>latest</LangVersion>
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
@@ -100,6 +102,10 @@
     <ProjectReference Include="..\Ngcs.Data.Repository\Ngcs.Data.Repository.csproj">
       <Project>{E9369002-B29E-43F3-BE05-44CB874A58A4}</Project>
       <Name>Ngcs.Data.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ngcs.ElasticSearch.Domain.Entities\Ngcs.ElasticSearch.Domain.Entities.csproj">
+      <Project>{9F12BECB-8135-4CC3-BA56-BB8F34383A3C}</Project>
+      <Name>Ngcs.ElasticSearch.Domain.Entities</Name>
     </ProjectReference>
     <ProjectReference Include="..\Ngcs.Practices.Composition\Ngcs.Practices.Composition.csproj">
       <Project>{284CBDD1-AADB-4CA2-B6F3-88548E9F0764}</Project>

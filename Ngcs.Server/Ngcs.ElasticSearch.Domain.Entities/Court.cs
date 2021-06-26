@@ -1,6 +1,9 @@
-﻿namespace Ngcs.ElasticSerch.Domain.Entities
+﻿using JetBrains.Annotations;
+
+namespace Ngcs.ElasticSearch.Domain.Entities
 {
-    public class CourtEntity
+    [UsedImplicitly]
+    public class Court
     {
         public int Id { get; set; }
         public string Name { get; set; }

@@ -3,9 +3,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using JetBrains.Annotations;
 using Ngcs.Data.Repository;
-using Ngcs.ElasticSearch.Data.AdoDotNet.Context;
 using Ngcs.ElasticSearch.Domain.Contracts;
-using Ngcs.ElasticSerch.Domain.Entities;
+using Ngcs.ElasticSearch.Domain.Entities;
 
 namespace Ngcs.ElasticSearch.Domain.Implementation.Services
 {
@@ -19,9 +18,9 @@ namespace Ngcs.ElasticSearch.Domain.Implementation.Services
             _unitOfWork = unitOfWork;
         }
 
-        async Task<CourtEntity[]> ICourtsService.GetCourtsAsync(CancellationToken cancellationToken)
+        async Task<Court[]> ICourtsService.GetCourtsAsync(CancellationToken cancellationToken)
         {
-            var repository = _unitOfWork.Repository<NgcsDataSet.CourtsRow>();
+            var repository = _unitOfWork.Repository<Court>();
             var courts = await Task.Run(() => repository.GetAll().ToArray(), cancellationToken);
             return courts;
         }

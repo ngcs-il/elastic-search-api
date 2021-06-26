@@ -1,4 +1,6 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
+using System.Linq;
 
 namespace Ngcs.Data.AdoDotNet.DbContext
 {
@@ -6,7 +8,7 @@ namespace Ngcs.Data.AdoDotNet.DbContext
     {
         IDbConnection Connection { get; }
 
-        TypedTableBase<T> Set<T>()
+        IQueryable<T> Set<T>()
             where T : DataRow;
 
         int SaveChanges();

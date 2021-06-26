@@ -1,7 +1,7 @@
 ﻿using System;
 using AutoMapper;
 using Ngcs.ElasticSearch.Api.Controllers;
-using Ngcs.ElasticSerch.Domain.Entities;
+using Ngcs.ElasticSearch.Domain.Entities;
 
 namespace Ngcs.ElasticSearch.Api.Mappers
 {
@@ -12,7 +12,7 @@ namespace Ngcs.ElasticSearch.Api.Mappers
             CreateCourtsMaps();
         }
 
-        private void CreateCourtsMaps() => CreateDomainObjectMap<CourtDto, CourtEntity>();
+        private void CreateCourtsMaps() => CreateDomainObjectMap<CourtDto, Court>();
 
         //TODO: put this piece of functionality into 
         //an external package, e.g. Model.Mapping.AutoMapper

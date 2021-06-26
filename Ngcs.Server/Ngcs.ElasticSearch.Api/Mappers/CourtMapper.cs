@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
 using JetBrains.Annotations;
 using Ngcs.ElasticSearch.Api.Controllers;
-using Ngcs.ElasticSerch.Domain.Entities;
+using Ngcs.ElasticSearch.Domain.Entities;
 
 namespace Ngcs.ElasticSearch.Api.Mappers
 {
     /// <summary>
-    /// Maps CourtEntity domain entity to CourtDto and versa.
+    /// Maps Court domain entity to CourtDto and versa.
     /// </summary>
     [UsedImplicitly]
     public class CourtMapper
@@ -22,8 +22,8 @@ namespace Ngcs.ElasticSearch.Api.Mappers
             _mapper = mapper;
         }
 
-        internal CourtDto MapToCourtDto(CourtEntity courtEntity) => _mapper.Map<CourtDto>(courtEntity);
+        internal CourtDto MapToCourtDto(Court court) => _mapper.Map<CourtDto>(court);
 
-        internal CourtEntity MapToCourt(CourtDto courtDto) => _mapper.Map<CourtEntity>(courtDto);
+        internal Court MapToCourt(CourtDto courtDto) => _mapper.Map<Court>(courtDto);
     }
 }

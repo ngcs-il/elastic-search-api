@@ -1,11 +1,11 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
-using Ngcs.ElasticSerch.Domain.Entities;
+using Ngcs.ElasticSearch.Domain.Entities;
 
 namespace Ngcs.ElasticSearch.Domain.Contracts
 {
     public interface ICourtsService
     {
-        Task<CourtEntity[]> GetCourtsAsync(CancellationToken cancellationToken = default);
+        Task<Court[]> GetCourtsAsync(CancellationToken cancellationToken = default);
     }
 }
