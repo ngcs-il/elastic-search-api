@@ -15,7 +15,7 @@ namespace Ngcs.Server.Facade
 	    /// <inheritdoc />
         public override string ModulesPath =>
 #if DEBUG && ADONET
-			"..\\bin\\AspNet";
+			"..\\bin\\AdoNet";
 #elif DEBUG && EF
             "..\\bin\\DebugEF";
 #else
