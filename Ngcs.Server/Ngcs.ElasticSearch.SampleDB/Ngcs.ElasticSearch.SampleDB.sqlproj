@@ -6,7 +6,7 @@
     <Name>Ngcs.ElasticSearch.SampleDB</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{e3ee301b-bcf3-4b0c-8e58-6c2f840ed26e}</ProjectGuid>
+    <ProjectGuid>{0e355d5a-e722-4313-8ce2-fc65905e6784}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql150DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
@@ -14,7 +14,7 @@
     <RootNamespace>Ngcs.ElasticSearch.SampleDB</RootNamespace>
     <AssemblyName>Ngcs.ElasticSearch.SampleDB</AssemblyName>
     <ModelCollation>1033,CI</ModelCollation>
-    <DefaultFileStructure>BySchemaType</DefaultFileStructure>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetLanguage>CS</TargetLanguage>
@@ -119,17 +119,13 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
-    <Folder Include="Tables\" />
-    <Folder Include="Security\" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Tables\Courts.sql">
+    <Build Include="dbo\Tables\Courts.sql">
       <AnsiNulls>On</AnsiNulls>
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>
-    <Build Include="Security\Permissions.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Ngcs.ElasticSearch.SampleDB.publish.xml" />
   </ItemGroup>
 </Project>
