@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Linq.Expressions;
@@ -11,7 +10,7 @@ namespace Ngcs.Data.AdoDotNet.Repository
 {
     [SuppressMessage("ReSharper", "SuspiciousTypeConversion.Global")]
     public class Repository<TEntity> : IRepository<TEntity>, IRepositoryQueryProvider<TEntity>
-        where TEntity : DataRow
+        where TEntity : class
     {
         private readonly IDbContext _dbContext;
 
