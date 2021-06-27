@@ -34,9 +34,9 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugEF|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\DebugEF\</OutputPath>
+    <OutputPath>..\bin\DebugEF\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DocumentationFile>..\bin\AdoNet\Ngcs.ElasticSearch.Api.xml</DocumentationFile>
+    <DocumentationFile>..\bin\DebugEF\Ngcs.ElasticSearch.Api.xml</DocumentationFile>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <LangVersion>latest</LangVersion>

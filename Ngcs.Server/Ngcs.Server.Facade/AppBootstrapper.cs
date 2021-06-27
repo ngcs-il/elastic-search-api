@@ -4,7 +4,6 @@ using Ngcs.WebApi2.Core;
 
 namespace Ngcs.Server.Facade
 {
-	/// <inheritdoc />
 	public class AppBootstrapper : IisBootstrapper
     {
 	    /// <inheritdoc />
@@ -14,10 +13,16 @@ namespace Ngcs.Server.Facade
         }
 
 	    /// <inheritdoc />
-        public override string ModulesPath => Properties.Resources.ModulesPath;
+        public override string ModulesPath =>
+#if DEBUG && ADONET
+			"..\\bin\\AspNet";
+#elif DEBUG && EF
+            "..\\bin\\DebugEF";
+#else
+            "..\\bin\\Release";
+#endif
 
-		/// <inheritdoc />
-	    protected override void Configure()
+		protected override void Configure()
 	    {
 		    base.Configure();
 			GlobalConfiguration.Configuration.Filters.Add(new ExceptionFilterAttribute());
