@@ -1,4 +1,4 @@
-using System.Collections;
+using System.Configuration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -15,10 +15,33 @@ namespace Ngcs.Server.GraphQL.Facade
 {
 	public class Startup
 	{
+        private static void AddConnectionString(string name, string connectionString)
+        {
+            // Get the application configuration file.
+            var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+
+            // Get the conectionStrings section.
+            var csSection = config.ConnectionStrings;
+
+            //Create your connection string into a connectionStringSettings object
+            var connection = new ConnectionStringSettings(name, connectionString);
+
+            //Add the object to the configuration
+            csSection.ConnectionStrings.Add(connection);
+
+            //Save the configuration
+            config.Save(ConfigurationSaveMode.Modified);
+
+            //Refresh the Section
+            ConfigurationManager.RefreshSection("connectionStrings");
+        }
+
 		public Startup(IConfiguration configuration)
 		{
 			Configuration = configuration;
-		}
+            var connectionString = configuration.GetConnectionString("appEntities");
+			AddConnectionString("appEntities", connectionString);
+        }
 
 		public IConfiguration Configuration { get; }
 
