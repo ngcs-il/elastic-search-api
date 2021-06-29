@@ -1,20 +1,33 @@
+using System.Reflection;
+using JetBrains.Annotations;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
 namespace Ngcs.Server.GraphQL.Facade
 {
-	public class Program
-	{
-		public static void Main(string[] args)
-		{
-			CreateHostBuilder(args).Build().Run();
-		}
+    /// <summary>
+    /// Entry point for the program
+    /// </summary>
+    [UsedImplicitly]
+    public class Program
+    {
+        /// <summary>
+        /// The entry point of the program, where the program control starts and ends.
+        /// </summary>
+        /// <param name="args">The command-line arguments.</param>
+        public static void Main(string[] args)
+        {
+            Assembly.GetCallingAssembly().SetWorkingDir();
+            CreateHostBuilder(args).Build().Run();
+        }
 
-		public static IHostBuilder CreateHostBuilder(string[] args) =>
-			Host.CreateDefaultBuilder(args)
-				.ConfigureWebHostDefaults(webBuilder =>
-				{
-					webBuilder.UseStartup<Startup>();
-				});
-	}
+        private static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder
+                        .UseStartup<Startup>()
+                        .UseConfiguration(Assembly.GetExecutingAssembly().BuildConfiguration());
+                });
+    }
 }

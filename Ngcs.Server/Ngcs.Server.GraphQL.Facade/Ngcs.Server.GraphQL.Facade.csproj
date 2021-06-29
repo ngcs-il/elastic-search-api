@@ -3,30 +3,32 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <Configurations>Release;DebugEF;DebugAdoNet</Configurations>
+	  <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugAdoNet|AnyCPU'">
     <DefineConstants>TRACE;ADONET</DefineConstants>
-    <OutputPath>bin\Debug</OutputPath>
+    <OutputPath>..\bin\AdoNet</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugEF|AnyCPU'">
     <DefineConstants>TRACE;EF</DefineConstants>
+    <OutputPath>..\bin\DebugEF</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="HotChocolate.AspNetCore" Version="11.3.0" />
+    <PackageReference Include="JetBrains.Annotations" Version="2021.1.0" />
+    <PackageReference Include="LogoFX.Server.Bootstrapping" Version="2.2.0" />
+    <PackageReference Include="Solid.Practices.Modularity" Version="2.3.1" />
+    <PackageReference Include="System.ComponentModel.Composition" Version="5.0.0" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Ngcs.Data.AdoDotNet.DbContext\Ngcs.Data.AdoDotNet.DbContext.csproj" />
-    <ProjectReference Include="..\Ngcs.Data.AdoDotNet.Repository\Ngcs.Data.AdoDotNet.Repository.csproj" />
-    <ProjectReference Include="..\Ngcs.Data.Repository\Ngcs.Data.Repository.csproj" />
     <ProjectReference Include="..\Ngcs.ElasticSearch.Data.AdoDotNet.Context\Ngcs.ElasticSearch.Data.AdoDotNet.Context.csproj" />
     <ProjectReference Include="..\Ngcs.ElasticSearch.Domain.Contracts\Ngcs.ElasticSearch.Domain.Contracts.csproj" />
-    <ProjectReference Include="..\Ngcs.ElasticSearch.Domain.Entities\Ngcs.ElasticSearch.Domain.Entities.csproj" />
     <ProjectReference Include="..\Ngcs.ElasticSearch.Domain.Implementation\Ngcs.ElasticSearch.Domain.Implementation.csproj" />
   </ItemGroup>
 
