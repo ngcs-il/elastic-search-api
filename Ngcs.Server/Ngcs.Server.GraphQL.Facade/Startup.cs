@@ -17,7 +17,7 @@ namespace Ngcs.Server.GraphQL.Facade
 		{
 			Configuration = configuration;
             var connectionString = configuration.GetConnectionString("appEntities");
-			AddConnectionString("appEntities", connectionString);
+			AddConnectionString("appEntities", connectionString, "System.Data.SqlClient");
         }
 
         [UsedImplicitly]
@@ -63,24 +63,38 @@ namespace Ngcs.Server.GraphQL.Facade
 				});
 		}
 
-        private static void AddConnectionString(string name, string connectionString)
+        private static void AddConnectionString(string name, string connectionString, string providerName)
         {
             // Get the application configuration file.
             var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
 
             // Get the conectionStrings section.
             var csSection = config.ConnectionStrings;
+            var needAdd = true;
+            for (var i = 0; i < csSection.ConnectionStrings.Count; i += 1)
+            {
+                var cs = csSection.ConnectionStrings[i];
+                if (cs.Name == name)
+                {
+                    cs.ConnectionString = connectionString;
+                    cs.ProviderName = providerName;
+                    needAdd = false;
+					break;
+                }
+            }
 
-            //Create your connection string into a connectionStringSettings object
-            var connection = new ConnectionStringSettings(name, connectionString);
-
-            //Add the object to the configuration
-            csSection.ConnectionStrings.Add(connection);
+            if (needAdd)
+            {
+                //Create your connection string into a connectionStringSettings object
+                var connection = new ConnectionStringSettings(name, connectionString, providerName);
+                //Add the object to the configuration
+                csSection.ConnectionStrings.Add(connection);
+            }
 
             //Save the configuration
             config.Save(ConfigurationSaveMode.Modified);
 
-            //Refresh the Section
+            //Refresh the Sectionb
             ConfigurationManager.RefreshSection("connectionStrings");
         }
     }
