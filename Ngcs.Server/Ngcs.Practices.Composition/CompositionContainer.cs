@@ -25,7 +25,11 @@ namespace Ngcs.Practices.Composition
             System.ComponentModel.Composition.Hosting.CompositionContainer container = new System.ComponentModel.Composition.Hosting.CompositionContainer(aggregateCatalog);
             try
             {
-                container.ComposeParts((object)this);
+                container.ComposeParts(this);
+            }
+            catch (FileNotFoundException ex)
+            {
+                Console.WriteLine(ex.ToString());
             }
             catch (Exception ex)
             {

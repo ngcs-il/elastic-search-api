@@ -2,18 +2,28 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <Configurations>Release;DebugEF;DebugAdoNet</Configurations>
+    <Configurations>Release;DebugEF;DebugAdoNet;DebugGraphQLAdoNet;DebugGraphQLEF</Configurations>
 	  <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugAdoNet|AnyCPU'">
     <DefineConstants>TRACE;ADONET</DefineConstants>
-    <OutputPath>..\bin\AdoNet</OutputPath>
+    <OutputPath>bin\Debug</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugGraphQLAdoNet|AnyCPU'">
+    <DefineConstants>TRACE;ADONET</DefineConstants>
+    <OutputPath>bin\Debug</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugEF|AnyCPU'">
     <DefineConstants>TRACE;EF</DefineConstants>
-    <OutputPath>..\bin\DebugEF</OutputPath>
+    <OutputPath>\bin\Debug</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugGraphQLEF|AnyCPU'">
+    <DefineConstants>TRACE;EF</DefineConstants>
+    <OutputPath>\bin\Debug</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
@@ -28,6 +38,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Ngcs.ElasticSearch.Data.AdoDotNet.Context\Ngcs.ElasticSearch.Data.AdoDotNet.Context.csproj" />
+    <ProjectReference Include="..\Ngcs.ElasticSearch.Data.EntityFramework.Context\Ngcs.ElasticSearch.Data.EntityFramework.Context.csproj" />
     <ProjectReference Include="..\Ngcs.ElasticSearch.Domain.Contracts\Ngcs.ElasticSearch.Domain.Contracts.csproj" />
     <ProjectReference Include="..\Ngcs.ElasticSearch.Domain.Implementation\Ngcs.ElasticSearch.Domain.Implementation.csproj" />
   </ItemGroup>
