@@ -22,7 +22,8 @@ namespace Ngcs.ElasticSearch.Data.AdoDotNet.Context
 
         private void Initialize()
         {
-            var connectionString = GetConnectionStringByName("appEntities");
+	        var connectionString =
+		        "Data Source=172.20.10.2;Initial Catalog=ES-SAMPLE;User ID=sa;Password=Temp2020;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";//GetConnectionStringByName("appEntities");
             _connection = new SqlConnection(connectionString);
             _dbMapperBuilder = new DbMapperBuilder(_connection);
 

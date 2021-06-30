@@ -1,4 +1,3 @@
-using System.Collections;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -60,7 +59,6 @@ namespace Ngcs.Server.GraphQL.Facade
 				{
 					endpoints.MapGraphQL();
 				});
-				;
 		}
 	}
 }
