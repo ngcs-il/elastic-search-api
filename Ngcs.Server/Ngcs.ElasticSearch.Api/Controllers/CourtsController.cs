@@ -40,15 +40,22 @@ namespace Ngcs.ElasticSearch.Api.Controllers
         /// <returns>OK</returns>
         private async partial Task<IHttpActionResult> GetCourtsImplementationAsync(CancellationToken cancellationToken)
         {
-            return Ok((await _courtsService.GetCourtsAsync(cancellationToken).ConfigureAwait(false))
-								.Select(x => _courtMapper.MapToCourtDto(x)));
+            var courtLevels = await _courtsService.GetCourtLevelsAsync(cancellationToken).ConfigureAwait(false);
+            var courts = await _courtsService.GetCourtsAsync(cancellationToken).ConfigureAwait(false);
+            return Ok(courts.Select(court =>
+            {
+                var courtDto = _courtMapper.MapToCourtDto(court);
+                courtDto.Level = courtLevels.Single(level => level.Id == court.LevelId).Name;
+                return courtDto;
+            }));
         }
 
         /// <summary>Listing Court Level types</summary>
         /// <returns>OK</returns>
-        private partial Task<IHttpActionResult> GetCourtLevelsImplementationAsync(CancellationToken cancellationToken)
+        private async partial Task<IHttpActionResult> GetCourtLevelsImplementationAsync(CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            var courtLevels = await _courtsService.GetCourtLevelsAsync(cancellationToken).ConfigureAwait(false);
+            return Ok(courtLevels.Select(courtLevel => _courtMapper.MapToCourtLevelDto(courtLevel)));
         }
     }
 }

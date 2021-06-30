@@ -24,5 +24,12 @@ namespace Ngcs.ElasticSearch.Domain.Implementation.Services
             var courts = await Task.Run(() => repository.GetAll().ToArray(), cancellationToken);
             return courts;
         }
+
+        async Task<CourtLevel[]> ICourtsService.GetCourtLevelsAsync(CancellationToken cancellationToken)
+        {
+            var repository = _unitOfWork.Repository<CourtLevel>();
+            var courtLevels = await Task.Run(() => repository.GetAll().ToArray(), cancellationToken);
+            return courtLevels;
+        }
     }
 }

@@ -33,9 +33,20 @@ namespace Ngcs.ElasticSearch.Data.AdoDotNet.Context
                 {
                     Id = courtsRow.id,
                     Name = courtsRow.name,
-                    Level = courtsRow.level
+                    LevelId = courtsRow.levelId
                 };
             });
+
+            _dbMapperBuilder.AddMapping<CourtLevel, CourtLevelsTableAdapter, NgcsDataSet.CourtLevelsDataTable>(dataRow =>
+            {
+                var courtLevelsRow = (NgcsDataSet.CourtLevelsRow) dataRow;
+                return new CourtLevel
+                {
+                    Id = courtLevelsRow.id,
+                    Name = courtLevelsRow.name
+                };
+            });
+
         }
 
         /// <summary>

@@ -72,10 +72,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppDbContext.cs" />
-    <Compile Include="Module.cs" />
-    <Compile Include="NgcsDataSet.cs">
+    <Compile Include="CourtsTableAdapter.cs">
       <DependentUpon>NgcsDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Module.cs" />
     <Compile Include="NgcsDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
