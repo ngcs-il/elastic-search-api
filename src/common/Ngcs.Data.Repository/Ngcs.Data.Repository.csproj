@@ -37,6 +37,7 @@
     <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IConnectionStringService.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="IRepositoryQueryProvider.cs" />
     <Compile Include="IUnitOfWork.cs" />

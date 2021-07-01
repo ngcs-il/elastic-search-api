@@ -87,6 +87,7 @@
     <Compile Include="AppBootstrapper.cs" />
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="ConnectionStringService.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -106,6 +107,10 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\common\Ngcs.Data.Repository\Ngcs.Data.Repository.csproj">
+      <Project>{E9369002-B29E-43F3-BE05-44CB874A58A4}</Project>
+      <Name>Ngcs.Data.Repository</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\common\Ngcs.Practices.IoC.SimpleContainer\Ngcs.Practices.IoC.SimpleContainer.csproj">
       <Project>{50CB854F-8AE9-4A2D-A45B-8A4E0D14B91B}</Project>
       <Name>Ngcs.Practices.IoC.SimpleContainer</Name>

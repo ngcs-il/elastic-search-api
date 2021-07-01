@@ -29,6 +29,7 @@ namespace Ngcs.Server.GraphQL.Facade
 					.AddSingleton<IDbContext, AppDbContext>()
 					.AddTransient<ITransactionFactory, TransactionConcreteFactory>()
 					.AddTransient<IDbContextFactory, DbContextFactory>()
+                    .AddSingleton<IConnectionStringService, ConnectionStringService>()
 					.AddGraphQLServer()
 					.AddQueryType<Query>();
 			services.AddRazorPages();
