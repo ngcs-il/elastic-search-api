@@ -15,12 +15,14 @@ namespace Ngcs.ElasticSearch.Domain.Implementation
         {
             container.RegisterSingleton<IValueService, ValueService>();
             container.RegisterSingleton<ICourtsService, CourtsService>();
+            container.RegisterSingleton<ICourtLevelsService, CourtLevelsService>();
         }
 
         public void RegisterModule(IServiceCollection dependencyRegistrator)
         {
             dependencyRegistrator.AddSingleton<IValueService, ValueService>();
             dependencyRegistrator.AddSingleton<ICourtsService, CourtsService>();
+            dependencyRegistrator.AddSingleton<ICourtLevelsService, CourtLevelsService>();
         }
     }
 }

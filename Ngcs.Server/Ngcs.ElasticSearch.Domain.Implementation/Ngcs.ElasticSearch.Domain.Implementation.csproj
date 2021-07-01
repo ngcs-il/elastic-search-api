@@ -72,6 +72,7 @@
   <ItemGroup>
     <Compile Include="Module.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CourtLevelsService.cs" />
     <Compile Include="Services\CourtsService.cs" />
     <Compile Include="Services\ValueService.cs" />
   </ItemGroup>

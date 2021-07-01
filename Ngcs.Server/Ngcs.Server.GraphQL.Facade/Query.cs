@@ -13,9 +13,9 @@ namespace Ngcs.Server.GraphQL.Facade
             return await courtsService.GetCourtsAsync();
         }
 
-        public async Task<IEnumerable<CourtLevel>> GetCourtLevels([Service] ICourtsService courtsService)
+        public async Task<IEnumerable<CourtLevel>> GetCourtLevels([Service] ICourtLevelsService courtLevelsService)
         {
-            return await courtsService.GetCourtLevelsAsync();
+            return await courtLevelsService.GetCourtLevelsAsync();
         }
     }
 }

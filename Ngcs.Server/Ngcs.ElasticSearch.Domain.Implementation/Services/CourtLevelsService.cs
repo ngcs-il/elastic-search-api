@@ -9,20 +9,20 @@ using Ngcs.ElasticSearch.Domain.Entities;
 namespace Ngcs.ElasticSearch.Domain.Implementation.Services
 {
     [UsedImplicitly]
-    internal sealed class CourtsService : ICourtsService
+    internal sealed class CourtLevelsService : ICourtLevelsService
     {
         private readonly IUnitOfWork _unitOfWork;
 
-        public CourtsService(IUnitOfWork unitOfWork)
+        public CourtLevelsService(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
 
-        async Task<Court[]> ICourtsService.GetCourtsAsync(CancellationToken cancellationToken)
+        async Task<CourtLevel[]> ICourtLevelsService.GetCourtLevelsAsync(CancellationToken cancellationToken)
         {
-            var repository = _unitOfWork.Repository<Court>();
-            var courts = await Task.Run(() => repository.GetAll().ToArray(), cancellationToken);
-            return courts;
+            var repository = _unitOfWork.Repository<CourtLevel>();
+            var courtLevels = await Task.Run(() => repository.GetAll().ToArray(), cancellationToken);
+            return courtLevels;
         }
     }
 }
