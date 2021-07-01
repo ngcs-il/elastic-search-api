@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Globalization;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using System.Threading;
 
 namespace ConvertYamlToSql
 {
@@ -19,6 +18,8 @@ namespace ConvertYamlToSql
 
         static void Main(string[] args)
         {
+            var courtsLevelDic = new Dictionary<string, int>();
+
             var lines = File.ReadAllLines("Courts.yml");
 
             var sb = new StringBuilder();
@@ -29,9 +30,18 @@ namespace ConvertYamlToSql
                 var id = GetValue(lines, ref index);
                 var name = GetValue(lines, ref index);
                 var level = GetValue(lines, ref index);
+                if (!courtsLevelDic.TryGetValue(level, out var levelId))
+                {
+                    levelId = courtsLevelDic.Count + 1;
+                    courtsLevelDic.Add(level, levelId);
+                    sb.AppendLine();
+                    sb.AppendLine("GO");
+                    sb.AppendLine($"INSERT INTO [dbo].[CourtLevels] ([id], [name]) VALUES ({levelId}, N'{level}');");
+                }
+
                 sb.AppendLine();
                 sb.AppendLine("GO");
-                sb.AppendLine($"INSERT INTO [dbo].[Courts] ([id], [name], [level]) VALUES ({id}, N'{name}', N'{level}');");
+                sb.AppendLine($"INSERT INTO [dbo].[Courts] ([id], [name], [levelId]) VALUES ({id}, N'{name}', {levelId});");
             }
 
             File.WriteAllText("Courts.sql", sb.ToString());

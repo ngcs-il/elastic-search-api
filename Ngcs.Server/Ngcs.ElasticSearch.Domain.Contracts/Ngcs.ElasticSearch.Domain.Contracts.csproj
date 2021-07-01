@@ -69,6 +69,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ICourtLevelsService.cs" />
     <Compile Include="ICourtsService.cs" />
     <Compile Include="IValueService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

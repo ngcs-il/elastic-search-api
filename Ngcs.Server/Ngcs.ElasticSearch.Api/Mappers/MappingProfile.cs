@@ -9,10 +9,13 @@ namespace Ngcs.ElasticSearch.Api.Mappers
     {
         public MappingProfile()
         {
-            CreateCourtsMaps();
+            CreateCourtMaps();
+            CreateCourtLevelMaps();
         }
 
-        private void CreateCourtsMaps() => CreateDomainObjectMap<CourtDto, Court>();
+        private void CreateCourtMaps() => CreateDomainObjectMap<CourtDto, Court>();
+
+        private void CreateCourtLevelMaps() => CreateDomainObjectMap<CourtLevelDto, CourtLevel>();
 
         //TODO: put this piece of functionality into 
         //an external package, e.g. Model.Mapping.AutoMapper

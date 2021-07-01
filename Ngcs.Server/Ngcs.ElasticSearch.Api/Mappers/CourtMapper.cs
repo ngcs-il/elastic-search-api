@@ -25,5 +25,7 @@ namespace Ngcs.ElasticSearch.Api.Mappers
         internal CourtDto MapToCourtDto(Court court) => _mapper.Map<CourtDto>(court);
 
         internal Court MapToCourt(CourtDto courtDto) => _mapper.Map<Court>(courtDto);
+
+        internal CourtLevelDto MapToCourtLevelDto(CourtLevel courtLevel) => _mapper.Map<CourtLevelDto>(courtLevel);
     }
 }

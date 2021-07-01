@@ -33,5 +33,16 @@ namespace Ngcs.ElasticSearch.Data.AdoDotNet.Context.Properties {
                 return ((string)(this["ngcs_sampleConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP2\\SQLEXPRESS;Initial Catalog=ES-SAMPLE;Integrated Security=Tru" +
+            "e")]
+        public string ES_SAMPLEConnectionString {
+            get {
+                return ((string)(this["ES_SAMPLEConnectionString"]));
+            }
+        }
     }
 }

@@ -6,12 +6,12 @@ namespace Ngcs.Server.GraphQL.Facade
 {
     internal sealed class Bootstrapper : BootstrapperBase
     {
-        public Bootstrapper(IServiceCollection dependencyRegistrator) 
-            : base(dependencyRegistrator)
+        public Bootstrapper(IServiceCollection dependencyRegistrar)
+            : base(dependencyRegistrar)
         {
         }
 
-        public override CompositionOptions CompositionOptions => new CompositionOptions
+        public override CompositionOptions CompositionOptions => new()
         {
             Prefixes = new[] { "Ngcs.ElasticSearch" }
         };
