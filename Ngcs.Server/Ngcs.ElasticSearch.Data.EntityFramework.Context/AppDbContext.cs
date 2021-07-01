@@ -22,6 +22,7 @@ namespace Ngcs.ElasticSearch.Data.EntityFramework.Context
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Court>().ToTable("Courts");
+            modelBuilder.Entity<CourtLevel>().ToTable("CourtLevels");
         }
     }
 }
