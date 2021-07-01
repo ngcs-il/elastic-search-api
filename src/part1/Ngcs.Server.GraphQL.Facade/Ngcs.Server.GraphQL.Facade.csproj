@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HotChocolate.AspNetCore" Version="11.3.0" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\common\Ngcs.Data.AdoDotNet.DbContext\Ngcs.Data.AdoDotNet.DbContext.csproj" />
+    <ProjectReference Include="..\..\common\Ngcs.Data.AdoDotNet.Repository\Ngcs.Data.AdoDotNet.Repository.csproj" />
+    <ProjectReference Include="..\..\common\Ngcs.Data.Repository\Ngcs.Data.Repository.csproj" />
+    <ProjectReference Include="..\Ngcs.ElasticSearch.Data.AdoDotNet.Context\Ngcs.ElasticSearch.Data.AdoDotNet.Context.csproj" />
+    <ProjectReference Include="..\Ngcs.ElasticSearch.Domain.Contracts\Ngcs.ElasticSearch.Domain.Contracts.csproj" />
+    <ProjectReference Include="..\Ngcs.ElasticSearch.Domain.Entities\Ngcs.ElasticSearch.Domain.Entities.csproj" />
+    <ProjectReference Include="..\Ngcs.ElasticSearch.Domain.Implementation\Ngcs.ElasticSearch.Domain.Implementation.csproj" />
+  </ItemGroup>
+
+</Project>
