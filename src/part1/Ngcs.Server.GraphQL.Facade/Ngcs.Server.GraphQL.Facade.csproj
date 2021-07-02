@@ -11,10 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\common\Ngcs.Data.AdoDotNet.DbContext\Ngcs.Data.AdoDotNet.DbContext.csproj" />
-    <ProjectReference Include="..\..\common\Ngcs.Data.AdoDotNet.Repository\Ngcs.Data.AdoDotNet.Repository.csproj" />
+    <ProjectReference Include="..\..\common\Ngcs.Data.DbContext.AdoDotNet\Ngcs.Data.DbContext.AdoDotNet.csproj" />
+    <ProjectReference Include="..\..\common\Ngcs.Data.Repository.AdoDotNet\Ngcs.Data.Repository.AdoDotNet.csproj" />
     <ProjectReference Include="..\..\common\Ngcs.Data.Repository\Ngcs.Data.Repository.csproj" />
-    <ProjectReference Include="..\Ngcs.ElasticSearch.Data.AdoDotNet.Context\Ngcs.ElasticSearch.Data.AdoDotNet.Context.csproj" />
+    <ProjectReference Include="..\Ngcs.ElasticSearch.Data.Context.AdoDotNet\Ngcs.ElasticSearch.Data.Context.AdoDotNet.csproj" />
     <ProjectReference Include="..\Ngcs.ElasticSearch.Domain.Contracts\Ngcs.ElasticSearch.Domain.Contracts.csproj" />
     <ProjectReference Include="..\Ngcs.ElasticSearch.Domain.Entities\Ngcs.ElasticSearch.Domain.Entities.csproj" />
     <ProjectReference Include="..\Ngcs.ElasticSearch.Domain.Implementation\Ngcs.ElasticSearch.Domain.Implementation.csproj" />

@@ -9,15 +9,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.Server.Facade", "Ngcs.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.ElasticSearch.Domain.Contracts", "Ngcs.ElasticSearch.Domain.Contracts\Ngcs.ElasticSearch.Domain.Contracts.csproj", "{5512C587-6E38-44BB-8078-5D4D5C7341B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.ElasticSearch.Api", "Ngcs.ElasticSearch.Api\Ngcs.ElasticSearch.Api.csproj", "{2CB9F5FE-9DEF-4977-A898-C40143625EBC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.ElasticSearch.Presentation", "Ngcs.ElasticSearch.Presentation\Ngcs.ElasticSearch.Presentation.csproj", "{2CB9F5FE-9DEF-4977-A898-C40143625EBC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.ElasticSearch.Domain.Implementation", "Ngcs.ElasticSearch.Domain.Implementation\Ngcs.ElasticSearch.Domain.Implementation.csproj", "{9732B4F0-6309-4E50-BCE3-3AFAFAF58A7D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.ElasticSearch.Domain.Entities", "Ngcs.ElasticSearch.Domain.Entities\Ngcs.ElasticSearch.Domain.Entities.csproj", "{9F12BECB-8135-4CC3-BA56-BB8F34383A3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.ElasticSearch.Data.AdoDotNet.Context", "Ngcs.ElasticSearch.Data.AdoDotNet.Context\Ngcs.ElasticSearch.Data.AdoDotNet.Context.csproj", "{D1C8AA50-6AAA-41B7-858D-652CA121C540}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.ElasticSearch.Data.Context.AdoDotNet", "Ngcs.ElasticSearch.Data.Context.AdoDotNet\Ngcs.ElasticSearch.Data.Context.AdoDotNet.csproj", "{D1C8AA50-6AAA-41B7-858D-652CA121C540}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.ElasticSearch.Data.EntityFramework.Context", "Ngcs.ElasticSearch.Data.EntityFramework.Context\Ngcs.ElasticSearch.Data.EntityFramework.Context.csproj", "{3385F33E-EAE6-450A-99CC-24F5D77864B9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.ElasticSearch.Data.Context.EntityFramework", "Ngcs.ElasticSearch.Data.Context.EntityFramework\Ngcs.ElasticSearch.Data.Context.EntityFramework.csproj", "{3385F33E-EAE6-450A-99CC-24F5D77864B9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ngcs.Server.GraphQL.Facade", "Ngcs.Server.GraphQL.Facade\Ngcs.Server.GraphQL.Facade.csproj", "{1A688B25-4665-47A2-881E-98EE880F9CAC}"
 EndProject
@@ -31,15 +31,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.Practices.Composition"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.Practices.IoC.SimpleContainer", "..\common\Ngcs.Practices.IoC.SimpleContainer\Ngcs.Practices.IoC.SimpleContainer.csproj", "{50CB854F-8AE9-4A2D-A45B-8A4E0D14B91B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.Data.AdoDotNet.Repository", "..\common\Ngcs.Data.AdoDotNet.Repository\Ngcs.Data.AdoDotNet.Repository.csproj", "{9F697E06-D181-4ADD-AFFF-21BDD86B38CD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.Data.Repository.AdoDotNet", "..\common\Ngcs.Data.Repository.AdoDotNet\Ngcs.Data.Repository.AdoDotNet.csproj", "{9F697E06-D181-4ADD-AFFF-21BDD86B38CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.Data.AdoDotNet.DbContext", "..\common\Ngcs.Data.AdoDotNet.DbContext\Ngcs.Data.AdoDotNet.DbContext.csproj", "{423164EA-A2E5-4F2A-AFEF-A86416BAB6FB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.Data.DbContext.AdoDotNet", "..\common\Ngcs.Data.DbContext.AdoDotNet\Ngcs.Data.DbContext.AdoDotNet.csproj", "{423164EA-A2E5-4F2A-AFEF-A86416BAB6FB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.Data.Entities", "..\common\Ngcs.Data.Entities\Ngcs.Data.Entities.csproj", "{495E91C5-B078-48FC-9B6C-FEE5CE1A55A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.Data.EntityFramework.Repository", "..\common\Ngcs.Data.EntityFramework.Repository\Ngcs.Data.EntityFramework.Repository.csproj", "{04E0EB59-6A37-47D9-B3A5-6E5A9CF423CF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.Data.Repository.EntityFramework", "..\common\Ngcs.Data.Repository.EntityFramework\Ngcs.Data.Repository.EntityFramework.csproj", "{04E0EB59-6A37-47D9-B3A5-6E5A9CF423CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.Data.EntityFramework.DbContext", "..\common\Ngcs.Data.EntityFramework.DbContext\Ngcs.Data.EntityFramework.DbContext.csproj", "{481EA4B8-825F-4E4A-B657-7D581F33A8C1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.Data.DbContext.EntityFramework", "..\common\Ngcs.Data.DbContext.EntityFramework\Ngcs.Data.DbContext.EntityFramework.csproj", "{481EA4B8-825F-4E4A-B657-7D581F33A8C1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.Data.Repository", "..\common\Ngcs.Data.Repository\Ngcs.Data.Repository.csproj", "{E9369002-B29E-43F3-BE05-44CB874A58A4}"
 EndProject

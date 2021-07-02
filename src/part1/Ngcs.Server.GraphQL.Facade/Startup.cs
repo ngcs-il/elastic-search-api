@@ -1,12 +1,13 @@
+using System.Diagnostics.CodeAnalysis;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Ngcs.Data.AdoDotNet.DbContext;
-using Ngcs.Data.AdoDotNet.Repository;
+using Ngcs.Data.DbContext.AdoDotNet;
 using Ngcs.Data.Repository;
-using Ngcs.ElasticSearch.Data.AdoDotNet.Context;
+using Ngcs.Data.Repository.AdoDotNet;
+using Ngcs.ElasticSearch.Data.Context.AdoDotNet;
 using Ngcs.ElasticSearch.Domain.Contracts;
 using Ngcs.ElasticSearch.Domain.Implementation.Services;
 
@@ -19,7 +20,8 @@ namespace Ngcs.Server.GraphQL.Facade
 			Configuration = configuration;
 		}
 
-		public IConfiguration Configuration { get; }
+		[SuppressMessage("ReSharper", "UnusedAutoPropertyAccessor.Global")] 
+        public IConfiguration Configuration { get; }
 
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
