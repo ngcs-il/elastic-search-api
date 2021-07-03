@@ -8,15 +8,15 @@ namespace Ngcs.Practices.Composition
         private readonly IIocContainer _iocContainer;
         protected ICompositionContainer CompositionContainer;
 
-        protected BootstrapperInitializationFacadeBase(IIocContainer iocContainer) => this._iocContainer = iocContainer;
+        protected BootstrapperInitializationFacadeBase(IIocContainer iocContainer) => _iocContainer = iocContainer;
 
         public IAssembliesReadOnlyResolver AssembliesResolver { get; private set; }
 
         public void Initialize(string rootPath)
         {
-            this.InitializeComposition(rootPath);
-            this.AssembliesResolver = this.CreateAssembliesResolver();
-            this.RegisterModules();
+            InitializeComposition(rootPath);
+            AssembliesResolver = CreateAssembliesResolver();
+            RegisterModules();
         }
 
         protected abstract IAssembliesReadOnlyResolver CreateAssembliesResolver();
@@ -24,11 +24,14 @@ namespace Ngcs.Practices.Composition
         private void InitializeComposition(string rootPath)
         {
             if (!Directory.Exists(rootPath))
+            {
                 Directory.CreateDirectory(rootPath);
-            this.CompositionContainer = new Ngcs.Practices.Composition.CompositionContainer(rootPath);
-            this.CompositionContainer.Compose();
+            }
+
+            CompositionContainer = new CompositionContainer(rootPath);
+            CompositionContainer.Compose();
         }
 
-        private void RegisterModules() => new ModuleRegistrator(this._iocContainer, this.CompositionContainer).RegisterModules();
+        private void RegisterModules() => new ModuleRegistrator(_iocContainer, CompositionContainer).RegisterModules();
     }
 }

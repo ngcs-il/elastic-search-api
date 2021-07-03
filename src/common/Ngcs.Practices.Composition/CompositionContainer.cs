@@ -6,7 +6,7 @@ using System.IO;
 
 namespace Ngcs.Practices.Composition
 {
-    public class CompositionContainer : ICompositionContainer, ICompositionModulesProvider
+    public class CompositionContainer : ICompositionContainer
     {
         private readonly string _rootPath;
 

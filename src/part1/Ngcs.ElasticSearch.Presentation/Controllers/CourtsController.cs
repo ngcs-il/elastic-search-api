@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -15,6 +16,7 @@ namespace Ngcs.ElasticSearch.Presentation.Controllers
     /// </summary>
     /// <example></example>
 	//[Impersonate]
+    [SuppressMessage("ReSharper", "UnusedParameterInPartialMethod")]
     public partial class CourtsController
     {
         private readonly ICourtsService _courtsService;
