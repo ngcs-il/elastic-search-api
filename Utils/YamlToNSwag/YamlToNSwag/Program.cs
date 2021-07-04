@@ -2,6 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using YamlDotNet.Serialization;
 
 namespace YamlToNSwag
@@ -9,24 +10,6 @@ namespace YamlToNSwag
     [SuppressMessage("ReSharper", "ClassNeverInstantiated.Global")]
     internal class Program
     {
-        private class FromDocument
-        {
-            [JsonProperty(PropertyName = "json")]
-            public string Json { get; set; }
-        }
-
-        private class DocumentGenerator
-        {
-            [JsonProperty(PropertyName = "fromDocument")]
-            public FromDocument FromDocument { get; set; }
-        }
-
-        private class NSwagObject
-        {
-            [JsonProperty(PropertyName = "documentGenerator")]
-            public DocumentGenerator DocumentGenerator { get; set; }
-        }
-
         private static int Main(string[] args)
         {
             if (args.Length != 2)
@@ -35,23 +18,25 @@ namespace YamlToNSwag
                 return -1;
             }
 
-            using var yamlStr = File.OpenText(args[0]);
+            var yamlFileName = Path.GetFullPath(args[0]);
+            var nswagFileName = Path.GetFullPath(args[1]);
+
+            Console.WriteLine($"Input file: '{yamlFileName}'.");
+            Console.WriteLine($"Output file: '{nswagFileName}'.");
+
+            using var yamlStr = File.OpenText(yamlFileName);
             var deserializer = new Deserializer();
             var yamlObject = deserializer.Deserialize(yamlStr);
 
-            var serializer = new JsonSerializer();
-            using var strWriterYaml = new StringWriter();
-            serializer.Serialize(strWriterYaml, yamlObject);
-            var jsonStr = strWriterYaml.ToString();
+            var jsonStr = JsonConvert.SerializeObject(yamlObject, Formatting.Indented);
 
-            var nswagStr = File.ReadAllText(args[1]);
-            var nswagObj = JsonConvert.DeserializeObject<NSwagObject>(nswagStr);
+            var nswagStr = File.ReadAllText(nswagFileName);
+            var nswagObj = (JObject) JsonConvert.DeserializeObject(nswagStr);
+            // ReSharper disable PossibleNullReferenceException
+            nswagObj["documentGenerator"]["fromDocument"]["json"] = jsonStr;
 
-            // ReSharper disable once PossibleNullReferenceException
-            nswagObj.DocumentGenerator.FromDocument.Json = jsonStr;
-
-            using var nswagFile = File.CreateText(args[1]);
-            serializer.Serialize(nswagFile, yamlObject);
+            nswagStr = JsonConvert.SerializeObject(nswagObj, Formatting.Indented);
+            File.WriteAllText(nswagFileName, nswagStr);
 
             return 0;
         }
