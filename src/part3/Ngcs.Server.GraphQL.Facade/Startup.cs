@@ -1,4 +1,3 @@
-using System.Configuration;
 using JetBrains.Annotations;
 using LogoFX.Server.Bootstrapping.Mvc;
 using Microsoft.AspNetCore.Builder;
@@ -6,6 +5,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Ngcs.Data.Repository;
 using Solid.Bootstrapping;
 using BootstrapperBase = LogoFX.Server.Bootstrapping.BootstrapperBase;
 
@@ -16,8 +16,6 @@ namespace Ngcs.Server.GraphQL.Facade
 		public Startup(IConfiguration configuration)
 		{
 			Configuration = configuration;
-            var connectionString = configuration.GetConnectionString("appEntities");
-			AddConnectionString("appEntities", connectionString, "System.Data.SqlClient");
         }
 
         [UsedImplicitly]
@@ -25,7 +23,9 @@ namespace Ngcs.Server.GraphQL.Facade
 
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
-		{
+        {
+            services.AddSingleton<IConnectionStringService, ConnectionStringService>();
+
 			services.AddGraphQLServer()
 					.AddQueryType<Query>();
 			services.AddRazorPages();
@@ -62,40 +62,5 @@ namespace Ngcs.Server.GraphQL.Facade
 					endpoints.MapGraphQL();
 				});
 		}
-
-        private static void AddConnectionString(string name, string connectionString, string providerName)
-        {
-            // Get the application configuration file.
-            var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-
-            // Get the conectionStrings section.
-            var csSection = config.ConnectionStrings;
-            var needAdd = true;
-            for (var i = 0; i < csSection.ConnectionStrings.Count; i += 1)
-            {
-                var cs = csSection.ConnectionStrings[i];
-                if (cs.Name == name)
-                {
-                    cs.ConnectionString = connectionString;
-                    cs.ProviderName = providerName;
-                    needAdd = false;
-					break;
-                }
-            }
-
-            if (needAdd)
-            {
-                //Create your connection string into a connectionStringSettings object
-                var connection = new ConnectionStringSettings(name, connectionString, providerName);
-                //Add the object to the configuration
-                csSection.ConnectionStrings.Add(connection);
-            }
-
-            //Save the configuration
-            config.Save(ConfigurationSaveMode.Modified);
-
-            //Refresh the Sectionb
-            ConfigurationManager.RefreshSection("connectionStrings");
-        }
     }
 }

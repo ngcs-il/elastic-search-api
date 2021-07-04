@@ -9,7 +9,7 @@ namespace Ngcs.ElasticSearch.Api
 {
     [UsedImplicitly]
     [Export(typeof(ICompositionModule))]
-    internal sealed class MappingModule : ICompositionModule
+    internal sealed class Module : ICompositionModule
     {
         public void RegisterModule(IIocContainer container)
         {

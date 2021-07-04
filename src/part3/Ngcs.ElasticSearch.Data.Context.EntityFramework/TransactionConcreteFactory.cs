@@ -1,7 +1,7 @@
 ﻿using JetBrains.Annotations;
-using Ngcs.Data.EntityFramework.DbContext;
+using Ngcs.Data.DbContext.EntityFramework;
 
-namespace Ngcs.ElasticSearch.Data.EntityFramework.Context
+namespace Ngcs.ElasticSearch.Data.Context.EntityFramework
 {
     [UsedImplicitly]
     public class TransactionConcreteFactory : TransactionAbstractFactory<AppDbContext>

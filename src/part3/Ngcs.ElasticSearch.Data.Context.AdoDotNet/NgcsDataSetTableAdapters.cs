@@ -1,10 +1,10 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 using JetBrains.Annotations;
-using Ngcs.Data.AdoDotNet.DbContext;
-// ReSharper disable CheckNamespace
+using Ngcs.Data.DbContext.AdoDotNet;
 
-namespace Ngcs.ElasticSearch.Data.AdoDotNet.Context.NgcsDataSetTableAdapters
+// ReSharper disable once CheckNamespace
+namespace Ngcs.ElasticSearch.Data.Context.AdoDotNet.NgcsDataSetTableAdapters
 {
     [UsedImplicitly]
     partial class CourtsTableAdapter : IDataTableAdapter
@@ -25,7 +25,7 @@ namespace Ngcs.ElasticSearch.Data.AdoDotNet.Context.NgcsDataSetTableAdapters
     {
         public void SetConnection(IDbConnection connection)
         {
-            Connection = (SqlConnection)connection;
+            Connection = (SqlConnection) connection;
         }
 
         public int Fill(DataTable dataTable)
@@ -33,5 +33,4 @@ namespace Ngcs.ElasticSearch.Data.AdoDotNet.Context.NgcsDataSetTableAdapters
             return Fill((NgcsDataSet.CourtLevelsDataTable) dataTable);
         }
     }
-
 }

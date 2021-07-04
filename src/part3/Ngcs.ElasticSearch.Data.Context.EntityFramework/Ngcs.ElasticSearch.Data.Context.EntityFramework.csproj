@@ -7,8 +7,8 @@
     <ProjectGuid>{3385F33E-EAE6-450A-99CC-24F5D77864B9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Ngcs.ElasticSearch.Data.EntityFramework.Context</RootNamespace>
-    <AssemblyName>Ngcs.ElasticSearch.Data.EntityFramework.Context</AssemblyName>
+    <RootNamespace>Ngcs.ElasticSearch.Data.Context.EntityFramework</RootNamespace>
+    <AssemblyName>Ngcs.ElasticSearch.Data.Context.EntityFramework</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -24,15 +24,6 @@
     <WarningLevel>4</WarningLevel>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugAdoNet|AnyCPU'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\DebugAdoNet\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;ADONET</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <LangVersion>latest</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugEF|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>..\bin\DebugEF\</OutputPath>
@@ -42,35 +33,24 @@
     <LangVersion>latest</LangVersion>
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugGraphQLAdoNet|AnyCPU'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugAdoNet|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\DebugGraphQLAdoNet\</OutputPath>
+    <OutputPath>bin\DebugAdoNet\</OutputPath>
     <DefineConstants>TRACE;DEBUG;ADONET</DefineConstants>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <LangVersion>latest</LangVersion>
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugGraphQLEF|AnyCPU'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\DebugGraphQLEF\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;EF</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <LangVersion>latest</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
-  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Users\dmitr\.nuget\packages\microsoft.extensions.dependencyinjection.abstractions\5.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppDbContext.cs" />
@@ -79,29 +59,29 @@
     <Compile Include="TransactionConcreteFactory.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Ngcs.Data.EntityFramework.DbContext\Ngcs.Data.EntityFramework.DbContext.csproj">
+    <ProjectReference Include="..\..\common\Ngcs.Data.DbContext.EntityFramework\Ngcs.Data.DbContext.EntityFramework.csproj">
       <Project>{481EA4B8-825F-4E4A-B657-7D581F33A8C1}</Project>
-      <Name>Ngcs.Data.EntityFramework.DbContext</Name>
+      <Name>Ngcs.Data.DbContext.EntityFramework</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Ngcs.Data.EntityFramework.Repository\Ngcs.Data.EntityFramework.Repository.csproj">
+    <ProjectReference Include="..\..\common\Ngcs.Data.Repository.EntityFramework\Ngcs.Data.Repository.EntityFramework.csproj">
       <Project>{04E0EB59-6A37-47D9-B3A5-6E5A9CF423CF}</Project>
-      <Name>Ngcs.Data.EntityFramework.Repository</Name>
+      <Name>Ngcs.Data.Repository.EntityFramework</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Ngcs.Data.Repository\Ngcs.Data.Repository.csproj">
+    <ProjectReference Include="..\..\common\Ngcs.Data.Repository\Ngcs.Data.Repository.csproj">
       <Project>{E9369002-B29E-43F3-BE05-44CB874A58A4}</Project>
       <Name>Ngcs.Data.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\common\Ngcs.Practices.Composition\Ngcs.Practices.Composition.csproj">
+      <Project>{284CBDD1-AADB-4CA2-B6F3-88548E9F0764}</Project>
+      <Name>Ngcs.Practices.Composition</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\common\Ngcs.Practices.IoC\Ngcs.Practices.IoC.csproj">
+      <Project>{CB390942-3103-4C81-9B6A-F948B402A181}</Project>
+      <Name>Ngcs.Practices.IoC</Name>
     </ProjectReference>
     <ProjectReference Include="..\Ngcs.ElasticSearch.Domain.Entities\Ngcs.ElasticSearch.Domain.Entities.csproj">
       <Project>{9F12BECB-8135-4CC3-BA56-BB8F34383A3C}</Project>
       <Name>Ngcs.ElasticSearch.Domain.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Ngcs.Practices.Composition\Ngcs.Practices.Composition.csproj">
-      <Project>{284CBDD1-AADB-4CA2-B6F3-88548E9F0764}</Project>
-      <Name>Ngcs.Practices.Composition</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Ngcs.Practices.IoC\Ngcs.Practices.IoC.csproj">
-      <Project>{CB390942-3103-4C81-9B6A-F948B402A181}</Project>
-      <Name>Ngcs.Practices.IoC</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -114,8 +94,8 @@
     <PackageReference Include="JetBrains.Annotations">
       <Version>2021.1.0</Version>
     </PackageReference>
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection">
-      <Version>5.0.1</Version>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions">
+      <Version>5.0.0</Version>
     </PackageReference>
     <PackageReference Include="Solid.Practices.Modularity">
       <Version>2.3.1</Version>

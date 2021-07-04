@@ -2,28 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <Configurations>Release;DebugEF;DebugAdoNet;DebugGraphQLAdoNet;DebugGraphQLEF</Configurations>
-	  <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugAdoNet|AnyCPU'">
-    <DefineConstants>TRACE;ADONET</DefineConstants>
-    <OutputPath>bin\Debug</OutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugGraphQLAdoNet|AnyCPU'">
-    <DefineConstants>TRACE;ADONET</DefineConstants>
-    <OutputPath>bin\Debug</OutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugEF|AnyCPU'">
-    <DefineConstants>TRACE;EF</DefineConstants>
-    <OutputPath>\bin\Debug</OutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugGraphQLEF|AnyCPU'">
-    <DefineConstants>TRACE;EF</DefineConstants>
-    <OutputPath>\bin\Debug</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
   </PropertyGroup>
 
   <ItemGroup>
@@ -33,13 +12,13 @@
     <PackageReference Include="LogoFX.Server.Bootstrapping" Version="2.2.0" />
     <PackageReference Include="Solid.Practices.Modularity" Version="2.3.1" />
     <PackageReference Include="System.ComponentModel.Composition" Version="5.0.0" />
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Ngcs.ElasticSearch.Data.AdoDotNet.Context\Ngcs.ElasticSearch.Data.AdoDotNet.Context.csproj" />
-    <ProjectReference Include="..\Ngcs.ElasticSearch.Data.EntityFramework.Context\Ngcs.ElasticSearch.Data.EntityFramework.Context.csproj" />
+    <ProjectReference Include="..\..\common\Ngcs.Data.Repository\Ngcs.Data.Repository.csproj" />
+    <ProjectReference Include="..\Ngcs.ElasticSearch.Data.Context.AdoDotNet\Ngcs.ElasticSearch.Data.Context.AdoDotNet.csproj" />
+    <ProjectReference Include="..\Ngcs.ElasticSearch.Data.Context.EntityFramework\Ngcs.ElasticSearch.Data.Context.EntityFramework.csproj" />
     <ProjectReference Include="..\Ngcs.ElasticSearch.Domain.Contracts\Ngcs.ElasticSearch.Domain.Contracts.csproj" />
     <ProjectReference Include="..\Ngcs.ElasticSearch.Domain.Implementation\Ngcs.ElasticSearch.Domain.Implementation.csproj" />
   </ItemGroup>

@@ -1,4 +1,5 @@
 ﻿using System.Web.Http;
+using Ngcs.Data.Repository;
 using Ngcs.Practices.IoC;
 using Ngcs.WebApi2.Core;
 
@@ -10,6 +11,7 @@ namespace Ngcs.Server.Facade
 	    public AppBootstrapper(IIocContainer iocContainer)
             : base(iocContainer)
         {
+			iocContainer.RegisterSingleton<IConnectionStringService, ConnectionStringService>();
         }
 
 	    /// <inheritdoc />

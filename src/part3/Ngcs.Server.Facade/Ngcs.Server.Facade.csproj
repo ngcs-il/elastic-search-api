@@ -87,6 +87,7 @@
     <Compile Include="AppBootstrapper.cs" />
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="ConnectionStringService.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -106,29 +107,29 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Ngcs.Practices.IoC.SimpleContainer\Ngcs.Practices.IoC.SimpleContainer.csproj">
-      <Project>{50cb854f-8ae9-4a2d-a45b-8a4e0d14b91b}</Project>
+    <ProjectReference Include="..\..\common\Ngcs.Data.Repository\Ngcs.Data.Repository.csproj">
+      <Project>{E9369002-B29E-43F3-BE05-44CB874A58A4}</Project>
+      <Name>Ngcs.Data.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\common\Ngcs.Practices.IoC.SimpleContainer\Ngcs.Practices.IoC.SimpleContainer.csproj">
+      <Project>{50CB854F-8AE9-4A2D-A45B-8A4E0D14B91B}</Project>
       <Name>Ngcs.Practices.IoC.SimpleContainer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Ngcs.Web.Core\Ngcs.Web.Core.csproj">
-      <Project>{33bf59dc-d43b-42b3-ad67-eef477f76bb5}</Project>
+    <ProjectReference Include="..\..\common\Ngcs.Practices.IoC\Ngcs.Practices.IoC.csproj">
+      <Project>{CB390942-3103-4C81-9B6A-F948B402A181}</Project>
+      <Name>Ngcs.Practices.IoC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\common\Ngcs.Web.Core\Ngcs.Web.Core.csproj">
+      <Project>{33BF59DC-D43B-42B3-AD67-EEF477F76BB5}</Project>
       <Name>Ngcs.Web.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\common\Ngcs.WebApi2.Core\Ngcs.WebApi2.Core.csproj">
+      <Project>{2DF223E2-2DD9-41B9-9609-92676F0D6D59}</Project>
+      <Name>Ngcs.WebApi2.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\Ngcs.ElasticSearch.Domain.Contracts\Ngcs.ElasticSearch.Domain.Contracts.csproj">
       <Project>{5512C587-6E38-44BB-8078-5D4D5C7341B5}</Project>
       <Name>Ngcs.ElasticSearch.Domain.Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Ngcs.Practices.Composition\Ngcs.Practices.Composition.csproj">
-      <Project>{284cbdd1-aadb-4ca2-b6f3-88548e9f0764}</Project>
-      <Name>Ngcs.Practices.Composition</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Ngcs.Practices.IoC\Ngcs.Practices.IoC.csproj">
-      <Project>{cb390942-3103-4c81-9b6a-f948b402a181}</Project>
-      <Name>Ngcs.Practices.IoC</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Ngcs.WebApi2.Core\Ngcs.WebApi2.Core.csproj">
-      <Project>{2DF223E2-2DD9-41B9-9609-92676F0D6D59}</Project>
-      <Name>Ngcs.WebApi2.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
@@ -147,24 +148,6 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugEF|AnyCPU'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;EF</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <LangVersion>latest</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugGraphQLAdoNet|AnyCPU'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;ADONET</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <LangVersion>latest</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugGraphQLEF|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\</OutputPath>
     <DefineConstants>TRACE;DEBUG;EF</DefineConstants>

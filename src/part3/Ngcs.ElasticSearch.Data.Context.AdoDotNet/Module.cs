@@ -1,19 +1,19 @@
 ﻿using System.ComponentModel.Composition;
-using Ngcs.Data.EntityFramework.DbContext;
-using Ngcs.Data.EntityFramework.Repository;
+using Ngcs.Data.DbContext.AdoDotNet;
 using Ngcs.Data.Repository;
+using Ngcs.Data.Repository.AdoDotNet;
 using Ngcs.Practices.IoC;
 using ICompositionModule = Ngcs.Practices.Composition.ICompositionModule;
-#if EF
+#if ADONET
 using Solid.Practices.Modularity;
 using Microsoft.Extensions.DependencyInjection;
 #endif
 
-namespace Ngcs.ElasticSearch.Data.EntityFramework.Context
+namespace Ngcs.ElasticSearch.Data.Context.AdoDotNet
 {
     [Export(typeof(ICompositionModule))]
     class Module : ICompositionModule
-#if EF
+#if ADONET
         , ICompositionModule<IServiceCollection>
 #endif
     {
@@ -23,9 +23,9 @@ namespace Ngcs.ElasticSearch.Data.EntityFramework.Context
             container.RegisterSingleton<IDbContext, AppDbContext>();
             container.RegisterTransient<ITransactionFactory, TransactionConcreteFactory>();
             container.RegisterTransient<IDbContextFactory, DbContextFactory>();
-        }
+        }   
 
-#if EF
+#if ADONET
         public void RegisterModule(IServiceCollection dependencyRegistrator)
         {
             dependencyRegistrator.AddSingleton<IUnitOfWork, UnitOfWork>();

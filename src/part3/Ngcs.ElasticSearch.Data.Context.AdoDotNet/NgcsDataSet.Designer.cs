@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace Ngcs.ElasticSearch.Data.AdoDotNet.Context {
+namespace Ngcs.ElasticSearch.Data.Context.AdoDotNet {
     
     
     /// <summary>
@@ -1024,7 +1024,7 @@ namespace Ngcs.ElasticSearch.Data.AdoDotNet.Context {
         }
     }
 }
-namespace Ngcs.ElasticSearch.Data.AdoDotNet.Context.NgcsDataSetTableAdapters {
+namespace Ngcs.ElasticSearch.Data.Context.AdoDotNet.NgcsDataSetTableAdapters {
     
     
     /// <summary>
@@ -1181,7 +1181,7 @@ namespace Ngcs.ElasticSearch.Data.AdoDotNet.Context.NgcsDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Ngcs.ElasticSearch.Data.AdoDotNet.Context.Properties.Settings.Default.ES_SAMPLEConnectionString;
+            this._connection.ConnectionString = global::Ngcs.ElasticSearch.Data.Context.AdoDotNet.Properties.Settings.Default.ES_SAMPLEConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1506,7 +1506,7 @@ namespace Ngcs.ElasticSearch.Data.AdoDotNet.Context.NgcsDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Ngcs.ElasticSearch.Data.AdoDotNet.Context.Properties.Settings.Default.ES_SAMPLEConnectionString;
+            this._connection.ConnectionString = global::Ngcs.ElasticSearch.Data.Context.AdoDotNet.Properties.Settings.Default.ES_SAMPLEConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

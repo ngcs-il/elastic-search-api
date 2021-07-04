@@ -1,5 +1,3 @@
-using System;
-using System.IO;
 using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Dispatcher;
@@ -119,7 +117,7 @@ namespace Ngcs.Server.Facade
                         foreach (var assemblyPath in assemblyPaths)
                         {
 	                        if (assemblyPath.ToLower().Contains(".dll"))
-	                        { ;
+	                        {
 		                        c.IncludeXmlComments(assemblyPath.Replace(".dll", ".xml"));
                             }
                         }
@@ -198,7 +196,7 @@ namespace Ngcs.Server.Facade
                         //
                         //c.CustomProvider((defaultProvider) => new CachingSwaggerProvider(defaultProvider));
                     })
-                .EnableSwaggerUi(c =>
+                .EnableSwaggerUi(_ =>
                     {
                         // Use the "DocumentTitle" option to change the Document title.
                         // Very helpful when you have multiple Swagger pages open, to tell them apart.

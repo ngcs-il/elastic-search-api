@@ -1,6 +1,6 @@
-﻿using Ngcs.Data.AdoDotNet.DbContext;
+﻿using Ngcs.Data.DbContext.AdoDotNet;
 
-namespace Ngcs.ElasticSearch.Data.AdoDotNet.Context
+namespace Ngcs.ElasticSearch.Data.Context.AdoDotNet
 {
     public class TransactionConcreteFactory : TransactionAbstractFactory<AppDbContext>
     {

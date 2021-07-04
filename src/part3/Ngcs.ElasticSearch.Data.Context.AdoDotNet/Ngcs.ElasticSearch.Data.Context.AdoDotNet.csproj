@@ -7,8 +7,8 @@
     <ProjectGuid>{D1C8AA50-6AAA-41B7-858D-652CA121C540}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Ngcs.ElasticSearch.Data.AdoDotNet.Context</RootNamespace>
-    <AssemblyName>Ngcs.ElasticSearch.Data.AdoDotNet.Context</AssemblyName>
+    <RootNamespace>Ngcs.ElasticSearch.Data.Context.AdoDotNet</RootNamespace>
+    <AssemblyName>Ngcs.ElasticSearch.Data.Context.AdoDotNet</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -40,24 +40,6 @@
     <LangVersion>latest</LangVersion>
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugGraphQLAdoNet|AnyCPU'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\DebugGraphQLAdoNet\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;ADONET</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <LangVersion>latest</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugGraphQLEF|AnyCPU'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\DebugGraphQLEF\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;EF</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <LangVersion>latest</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
@@ -72,13 +54,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppDbContext.cs" />
-    <Compile Include="CourtsTableAdapter.cs">
-      <DependentUpon>NgcsDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Module.cs" />
     <Compile Include="NgcsDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>NgcsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NgcsDataSetTableAdapters.cs">
+      <SubType>code</SubType>
       <DependentUpon>NgcsDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -95,9 +78,9 @@
       <DependentUpon>NgcsDataSet.xsd</DependentUpon>
     </None>
     <None Include="NgcsDataSet.xsd">
+      <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>NgcsDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </None>
     <None Include="NgcsDataSet.xss">
       <DependentUpon>NgcsDataSet.xsd</DependentUpon>
@@ -108,15 +91,15 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Ngcs.Data.AdoDotNet.DbContext\Ngcs.Data.AdoDotNet.DbContext.csproj">
+    <ProjectReference Include="..\..\common\Ngcs.Data.DbContext.AdoDotNet\Ngcs.Data.DbContext.AdoDotNet.csproj">
       <Project>{423164EA-A2E5-4F2A-AFEF-A86416BAB6FB}</Project>
       <Name>Ngcs.Data.AdoDotNet.DbContext</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Ngcs.Data.AdoDotNet.Repository\Ngcs.Data.AdoDotNet.Repository.csproj">
+    <ProjectReference Include="..\..\common\Ngcs.Data.Repository.AdoDotNet\Ngcs.Data.Repository.AdoDotNet.csproj">
       <Project>{9F697E06-D181-4ADD-AFFF-21BDD86B38CD}</Project>
       <Name>Ngcs.Data.AdoDotNet.Repository</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Ngcs.Data.Repository\Ngcs.Data.Repository.csproj">
+    <ProjectReference Include="..\..\common\Ngcs.Data.Repository\Ngcs.Data.Repository.csproj">
       <Project>{E9369002-B29E-43F3-BE05-44CB874A58A4}</Project>
       <Name>Ngcs.Data.Repository</Name>
     </ProjectReference>
@@ -124,11 +107,11 @@
       <Project>{9F12BECB-8135-4CC3-BA56-BB8F34383A3C}</Project>
       <Name>Ngcs.ElasticSearch.Domain.Entities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Ngcs.Practices.Composition\Ngcs.Practices.Composition.csproj">
+    <ProjectReference Include="..\..\common\Ngcs.Practices.Composition\Ngcs.Practices.Composition.csproj">
       <Project>{284CBDD1-AADB-4CA2-B6F3-88548E9F0764}</Project>
       <Name>Ngcs.Practices.Composition</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Ngcs.Practices.IoC\Ngcs.Practices.IoC.csproj">
+    <ProjectReference Include="..\..\common\Ngcs.Practices.IoC\Ngcs.Practices.IoC.csproj">
       <Project>{CB390942-3103-4C81-9B6A-F948B402A181}</Project>
       <Name>Ngcs.Practices.IoC</Name>
     </ProjectReference>

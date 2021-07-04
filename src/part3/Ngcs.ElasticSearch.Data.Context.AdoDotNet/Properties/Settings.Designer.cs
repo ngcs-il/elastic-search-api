@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Ngcs.ElasticSearch.Data.AdoDotNet.Context.Properties {
+namespace Ngcs.ElasticSearch.Data.Context.AdoDotNet.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -26,8 +26,9 @@ namespace Ngcs.ElasticSearch.Data.AdoDotNet.Context.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP2\\SQLEXPRESS;Initial Catalog=ngcs-sample;Integrated Security=T" +
-            "rue")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=10.100.102.3;Initial Catalog=ES-SAMPLE;User ID=sa;Password=Temp2020;C" +
+            "onnect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=R" +
+            "eadWrite;MultiSubnetFailover=False")]
         public string ngcs_sampleConnectionString {
             get {
                 return ((string)(this["ngcs_sampleConnectionString"]));
