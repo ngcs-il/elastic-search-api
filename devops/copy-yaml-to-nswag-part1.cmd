@@ -1,0 +1,1 @@
+call copy-yaml-to-nswag ..\src\part1\Ngcs.ElasticSearch.Api\Controllers\api\api.yaml ..\src\part1\Ngcs.ElasticSearch.Api\Controllers\api\es-api.nswag
