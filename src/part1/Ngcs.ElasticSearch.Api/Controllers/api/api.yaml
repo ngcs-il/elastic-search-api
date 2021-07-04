@@ -1482,13 +1482,12 @@ components:
           minLength: 2
           x-faker:
             lorem.words: 1
-        level:
-          type: string
-          minLength: 2
+        levelId:
+          type: integer
           x-faker:
             value.from:
               x-ref: courts_levels
-              property: name
+              property: id
       required:
         - id
         - name

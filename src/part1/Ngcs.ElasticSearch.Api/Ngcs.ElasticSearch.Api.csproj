@@ -60,7 +60,7 @@
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Mappers\CourtMapper.cs" />
     <Compile Include="Mappers\MappingProfile.cs" />
-    <Compile Include="MappingModule.cs" />
+    <Compile Include="Module.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -108,7 +108,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>node $(ProjectDir)Controllers\api\api-converter.js $(ProjectDir)Controllers\api
+    <PreBuildEvent>$(SolutionDir)..\..\devops\YamlToNSwag\YamlToNSwag.exe $(ProjectDir)Controllers\api\api.yaml $(ProjectDir)Controllers\api\es-api.nswag
 nswag run $(ProjectDir)Controllers\api\es-api.nswag</PreBuildEvent>
   </PropertyGroup>
 </Project>

@@ -338,10 +338,8 @@ namespace Ngcs.ElasticSearch.Api.Controllers
         [System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength = 2)]
         public string Name { get; set; }
     
-        [Newtonsoft.Json.JsonProperty("level", Required = Newtonsoft.Json.Required.Always)]
-        [System.ComponentModel.DataAnnotations.Required]
-        [System.ComponentModel.DataAnnotations.StringLength(int.MaxValue, MinimumLength = 2)]
-        public string Level { get; set; }
+        [Newtonsoft.Json.JsonProperty("levelId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        public int LevelId { get; set; }
     
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
     
