@@ -1,9 +1,9 @@
 ﻿using System;
 using AutoMapper;
+using Ngcs.ElasticSearch.Api.Controllers;
 using Ngcs.ElasticSearch.Domain.Entities;
-using Ngcs.ElasticSearch.Presentation.Controllers;
 
-namespace Ngcs.ElasticSearch.Presentation.Mappers
+namespace Ngcs.ElasticSearch.Api.Mappers
 {
     internal class MappingProfile : Profile
     {

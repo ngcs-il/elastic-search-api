@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using System.Web.Http;
 
 // ReSharper disable UnusedParameterInPartialMethod
-namespace Ngcs.ElasticSearch.Presentation.Controllers
+namespace Ngcs.ElasticSearch.Api.Controllers
 {
     /// <inheritdoc />
     public partial class SearchController

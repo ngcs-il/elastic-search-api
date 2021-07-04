@@ -1,11 +1,11 @@
 ﻿using System.ComponentModel.Composition;
 using AutoMapper;
 using JetBrains.Annotations;
-using Ngcs.ElasticSearch.Presentation.Mappers;
+using Ngcs.ElasticSearch.Api.Mappers;
 using Ngcs.Practices.Composition;
 using Ngcs.Practices.IoC;
 
-namespace Ngcs.ElasticSearch.Presentation
+namespace Ngcs.ElasticSearch.Api
 {
     [UsedImplicitly]
     [Export(typeof(ICompositionModule))]

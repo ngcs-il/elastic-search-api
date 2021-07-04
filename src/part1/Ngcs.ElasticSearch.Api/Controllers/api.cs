@@ -13,7 +13,7 @@ using Ngcs.WebApi2.Core;
 #pragma warning disable 1591 // Disable "CS1591 Missing XML comment for publicly visible type or member ..."
 #pragma warning disable 8073 // Disable "CS8073 The result of the expression is always 'false' since a value of type 'T' is never equal to 'null' of type 'T?'"
 
-namespace Ngcs.ElasticSearch.Presentation.Controllers
+namespace Ngcs.ElasticSearch.Api.Controllers
 {
     using System = global::System;
 

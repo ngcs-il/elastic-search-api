@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.Server.Facade", "Ngcs.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.ElasticSearch.Domain.Contracts", "Ngcs.ElasticSearch.Domain.Contracts\Ngcs.ElasticSearch.Domain.Contracts.csproj", "{5512C587-6E38-44BB-8078-5D4D5C7341B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.ElasticSearch.Presentation", "Ngcs.ElasticSearch.Presentation\Ngcs.ElasticSearch.Presentation.csproj", "{2CB9F5FE-9DEF-4977-A898-C40143625EBC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.ElasticSearch.Api", "Ngcs.ElasticSearch.Api\Ngcs.ElasticSearch.Api.csproj", "{2CB9F5FE-9DEF-4977-A898-C40143625EBC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ngcs.ElasticSearch.Domain.Implementation", "Ngcs.ElasticSearch.Domain.Implementation\Ngcs.ElasticSearch.Domain.Implementation.csproj", "{9732B4F0-6309-4E50-BCE3-3AFAFAF58A7D}"
 EndProject

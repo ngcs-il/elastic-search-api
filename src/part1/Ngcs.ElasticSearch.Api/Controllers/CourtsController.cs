@@ -4,12 +4,12 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http;
+using Ngcs.ElasticSearch.Api.Mappers;
 using Ngcs.ElasticSearch.Domain.Contracts;
-using Ngcs.ElasticSearch.Presentation.Mappers;
 
 #pragma warning disable 1998
 
-namespace Ngcs.ElasticSearch.Presentation.Controllers
+namespace Ngcs.ElasticSearch.Api.Controllers
 {
     /// <summary>
     /// Represents a Courts endpoint.

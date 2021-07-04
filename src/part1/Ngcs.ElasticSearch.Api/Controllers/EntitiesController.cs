@@ -4,15 +4,15 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http;
 
-namespace Ngcs.ElasticSearch.Presentation.Controllers
+namespace Ngcs.ElasticSearch.Api.Controllers
 {
     /// <inheritdoc />
     [SuppressMessage("ReSharper", "UnusedParameterInPartialMethod")]
-    public partial class ProceedingsController
+    public partial class EntitiesController
     {
-        /// <summary>Listing Proceeding types</summary>
+        /// <summary>Listing Entity types</summary>
         /// <returns>OK</returns>
-        private partial Task<IHttpActionResult> GetProceedingsImplementationAsync(CancellationToken cancellationToken)
+        private partial Task<IHttpActionResult> GetEntitiesImplementationAsync(CancellationToken cancellationToken)
         {
             throw new NotImplementedException();
         }
