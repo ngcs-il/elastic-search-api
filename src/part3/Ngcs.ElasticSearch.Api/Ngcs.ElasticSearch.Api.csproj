@@ -108,7 +108,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>$(SolutionDir)..\..\devops\YamlToNSwag\YamlToNSwag.exe $(ProjectDir)Controllers\api\api.yaml $(ProjectDir)Controllers\api\es-api.nswag
-nswag run $(ProjectDir)Controllers\api\es-api.nswag</PreBuildEvent>
+    <PreBuildEvent>cd $(SolutionDir)..\..\devops
+generate-api $(ProjectDir)</PreBuildEvent>
   </PropertyGroup>
 </Project>
