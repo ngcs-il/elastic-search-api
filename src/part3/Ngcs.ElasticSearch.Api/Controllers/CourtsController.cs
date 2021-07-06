@@ -47,7 +47,7 @@ namespace Ngcs.ElasticSearch.Api.Controllers
             return Ok(courts.Select(court =>
             {
                 var courtDto = _courtMapper.MapToCourtDto(court);
-                courtDto.Level = courtLevels.Single(level => level.Id == court.LevelId).Name;
+                courtDto.Level = _courtMapper.MapToCourtLevelDto(courtLevels.Single(level => level.Id == court.LevelId));
                 return courtDto;
             }));
         }

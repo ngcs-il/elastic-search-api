@@ -1483,11 +1483,7 @@ components:
           x-faker:
             lorem.words: 1
         level:
-          type: string
-          x-faker:
-            value.from:
-              x-ref: courts_levels
-              property: name
+          $ref: '#/components/schemas/CourtLevelDto'
       required:
         - id
         - name

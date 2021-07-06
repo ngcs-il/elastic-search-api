@@ -339,8 +339,8 @@ namespace Ngcs.ElasticSearch.Api.Controllers
         public string Name { get; set; }
     
         [Newtonsoft.Json.JsonProperty("level", Required = Newtonsoft.Json.Required.Always)]
-        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
-        public string Level { get; set; }
+        [System.ComponentModel.DataAnnotations.Required]
+        public CourtLevelDto Level { get; set; } = new CourtLevelDto();
     
         private System.Collections.Generic.IDictionary<string, object> _additionalProperties = new System.Collections.Generic.Dictionary<string, object>();
     
