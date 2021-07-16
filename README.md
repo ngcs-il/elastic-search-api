@@ -10,17 +10,17 @@ Also it uses Node.js and NPM. Before launch the application you may run ```/devo
 ## How to start
 
 1. Install Node.js (ver. >= 14) and npm package manager.
-2. Run ```/devops/run-once.cmd```. It installs globally nswag package.
-3. Open the solution in the Visual Studio 2019.
-4. Create database using ```Ngcs.ElasticSearch.SampleDB``` project.
-  1. Launch 'publish' command.
+1. Run ```/devops/run-once.cmd```. It installs globally nswag package.
+1. Open the solution in the Visual Studio 2019.
+1. Create database using ```Ngcs.ElasticSearch.SampleDB``` project.
+   1. Launch 'publish' command.
   ![alt text](/public/img/image01.png)
-5. In solution properties dialog set multiply startup projects: ```Ngcs.Server.Facade``` and ```Ngcs.Server.GraphQL.Facade```.
-6. Set connections string.
-    a) In root of the ```Ngcs.Server.Facade``` project edit ```WebConnectionString.config``` file. Set connection string named ```appEntities```.
-    b) In root of the ```Ngcs.Server.GraphQL.Facade``` project edit ```appsettings.json``` file. Set connection string named ```appEntities```
-6. Do "rebuild all".
-7. Do "start".
+1. In solution properties dialog set multiply startup projects: ```Ngcs.Server.Facade``` and ```Ngcs.Server.GraphQL.Facade```.
+1. Set connections string.
+   1. In root of the ```Ngcs.Server.Facade``` project edit ```WebConnectionString.config``` file. Set connection string named ```appEntities```.
+   1. In root of the ```Ngcs.Server.GraphQL.Facade``` project edit ```appsettings.json``` file. Set connection string named ```appEntities```
+1. Do "rebuild all".
+1. Do "start".
 
 ## Data
 
